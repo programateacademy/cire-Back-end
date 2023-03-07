@@ -1,4 +1,4 @@
-const mongoose = require ("mongoose")
+const mongoose = require('mongoose');
 
 const schema = mongoose.Schema;
 
@@ -8,9 +8,8 @@ const mySchema = new schema(
     age: Number,
     sex: String,
     NameRepresentative: String,
-    schoolbehavior: String,
-    behaviorhome: String,
-    description: String,
+    descriptionhome: String,
+    descriptionscholl: String,
     Actionplan: String
   },
   {
@@ -18,6 +17,6 @@ const mySchema = new schema(
   }
 );
 
-const model = mongoose.model('FormSeven', mySchema);
+const model = mongoose.model('Formkisd', mySchema);
 
 module.exports = model;
