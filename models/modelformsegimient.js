@@ -67,6 +67,6 @@ const mySchema = new schema(
   }
 )
 
-const model = mongoose.model('FormObservation', mySchema);
+const model = mongoose.model('FormSegimient', mySchema);
 
 module.exports = model

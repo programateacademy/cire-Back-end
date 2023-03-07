@@ -97,6 +97,6 @@ const mySchema = new schema(
   }
 )
 
-const model = mongoose.model('FormObservation', mySchema);
+const model = mongoose.model('FormRecomendation', mySchema);
 
 module.exports = model;
