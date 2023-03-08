@@ -5,10 +5,10 @@ const schema = mongoose.Schema;
 const mySchema = new schema(
   {
     name: String,
-    edad: Number,
-    sexo: String,
-    nomRepresentante: String,
-    numRepresentante: Number,
+    age: Number,
+    sex: String,
+    namAttendant: String,
+    numAttendant: Number,
   },
   {
     timestamps: true
