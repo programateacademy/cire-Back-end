@@ -13,357 +13,293 @@ const mySchema = new schema(
       planning: {
         Manages_to_classify_The_step_by_step_To_develop_The_task: {
           Monday: {
-            yes: String,
-            not: String
+           option: String
           },
           Tuesday: {
-            yes: String,
-            not: String
+            option: String
           },
           Wednesday: {
-            yes: String,
-            not: String
+            option: String
           },
           Thursday: {
-            yes: String,
-            not: String
+            option: String
           },
           Friday: {
-            yes: String,
-            not: String
+            option: String
           },
 
           Description: {
-            Conduct: String
+            behavior: String
           }
         },
 
         before_Starting_the_Task_prepare_The_material_That_you_Will_use: {
           Monday: {
-            yes: String,
-            not: String
+            option: String
           },
           Tuesday: {
-            yes: String,
-            not: String
+            option: String
           },
           Wednesday: {
-            yes: String,
-            not: String
+            option: String
           },
           Thursday: {
-            yes: String,
-            not: String
+            option: String
           },
           Friday: {
-            yes: String,
-            not: String
+            option: String
           },
 
           Description: {
-            Conduct: String
+            behavior: String
           }
         },
 
         Finish_the_task_I_started:{
           Monday: {
-            yes: String,
-            not: String
+            option: String
           },
           Tuesday: {
-            yes: String,
-            not: String
+            option: String
           },
           Wednesday: {
-            yes: String,
-            not: String
+            option: String
           },
           Thursday: {
-            yes: String,
-            not: String
+            option: String
           },
           Friday: {
-            yes: String,
-            not: String
+            option: String
           },
 
           Description: {
-            Conduct: String
+            behavior: String
           }
         },
 
         Runtime_is_adequate_for_the_task:{
           Monday: {
-            yes: String,
-            not: String
+            option: String
           },
           Tuesday: {
-            yes: String,
-            not: String
+            option: String
           },
           Wednesday: {
-            yes: String,
-            not: String
+            option: String
           },
           Thursday: {
-            yes: String,
-            not: String
+            option: String
           },
           Friday: {
-            yes: String,
-            not: String
+            option: String
           },
 
           Description: {
-            Conduct: String
+            behavior: String
           }
         },
 
         Gets_distracted_while_performing_the_task:{
           Monday: {
-            yes: String,
-            not: String
+            option: String
           },
           Tuesday: {
-            yes: String,
-            not: String
+            option: String
           },
           Wednesday: {
-            yes: String,
-            not: String
+            option: String
           },
           Thursday: {
-            yes: String,
-            not: String
+            option: String
           },
           Friday: {
-            yes: String,
-            not: String
+            option: String
           },
 
           Description: {
-            Conduct: String
+            behavior: String
           }
         },
 
         Requires_reinforcement_in_the_execution_of_an_instruction:{
           Monday: {
-            yes: String,
-            not: String
+           option:String
           },
           Tuesday: {
-            yes: String,
-            not: String
+            option:String
           },
           Wednesday: {
-            yes: String,
-            not: String
+            option:String
           },
           Thursday: {
-            yes: String,
-            not: String
+            option:String
           },
           Friday: {
-            yes: String,
-            not: String
+            option:String
           },
 
           Description: {
-            Conduct: String
+            behavior: String
           }
         },
 
         Strive_to_hand_in_homework_with_good_presentation:{
           Monday: {
-            yes: String,
-            not: String
+            option:String
           },
           Tuesday: {
-            yes: String,
-            not: String
+            option:String
           },
           Wednesday: {
-            yes: String,
-            not: String
+            option:String
           },
           Thursday: {
-            yes: String,
-            not: String
+            option:String
           },
           Friday: {
-            yes: String,
-            not: String
+            option:String
           },
 
           Description: {
-            Conduct: String
+            behavior: String
           }
         },
 
         Makes_adequate_use_of_the_space_stipulated_for_the_task:{
           Monday: {
-            yes: String,
-            not: String
+            option:String
           },
           Tuesday: {
-            yes: String,
-            not: String
+            option:String
           },
           Wednesday: {
-            yes: String,
-            not: String
+            option:String
           },
           Thursday: {
-            yes: String,
-            not: String
+            option:String
           },
           Friday: {
-            yes: String,
-            not: String
+            option:String
           },
 
           Description: {
-            Conduct: String
+            behavior: String
           }
         },
 
         Frustration_tolerance_or_recognition_of_success_is_evident:{
           Monday: {
-            yes: String,
-            not: String
+            option:String
           },
           Tuesday: {
-            yes: String,
-            not: String
+            option:String
           },
           Wednesday: {
-            yes: String,
-            not: String
+            option:String
           },
           Thursday: {
-            yes: String,
-            not: String
+            option:String
           },
           Friday: {
-            yes: String,
-            not: String
+            option:String
           },
 
           Description: {
-            Conduct: String
+            behavior: String
           }
         },
 
         If_you_are_from_the_province_keep_your_dialect:{
           Monday: {
-            yes: String,
-            not: String
+            option:String
           },
           Tuesday: {
-            yes: String,
-            not: String
+            option:String
           },
           Wednesday: {
             yes: String,
             not: String
           },
           Thursday: {
-            yes: String,
-            not: String
+            option:String
           },
           Friday: {
-            yes: String,
-            not: String
+            option:String
           },
 
           Description: {
-            Conduct: String
+            behavior: String
           }
         },
 
         Relates_to_other_children_with_notable_differences:{
           Monday: {
-            yes: String,
-            not: String
+            option:String
           },
           Tuesday: {
-            yes: String,
-            not: String
+            option:String
           },
           Wednesday: {
-            yes: String,
-            not: String
+            option:String
           },
           Thursday: {
-            yes: String,
-            not: String
+            option:String
           },
           Friday: {
-            yes: String,
-            not: String
+            option:String
           },
 
           Description: {
-            Conduct: String
+            behavior: String
           }
         },
 
         Feels_included_accepted_and_loved_with_peers:{
           Monday: {
-            yes: String,
-            not: String
+            option:String
           },
           Tuesday: {
-            yes: String,
-            not: String
+            option:String
           },
           Wednesday: {
-            yes: String,
-            not: String
+            option:String
           },
           Thursday: {
-            yes: String,
-            not: String
+            option:String
           },
           Friday: {
-            yes: String,
-            not: String
+            option:String
           },
 
           Description: {
-            Conduct: String
+            behavior: String
           }
         },
 
         Include_accept_and_show_love_for_your_peers:{
           Monday: {
-            yes: String,
-            not: String
+            option:String
           },
           Tuesday: {
-            yes: String,
-            not: String
+            option:String
           },
           Wednesday: {
-            yes: String,
-            not: String
+            option:String
           },
           Thursday: {
-            yes: String,
-            not: String
+            option:String
           },
           Friday: {
-            yes: String,
-            not: String
+            option:String
           },
 
           Description: {
-            Conduct: String
+            behavior: String
           },
 
           hour:{
-            initial: String,
-            final: String
+            initial: Number,
+            final: Number
           }
         },
 

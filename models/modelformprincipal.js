@@ -27,7 +27,7 @@ const mySchema = new schema(
         accionPlan:String
       },
 
-      worksIncire:{
+      worksInCire:{
         Description: String,
         accionPlan:String
       },

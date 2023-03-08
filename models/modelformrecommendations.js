@@ -11,25 +11,21 @@ const mySchema = new schema(
 
     familyRecommendations: {
       ParentingGuidelines: {
-        yes: String,
-        not: String,
+        option: String,
         observation: String
       },
       habitsAndRoutines: {
-        yes: String,
-        not: String,
+        option: String,
         observation: String
       },
 
       studyHabitsAndRoutines: {
-        yes: String,
-        not: String,
+        option: String,
         observation: String
       },
 
       commitments: {
-        yes: String,
-        not: String,
+        option: String,
         observation: String
       },
 
@@ -42,20 +38,17 @@ const mySchema = new schema(
         observation: String
       },
       rulesOutsideTheClassroom: {
-        yes: String,
-        not: String,
+        option: String,
         observation: String
       },
 
       accompaniment: {
-        yes: String,
-        not: String,
+        option: String,
         observation: String
       },
 
       commitments: {
-        yes: String,
-        not: String,
+        option: String,
         observation: String
       }
 
@@ -63,33 +56,28 @@ const mySchema = new schema(
 
     recommendationsCire: {
       ParentingGuidelines: {
-        yes: String,
-        not: String,
+        option: String,
         observation: String
 
       },
 
       studyHabitsAndRoutines: {
-        yes: String,
-        not: String,
+        option: String,
         observation: String
       },
 
       accompaniment: {
-        yes: String,
-        not: String,
+        option: String,
         observation: String
       },
 
       rules: {
-        yes: String,
-        not: String,
+        option: String,
         observation: String
       },
 
       commitments: {
-        yes: String,
-        not: String,
+        option: String,
         observation: String
       }
 
