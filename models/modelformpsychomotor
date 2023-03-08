@@ -52,8 +52,9 @@ const mySchema = new schema(
         Not: String
       },
 
-
     },
+
+    Observations: String
   },
 
   {
