@@ -17,23 +17,19 @@ function getProfessional(filterProfessional){
 };
 
 async function updateProfessional(id, age, phone){
-  const foundProfessional = await model.findOne({
-    _id: id
-  })
-  foundProfessional.age = age
-  foundProfessional.phone = phone
+  const foundProfessional = await model.findById(id);
+  foundProfessional.age = age;
+  foundProfessional.phone = phone;
   const updateProfessional = {
     age,
     phone
-  }
+  };
   const newProfessional = await foundProfessional.save(updateProfessional);
-  return newProfessional
+  return newProfessional;
 };
 
 async function removeProfessional(id){
-  return await model.deleteOne({
-    _id:id
-  })
+  return await model.findByIdAndDelete(id);
 };
 
 module.exports = {
