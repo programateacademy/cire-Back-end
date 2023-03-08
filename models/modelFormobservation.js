@@ -359,6 +359,11 @@ const mySchema = new schema(
 
           Description: {
             Conduct: String
+          },
+
+          hour:{
+            initial: String,
+            final: String
           }
         },
 
