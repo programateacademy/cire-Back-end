@@ -25,11 +25,11 @@ function getProfessional(filterProfessional) {
 };
 
 function updateProfessional(id, age, phone){
-  return new Promise(async (resolve, reject) => {
+  return new Promise((resolve, reject) => {
     if(!id || !age || !phone){
       reject('INVALID DATA');
     };
-    const result = await store.updateProfessional(id, age, phone)
+    const result = store.updateProfessional(id, age, phone)
     resolve(result);
   });
 };
@@ -55,6 +55,6 @@ module.exports = {
   getProfessional,
   updateProfessional,
   deleteProfessional
-}
+};
 
 

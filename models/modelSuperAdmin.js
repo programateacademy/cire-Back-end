@@ -15,4 +15,4 @@ const mySchema = new schema(
 
 const model = mongoose.model('superAdmin', mySchema);
 
-module.exports = model
+module.exports = model;
