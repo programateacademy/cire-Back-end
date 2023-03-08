@@ -64,6 +64,9 @@ const mySchema = new schema(
       },
 
     }
+  },
+  {
+    timestamps: true
   }
 )
 
