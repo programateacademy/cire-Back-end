@@ -10,86 +10,86 @@ const mySchema = new schema(
     },
 
 
-    have_felt_bothered_by_someone: {
+    q1: {
       option: Number,
 
     },
 
-    have_felt_lonely_or_distant_from_people: {
+    q2: {
       option: Number
 
     },
 
-    Have_youfelt_that_things_were_going_the_youwanted: {
+    q3: {
       option: Number
 
     },
 
-    you_felt_worried: {
+    q4: {
       option: Number
 
     },
 
-    He_felt_happy_to_have_good_friends_and_girlfriends: {
+    q5: {
       option: Number
 
     },
 
-    has_been_afraid_of_what_can_happen: {
+    q6: {
       option: Number
 
     },
 
-    You_have_felt_particularly_stimulated_or_interested_in_something: {
+    q7: {
       option: Number
 
     },
 
-    have_you_felt_depressed_or_very_happy: {
+    q8: {
       option: Number
 
     },
 
-    felt_full_of_energy: {
+    q9: {
       option: Number
 
     },
 
-    he_felt_very_tired: {
+    q10: {
       option: Number
     },
 
-    You_have_felt_so_restless_that_you_have_not_been_able_to_remain_seated_in_a_chair: {
+    q11: {
       option: Number
     },
 
-    I_know_that_it_was_fun_a_lot: {
-      option: Number
-
-    },
-
-    You_have_felt_very_happy_or_happy: {
-      option: Number
-    },
-
-    felt_likecrying: {
+    q12: {
       option: Number
 
     },
 
-    felt_euphoric:{
+    q13: {
       option: Number
     },
 
-    He_has_felt_secure_in_the_future:{
+    q14: {
+      option: Number
+
+    },
+
+    q15:{
       option: Number
     },
 
-    it_felt_boring:{
+    q16:{
       option: Number
     },
 
-    You_have_felt_happy_or_satisfied_for_having_achieved_something:{
+    q17:{
+      option: Number
+    },
+
+    q18:{
       option: Number
     },
 
