@@ -10,7 +10,7 @@ const mySchema = new schema(
     },
 
     familyRecommendations: {
-      ParentingGuidelines: {
+      parentingGuidelines: {
         option: String,
         observation: String
       },
