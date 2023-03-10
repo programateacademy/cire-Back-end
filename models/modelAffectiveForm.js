@@ -10,89 +10,24 @@ const mySchema = new schema(
     },
 
 
-    q1: {
-      option: Number,
-
-    },
-
-    q2: {
-      option: Number
-
-    },
-
-    q3: {
-      option: Number
-
-    },
-
-    q4: {
-      option: Number
-
-    },
-
-    q5: {
-      option: Number
-
-    },
-
-    q6: {
-      option: Number
-
-    },
-
-    q7: {
-      option: Number
-
-    },
-
-    q8: {
-      option: Number
-
-    },
-
-    q9: {
-      option: Number
-
-    },
-
-    q10: {
-      option: Number
-    },
-
-    q11: {
-      option: Number
-    },
-
-    q12: {
-      option: Number
-
-    },
-
-    q13: {
-      option: Number
-    },
-
-    q14: {
-      option: Number
-
-    },
-
-    q15:{
-      option: Number
-    },
-
-    q16:{
-      option: Number
-    },
-
-    q17:{
-      option: Number
-    },
-
-    q18:{
-      option: Number
-    },
-
+    q1: Number,
+    q2: Number,
+    q3: Number,
+    q4: Number,
+    q5: Number,
+    q6: Number,
+    q7: Number,
+    q8: Number,
+    q9: Number,
+    q10: Number,
+    q11: Number,
+    q12: Number,
+    q13: Number,
+    q14: Number,
+    q15: Number,
+    q16: Number,
+    q17: Number,
+    q18: Number
   },
 
   {

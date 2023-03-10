@@ -1,11 +1,17 @@
-const model = require('../../models/modelFormAffective');
+const model = require('../../models/modelAffectiveForm');
 
 function addAffective(Affective) {
   const myAffective = new model(Affective);
   myAffective.save();
 };
 
+function getAffective(){
+  return new Promise ((resolve) =>{
 
+    const Affective = model.find()
+    resolve(Affective)
+  })
+};
 
 async function updateAffective(id, q1, q2, q3, q4, q5, q6, q7, q8, q9, q10, q11, q12, q13, q14, q15, q16, q17, q18) {
   const foundAffective = await model.findById(id);
@@ -63,5 +69,6 @@ async function removeAffective(id) {
 module.exports = {
   add: addAffective,
   updateAffective: updateAffective,
-  remove: removeAffective
+  remove: removeAffective,
+  list: getAffective
 }
