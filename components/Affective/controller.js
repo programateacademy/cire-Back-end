@@ -2,7 +2,7 @@ const store = require('./store')
 
 function addAffective(q1, q2, q3, q4, q5, q6, q7, q8, q9, q10, q11, q12, q13, q14, q15, q16, q17, q18) {
   return new Promise((resolve) => {
-    
+
     const fullAffective = {
       q1: q1,
       q2: q2,
@@ -24,13 +24,13 @@ function addAffective(q1, q2, q3, q4, q5, q6, q7, q8, q9, q10, q11, q12, q13, q1
       q18: q18
     };
     store.add(fullAffective);
-    resolve(fullAffective)
+    resolve(fullAffective);
   });
 };
 
 function updateAffective(q1, q2, q3, q4, q5, q6, q7, q8, q9, q10, q11, q12, q13, q14, q15, q16, q17, q18){
   return new Promise((resolve) => {
-    
+
     const result = store.updateAffective(q1, q2, q3, q4, q5, q6, q7, q8, q9, q10, q11, q12, q13, q14, q15, q16, q17, q18)
     resolve(result);
   });

@@ -4,7 +4,6 @@ function addProfessional(professional){
   const myProfessional = new model(professional);
   myProfessional.save();
 };
-
 function getProfessional(filterProfessional){
   return new Promise ((resolve) =>{
     let filter = {};

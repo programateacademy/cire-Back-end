@@ -1,11 +1,11 @@
 const professional = require('../components/professional/network');
 const superAdmin = require('../components/superAdmin/network');
-const Affective = require('../components/Affective/network.js')
+const affective = require('../components/affective/network')
 
 const routes = function (server) {
   server.use('/professional', professional);
   server.use('/superAdmin', superAdmin);
-  server.use('Affective', Affective);
+  server.use('/affective', affective);
 };
 
 module.exports = routes;
