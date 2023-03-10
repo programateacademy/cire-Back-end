@@ -1,8 +1,17 @@
 const model = require('../../models/modelformAffective');
 
+
 function addAffective(Affective) {
   const myAffective = new model(Affective);
   myAffective.save();
+};
+
+function getAffective(data){
+  return new Promise ((resolve) =>{
+   
+    const Affective = model.find(data)
+    resolve(Affective)
+  })
 };
 
 
@@ -63,5 +72,7 @@ async function removeAffective(id) {
 module.exports = {
   add: addAffective,
   updateAffective: updateAffective,
-  remove: removeAffective
+  remove: removeAffective,
+  list:getAffective
+
 }

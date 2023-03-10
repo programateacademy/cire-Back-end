@@ -11,7 +11,7 @@ const mySchema = new schema(
 
     coexistence:{
       schoolBehavior:{
-        Description: String,
+        description: String,
         accionPlan:String
       },
       relationships:{
