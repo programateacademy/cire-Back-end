@@ -23,3 +23,21 @@ router.put('/:id', function (req, res) {
     });
 });
 
+router.delete('/:id', function (req, res) {
+  let id = req.params.id;
+  controller.deleteAffective(id)
+    .then((deleteAffective) => {
+      if (deleteAffective !== null){
+        response.success(req, res, `Affective ${req.params.id} deleted`, 200);
+      } else{
+        response.error(req, res, `The Affective with id: ${req.params.id} was already deleted or does not exist`);
+      }
+    })
+    .catch(err => {
+      response.error(req, res, 'INTERN ERROR', 500, err);
+    });
+});
+
+module.exports = router;
+
+

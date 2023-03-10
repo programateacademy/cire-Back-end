@@ -40,6 +40,22 @@ function updateAffective(q1, q2, q3, q4, q5, q6, q7, q8, q9, q10, q11, q12, q13,
   });
 };
 
+function deleteAffective(id){
+  return new Promise ((resolve, reject) => {
+    if (!id){
+      reject('INVALID DATA');
+    } else{
+      store.remove(id)
+        .then(() => {
+          resolve();
+        })
+        .catch(err => {
+          reject(err);
+        });
+    };
+  });
+};
+
 
 
 
@@ -48,6 +64,7 @@ function updateAffective(q1, q2, q3, q4, q5, q6, q7, q8, q9, q10, q11, q12, q13,
 
 module.exports = {
   addAffective,
-  updateAffective
+  updateAffective,
+  deleteAffective
 }
 
