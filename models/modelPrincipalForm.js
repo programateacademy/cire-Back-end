@@ -11,43 +11,43 @@ const mySchema = new schema(
 
     coexistence:{
       schoolBehavior:{
-        Description: String,
-        accionPlan:String
+        description: String,
+        actionPlan:String
       },
       relationships:{
-        Description: String,
-        accionPlan:String
+        description: String,
+        actionPlan:String
 
       }
     },
 
-    Academic:{
-      workInclasses:{
-        Description: String,
-        accionPlan:String
+    academic:{
+      workInClasses:{
+        description: String,
+        actionPlan:String
       },
 
       worksInCire:{
-        Description: String,
-        accionPlan:String
+        description: String,
+        actionPlan:String
       },
 
-      Workathome:{
-        Description: String,
-        accionPlan:String
+      workAtHome:{
+        description: String,
+        actionPlan:String
       },
 
     },
 
-    Familysupport:{
-      ParentingGuidelines:{
-        Description: String,
-        accionPlan:String
+    familySupport:{
+      parentingGuidelines:{
+        description: String,
+        actionPlan:String
       },
 
-      Accompaniment:{
-        Description: String,
-        accionPlan:String
+      accompaniment:{
+        description: String,
+        actionPlan:String
       },
 
     }
@@ -58,7 +58,7 @@ const mySchema = new schema(
   }
   )
 
-  const model = mongoose.model('FormPrincipal', mySchema);
+  const model = mongoose.model('formPrincipal', mySchema);
 
   module.exports = model;
 
