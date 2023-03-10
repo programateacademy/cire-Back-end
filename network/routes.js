@@ -5,7 +5,7 @@ const Affective = require('../components/Affective/network.js')
 const routes = function (server) {
   server.use('/professional', professional);
   server.use('/superAdmin', superAdmin);
-  server.use('Affective', Affective);
+  server.use('/Affective', Affective);
 };
 
 module.exports = routes;
