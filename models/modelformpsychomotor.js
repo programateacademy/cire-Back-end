@@ -11,41 +11,41 @@ const mySchema = new schema(
     },
 
     psychomotorDomain: {
-      Moves_awkwardly_and_falls_easily: {
-       option: String
+      moves_awkwardly_and_falls_easily: {
+      option: String
       },
 
       walk_and_run_with_difficulty:{
         option: String
       },
 
-      When_going_up_the_stairs_he_does_not_alternate_feet_requires_support:{
+      when_going_up_the_stairs_he_does_not_alternate_feet_requires_support:{
         option: String
       },
 
-      Stumbles_on_objects_that_are_in_its_path:{
+      stumbles_on_objects_that_are_in_its_path:{
         option: String
       },
 
-      Cannot_switch_from_one_action_or_activity_to_another_easily:{
+      cannot_switch_from_one_action_or_activity_to_another_easily:{
         option: String
       },
 
-      Use_all_fingers_to_grasp_or_lift_small_objects:{
+      use_all_fingers_to_grasp_or_lift_small_objects:{
         option: String
       },
 
-      It_does_not_control_its_strokes_when_drawing_paths_marking_contours_joining_the_drawings_etc: {
+      it_does_not_control_its_strokes_when_drawing_paths_marking_contours_joining_the_drawings_etc: {
         option: String
       },
 
-      Does_not_take_pencil_and_tools_properly:{
+      does_not_take_pencil_and_tools_properly:{
         option: String
       },
 
     },
 
-    Observations: String
+    observations: String
   },
 
   {

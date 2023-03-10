@@ -9,291 +9,291 @@ const mySchema = new schema(
       ref: "kid"
     },
 
-    psychoeducationalAspects: {
+    psychoEducationalAspects: {
       planning: {
-        Manages_to_classify_The_step_by_step_To_develop_The_task: {
-          Monday: {
-           option: String
+        manages_to_classify_The_step_by_step_To_develop_The_task: {
+          monday: {
+          option: String
           },
-          Tuesday: {
+          tuesday: {
             option: String
           },
-          Wednesday: {
+          wednesday: {
             option: String
           },
-          Thursday: {
+          thursday: {
             option: String
           },
-          Friday: {
+          friday: {
             option: String
           },
 
-          Description: {
+          description: {
             behavior: String
           }
         },
 
         before_Starting_the_Task_prepare_The_material_That_you_Will_use: {
-          Monday: {
+          monday: {
             option: String
           },
-          Tuesday: {
+          tuesday: {
             option: String
           },
-          Wednesday: {
+          wednesday: {
             option: String
           },
-          Thursday: {
+          thursday: {
             option: String
           },
-          Friday: {
+          friday: {
             option: String
           },
 
-          Description: {
+          description: {
             behavior: String
           }
         },
 
-        Finish_the_task_I_started:{
-          Monday: {
+        finish_the_task_I_started:{
+          monday: {
             option: String
           },
-          Tuesday: {
+          tuesday: {
             option: String
           },
-          Wednesday: {
+          wednesday: {
             option: String
           },
-          Thursday: {
+          thursday: {
             option: String
           },
-          Friday: {
+          friday: {
             option: String
           },
 
-          Description: {
+          description: {
             behavior: String
           }
         },
 
-        Runtime_is_adequate_for_the_task:{
-          Monday: {
+        runtime_is_adequate_for_the_task:{
+          monday: {
             option: String
           },
-          Tuesday: {
+          tuesday: {
             option: String
           },
-          Wednesday: {
+          wednesday: {
             option: String
           },
-          Thursday: {
+          thursday: {
             option: String
           },
-          Friday: {
+          friday: {
             option: String
           },
 
-          Description: {
+          description: {
             behavior: String
           }
         },
 
-        Gets_distracted_while_performing_the_task:{
-          Monday: {
+        gets_distracted_while_performing_the_task:{
+          monday: {
             option: String
           },
-          Tuesday: {
+          tuesday: {
             option: String
           },
-          Wednesday: {
+          wednesday: {
             option: String
           },
-          Thursday: {
+          thursday: {
             option: String
           },
-          Friday: {
+          friday: {
             option: String
           },
 
-          Description: {
+          description: {
             behavior: String
           }
         },
 
-        Requires_reinforcement_in_the_execution_of_an_instruction:{
-          Monday: {
-           option:String
+        requires_reinforcement_in_the_execution_of_an_instruction:{
+          monday: {
+          option:String
           },
-          Tuesday: {
+          tuesday: {
             option:String
           },
-          Wednesday: {
+          wednesday: {
             option:String
           },
-          Thursday: {
+          thursday: {
             option:String
           },
-          Friday: {
+          friday: {
             option:String
           },
 
-          Description: {
+          description: {
             behavior: String
           }
         },
 
-        Strive_to_hand_in_homework_with_good_presentation:{
-          Monday: {
+        strive_to_hand_in_homework_with_good_presentation:{
+          monday: {
             option:String
           },
-          Tuesday: {
+          tuesday: {
             option:String
           },
-          Wednesday: {
+          wednesday: {
             option:String
           },
-          Thursday: {
+          thursday: {
             option:String
           },
-          Friday: {
+          friday: {
             option:String
           },
 
-          Description: {
+          description: {
             behavior: String
           }
         },
 
-        Makes_adequate_use_of_the_space_stipulated_for_the_task:{
-          Monday: {
+        makes_adequate_use_of_the_space_stipulated_for_the_task:{
+          monday: {
             option:String
           },
-          Tuesday: {
+          tuesday: {
             option:String
           },
-          Wednesday: {
+          wednesday: {
             option:String
           },
-          Thursday: {
+          thursday: {
             option:String
           },
-          Friday: {
+          friday: {
             option:String
           },
 
-          Description: {
+          description: {
             behavior: String
           }
         },
 
-        Frustration_tolerance_or_recognition_of_success_is_evident:{
-          Monday: {
+        frustration_tolerance_or_recognition_of_success_is_evident:{
+          monday: {
             option:String
           },
-          Tuesday: {
+          tuesday: {
             option:String
           },
-          Wednesday: {
+          wednesday: {
             option:String
           },
-          Thursday: {
+          thursday: {
             option:String
           },
-          Friday: {
+          friday: {
             option:String
           },
 
-          Description: {
+          description: {
             behavior: String
           }
         },
 
-        If_you_are_from_the_province_keep_your_dialect:{
-          Monday: {
+        if_you_are_from_the_province_keep_your_dialect:{
+          monday: {
             option:String
           },
-          Tuesday: {
+          tuesday: {
             option:String
           },
-          Wednesday: {
+          wednesday: {
             yes: String,
             not: String
           },
-          Thursday: {
+          thursday: {
             option:String
           },
-          Friday: {
+          friday: {
             option:String
           },
 
-          Description: {
+          description: {
             behavior: String
           }
         },
 
-        Relates_to_other_children_with_notable_differences:{
-          Monday: {
+        relates_to_other_children_with_notable_differences:{
+          monday: {
             option:String
           },
-          Tuesday: {
+          tuesday: {
             option:String
           },
-          Wednesday: {
+          wednesday: {
             option:String
           },
-          Thursday: {
+          thursday: {
             option:String
           },
-          Friday: {
+          friday: {
             option:String
           },
 
-          Description: {
+          description: {
             behavior: String
           }
         },
 
-        Feels_included_accepted_and_loved_with_peers:{
-          Monday: {
+        feels_included_accepted_and_loved_with_peers:{
+          monday: {
             option:String
           },
-          Tuesday: {
+          tuesday: {
             option:String
           },
-          Wednesday: {
+          wednesday: {
             option:String
           },
-          Thursday: {
+          thursday: {
             option:String
           },
-          Friday: {
+          friday: {
             option:String
           },
 
-          Description: {
+          description: {
             behavior: String
           }
         },
 
-        Include_accept_and_show_love_for_your_peers:{
-          Monday: {
+        include_accept_and_show_love_for_your_peers:{
+          monday: {
             option:String
           },
-          Tuesday: {
+          tuesday: {
             option:String
           },
-          Wednesday: {
+          wednesday: {
             option:String
           },
-          Thursday: {
+          thursday: {
             option:String
           },
-          Friday: {
+          friday: {
             option:String
           },
 
-          Description: {
+          description: {
             behavior: String
           },
 
@@ -303,7 +303,7 @@ const mySchema = new schema(
           }
         },
 
-        Observations: String
+        observations: String
 
       }
 
@@ -316,6 +316,6 @@ const mySchema = new schema(
   }
 );
 
-const model = mongoose.model('FormObservation', mySchema);
+const model = mongoose.model('formObservation', mySchema);
 
 module.exports = model;

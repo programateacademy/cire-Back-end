@@ -11,35 +11,35 @@ const mySchema = new schema(
     },
 
     psychosocialField: {
-      He_needs_a_lot_of_support_from_his_teacher: {
+      he_needs_a_lot_of_support_from_his_teacher: {
         option: String
 
       },
 
-      Does_not_easily_adapt_to_new_different_situations_that_have_a_greater_degree_of_difficulty: {
+      does_not_easily_adapt_to_new_different_situations_that_have_a_greater_degree_of_difficulty: {
         option: String
       },
 
-      Bites_or_mistreats_your_belongings_and_school_work: {
+      bites_or_mistreats_your_belongings_and_school_work: {
         option: String
       },
 
-      Shows_prolonged_school_maladjustment: {
+      shows_prolonged_school_maladjustment: {
         option: String
       },
       cry_for_anything: {
         option: String
       },
 
-      Does_not_express_or_verbalize_his_feelings: {
+      does_not_express_or_verbalize_his_feelings: {
         option: String
       },
 
-      Does_not_play_with_other_children: {
+      does_not_play_with_other_children: {
         option: String
       },
 
-      Does_not_interact_with_adults: {
+      does_not_interact_with_adults: {
         option: String
       },
 

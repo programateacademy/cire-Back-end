@@ -10,7 +10,7 @@ const mySchema = new schema(
     },
 
     familyRecommendations: {
-      ParentingGuidelines: {
+      parentingGuidelines: {
         option: String,
         observation: String
       },
@@ -88,6 +88,6 @@ const mySchema = new schema(
   }
 )
 
-const model = mongoose.model('FormRecomendation', mySchema);
+const model = mongoose.model('formRecomendation', mySchema);
 
 module.exports = model;
