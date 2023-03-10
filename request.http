@@ -1,0 +1,26 @@
+POST http://localhost:3030/Affective HTTP/1.1
+Content-Type: application/json
+
+{
+  "q1": "OPTIONS 1",
+  "q2": "si",
+  "q3": "si",
+  "q4": "si",
+  "q5": "si",
+  "q6": "si",
+  "q7": "si",
+  "q8": "si",
+  "q9": "no",
+  "q10": "si",
+  "q11": "si",
+  "q12": "si",
+  "q13": "no",
+  "q14": "si",
+  "q15": "si",
+  "q16": "si",
+  "q17": "no",
+  "q18": "si"
+
+
+}
+

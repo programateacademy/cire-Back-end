@@ -1,8 +1,8 @@
 const model = require('../../models/modelformAffective');
 
-function addFormAffective(FormAffective) {
-  const myFormAffective = new model(FormAffective);
-  myFormAffective.save();
+function addAffective(Affective) {
+  const myAffective = new model(Affective);
+  myAffective.save();
 };
 
 
@@ -61,7 +61,7 @@ async function removeAffective(id) {
 };
 
 module.exports = {
-  add: addFormAffective,
+  add: addAffective,
   updateAffective: updateAffective,
   remove: removeAffective
 }

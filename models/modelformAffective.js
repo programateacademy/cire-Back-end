@@ -100,6 +100,6 @@ const mySchema = new schema(
   }
 )
 
-const model = mongoose.model('FormAffective', mySchema);
+const model = mongoose.model('Affective', mySchema);
 
 module.exports = model
