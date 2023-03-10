@@ -1,6 +1,5 @@
 const model = require('../../models/modelFormAffective');
 
-
 function addAffective(Affective) {
   const myAffective = new model(Affective);
   myAffective.save();
@@ -73,6 +72,5 @@ module.exports = {
   add: addAffective,
   updateAffective: updateAffective,
   remove: removeAffective,
-  list:getAffective
-
+  list: getAffective
 }
