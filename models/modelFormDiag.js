@@ -10,45 +10,45 @@ const mySchema = new schema(
       ref: 'kid'
     },
 
-    cognitiveDomain: {
-      shows_an_indifferent_attitude_towards_the_stimuli_it_receives: {
+    
+      q1: {
         option: String
 
       },
 
-      it_takes_a_lot_of_effort_to_stay_still_in_one_place_for_short_periods_of_time: {
+      q2: {
         option: String
       },
 
-      lacks_interest_in_group_activities: {
+     q3: {
         option: String
       },
 
-      often_you_cant_finish_what_you_start: {
+      q4: {
         option: String
       },
 
-      it_is_difficult_for_him_to_understand_instructions_and_execute_them_at_the_pace_of_the_rest_of_the_group: {
+      q5: {
         option: String
       },
 
-      he_tires_easily_and_does_not_care_about_quality_when_doing_his_work: {
+      q6: {
         option: String
       },
 
-      ask_for_the_order_to_be_repeated_several_times: {
+      q7: {
         option: String
       },
 
-      has_difficulty_organizing_and_finishing_work: {
+      q8: {
         option: String
       },
 
-      has_difficulty_remembering_what_has_just_been_said: {
+      q9: {
         option: String
       },
 
-      no_manifest_interest_in_reading_activities: {
+      q10: {
         option: String
       },
 
@@ -103,7 +103,7 @@ const mySchema = new schema(
 
 
     },
-  },
+  
 
   {
     timestamps: true

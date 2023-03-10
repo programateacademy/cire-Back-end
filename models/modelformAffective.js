@@ -4,10 +4,10 @@ const schema = mongoose.Schema;
 
 const mySchema = new schema(
   {
-    kid: {
-      type: schema.ObjectId,
-      ref: "kid"
-    },
+    // kid: {
+    //   type: schema.ObjectId,
+    //   ref: "kid"
+    // },
 
 
     q1: {

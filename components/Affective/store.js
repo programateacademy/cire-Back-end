@@ -6,10 +6,10 @@ function addAffective(Affective) {
   myAffective.save();
 };
 
-function getAffective(data){
+function getAffective(){
   return new Promise ((resolve) =>{
    
-    const Affective = model.find(data)
+    const Affective = model.find()
     resolve(Affective)
   })
 };
