@@ -1,0 +1,59 @@
+const mongoose = require('mongoose');
+
+const schema = mongoose.Schema;
+
+
+const mySchema = new schema(
+  {
+    kid: {
+      type: schema.ObjectId,
+      ref: 'kid'
+    },
+
+    psychomotorDomain: {
+      Moves_awkwardly_and_falls_easily: {
+       option: String
+      },
+
+      walk_and_run_with_difficulty:{
+        option: String
+      },
+
+      When_going_up_the_stairs_he_does_not_alternate_feet_requires_support:{
+        option: String
+      },
+
+      Stumbles_on_objects_that_are_in_its_path:{
+        option: String
+      },
+
+      Cannot_switch_from_one_action_or_activity_to_another_easily:{
+        option: String
+      },
+
+      Use_all_fingers_to_grasp_or_lift_small_objects:{
+        option: String
+      },
+
+      It_does_not_control_its_strokes_when_drawing_paths_marking_contours_joining_the_drawings_etc: {
+        option: String
+      },
+
+      Does_not_take_pencil_and_tools_properly:{
+        option: String
+      },
+
+    },
+
+    Observations: String
+  },
+
+  {
+    timestamps: true
+  }
+
+);
+
+const model = mongoose.model('formPsychomotor', mySchema);
+
+module.exports = model;
