@@ -8,8 +8,6 @@ const mySchema = new schema(
       type: schema.ObjectId,
       ref: "kid"
     },
-
-
     q1: Number,
     q2: Number,
     q3: Number,

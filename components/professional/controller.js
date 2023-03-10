@@ -29,7 +29,7 @@ function updateProfessional(id, age, phone){
     if(!id || !age || !phone){
       reject('INVALID DATA');
     };
-    const result = store.updateProfessional(id, age, phone)
+    const result = store.updateProfessional(id, age, phone);
     resolve(result);
   });
 };
