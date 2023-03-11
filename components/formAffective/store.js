@@ -1,4 +1,4 @@
-const model = require('../../models/modelFormAffective');
+const model = require('../../models/modelAffectiveForm');
 
 function addAffective(Affective) {
   const myAffective = new model(Affective);
