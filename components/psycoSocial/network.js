@@ -24,7 +24,7 @@ router.post('/', function (req,res){
 });
 
 router.put('/:id', function (req, res) {
-  controller.updatePsychoSocialForm(req.params.id, req.body.needSupportTeacher, req.body.doesNotEasilyAdapt, req.body.bitesMistreats, req.body.maladjustment, req.body.cryAnything, req.body.doesNotExpressFeelings, req.body.doesNotPlayOther, req.body.doesNotInteractAdults) //TODO I need to check the other put network on principal Form cause I think i didn't call the req.params.id
+  controller.updatePsychoSocialForm(req.params.id, req.body.needSupportTeacher, req.body.doesNotEasilyAdapt, req.body.bitesMistreats, req.body.maladjustment, req.body.cryAnything, req.body.doesNotExpressFeelings, req.body.doesNotPlayOther, req.body.doesNotInteractAdults)
     .then((data) => {
       response.success(req, res, data, 200);
     })

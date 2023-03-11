@@ -24,7 +24,7 @@ function getPsychoSocialForm(filterKid){
 };
 
 function updatePsychoSocialForm(id, needSupportTeacher, doesNotEasilyAdapt, bitesMistreats, maladjustment, cryAnything, doesNotExpressFeelings, doesNotPlayOther, doesNotInteractAdults){
-  return new Promise ((resolve, reject) => { 
+  return new Promise ((resolve, reject) => {
     if(!id){
       reject('INVALID DATA');
     };
@@ -54,4 +54,4 @@ module.exports ={
   getPsychoSocialForm,
   updatePsychoSocialForm,
   deletePsychoSocialForm
-}
+};
