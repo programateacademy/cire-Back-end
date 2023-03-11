@@ -39,9 +39,9 @@ router.delete('/:id', function (req, res) {
   controller.deleteKid(id)
     .then((deletedKid) => {
       if (deletedKid !== null){
-        response.success(req, res, `Professional ${req.params.id} deleted`, 200);
+        response.success(req, res, `Kid ${req.params.id} deleted`, 200);
       } else{
-        response.error(req, res, `The professional with id: ${req.params.id} was already deleted or does not exist`);
+        response.error(req, res, `The kid with id: ${req.params.id} was already deleted or does not exist`);
       }
     })
     .catch(err => {
