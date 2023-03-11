@@ -50,9 +50,9 @@ function addPrincipal(schoolDescription, schoolAction, relationDescription, rela
   });
 };
 
-function getPrincipal(){
+function getPrincipal(filterKid){
   return new Promise ((resolve) => {
-    resolve(store.list());
+    resolve(store.list(filterKid));
   });
 };
 

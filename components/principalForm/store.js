@@ -5,10 +5,21 @@ function addPrincipal(form){
   myForm.save();
 };
 
-function getPrincipal(){
-  return new Promise ((resolve) => {
-    const principal = model.find();
-    resolve(principal);
+function getPrincipal(filterKid){
+  let filter = {};
+  return new Promise ((resolve, reject) => {
+    if(filterKid !== null){
+      filter = {kid: filterKid};
+    };
+    model.find(filter)
+      .populate('kid', {name: true, age: true, sex: true, namAttendant: true, numAttendant:true})
+      .exec((error, populated) => {
+        if (error){
+          reject(error);
+          return false;
+        };
+        resolve(populated);
+      });
   });
 };
 
