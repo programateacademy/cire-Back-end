@@ -34,6 +34,6 @@ const mySchema = new schema(
 
 );
 
-const model = mongoose.model('formPsychomotor', mySchema);
+const model = mongoose.model('psychoMotorForm', mySchema);
 
 module.exports = model;
