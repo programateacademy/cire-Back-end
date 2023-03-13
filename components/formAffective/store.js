@@ -1,8 +1,4 @@
-<<<<<<< HEAD:components/Affective/store.js
-const model = require('../../models/modelformAffective');
-=======
 const model = require('../../models/modelAffectiveForm');
->>>>>>> Juanjo:components/formAffective/store.js
 
 function addAffective(Affective) {
   const myAffective = new model(Affective);
