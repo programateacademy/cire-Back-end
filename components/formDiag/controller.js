@@ -37,9 +37,9 @@ module.exports = {
 
 };
 
-function getDiagnostic() {
+function getDiagnostic(filterKid) {
   return new Promise ((resolve) => {
-    resolve(store.list());
+    resolve(store.list(filterKid));
   });
 };
 

@@ -36,4 +36,4 @@ module.exports = {
   list: getProfessional,
   updateProfessional: updateProfessional,
   remove: removeProfessional
-}
+};
