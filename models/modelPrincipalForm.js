@@ -58,7 +58,7 @@ const mySchema = new schema(
   }
   )
 
-  const model = mongoose.model('formPrincipal', mySchema);
+  const model = mongoose.model('principalForm', mySchema);
 
   module.exports = model;
 

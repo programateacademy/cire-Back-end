@@ -23,6 +23,16 @@ router.put('/:id', function (req, res) {
     });
 });
 
+router.get('/', function (req, res){
+  controller.getAffective()
+    .then((data) => {
+      response.success(req, res, data, 200);
+    })
+    .catch(err => {
+      response.error(req, res, 'Unexpected error', 500, err);
+    });
+});
+
 router.delete('/:id', function (req, res) {
   let id = req.params.id;
   controller.deleteAffective(id)
