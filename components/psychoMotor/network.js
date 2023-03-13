@@ -4,9 +4,10 @@ const controller = require('./controller');
 const response = require('../../network/response');
 
 router.get('/', function (req, res){
-  controller.getPsychoSocialForm()
-    .then((psychoSocialForm) => {
-      response.success(req, res, psychoSocialForm, 200);
+  const filterKid = req.query.kid || null;
+  controller.getPsychoMotor(filterKid)
+    .then((psychoMotorForm) => {
+      response.success(req, res, psychoMotorForm, 200);
     })
     .catch(err => {
       response.error(req, res, 'Unexpected error', 500, err);
@@ -14,7 +15,7 @@ router.get('/', function (req, res){
 });
 
 router.post('/', function (req,res){
-  controller.addPsychoSocial(req.body.needSupportTeacher, req.body.doesNotEasilyAdapt, req.body.bitesMistreats, req.body.maladjustment, req.body.cryAnything, req.body.doesNotExpressFeelings, req.body.doesNotPlayOther, req.body.doesNotInteractAdults)
+  controller.addPsychoSocial(req.body.fallsEasily, req.body.walkWithDifficulty, req.body.feetRequiresSupport, req.body.stumblesOnObjects, req.body.cannotSwitchActionsEasily, req.body.useAllFingers, req.body.doesNotControlItsStrokes, req.body.doesNotTakeObjectsProperly, req.body.observations)
     .then((psychoSocialForm)=>{
       response.success(req, res, psychoSocialForm, 201);
     })
@@ -24,7 +25,7 @@ router.post('/', function (req,res){
 });
 
 router.put('/:id', function (req, res) {
-  controller.updatePsychoSocialForm(req.params.id, req.body.needSupportTeacher, req.body.doesNotEasilyAdapt, req.body.bitesMistreats, req.body.maladjustment, req.body.cryAnything, req.body.doesNotExpressFeelings, req.body.doesNotPlayOther, req.body.doesNotInteractAdults) //TODO I need to check the other put network on principal Form cause I think i didn't call the req.params.id
+  controller.updatePsychoSocialForm(req.params.id, req.body.fallsEasily, req.body.walkWithDifficulty, req.body.feetRequiresSupport, req.body.stumblesOnObjects, req.body.cannotSwitchActionsEasily, req.body.useAllFingers, req.body.doesNotControlItsStrokes, req.body.doesNotTakeObjectsProperly, req.body.observations)
     .then((data) => {
       response.success(req, res, data, 200);
     })
@@ -35,10 +36,10 @@ router.put('/:id', function (req, res) {
 
 router.delete('/:id', function (req, res) {
   let id = req.params.id;
-  controller.deletePsychoSocialForm(id)
+  controller.deletePsychoMotor(id)
     .then((deletedForm) => {
       if (deletedForm !== null){
-        response.success(req, res, `Psychosocial form ${req.params.id} deleted`, 200);
+        response.success(req, res, `Psychomotor form ${req.params.id} deleted`, 200);
       } else{
         response.error(req, res, `The form with id: ${req.params.id} was already deleted or does not exist`);
       }
