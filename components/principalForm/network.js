@@ -14,7 +14,7 @@ router.get('/', function (req, res){
 });
 
 router.post('/', function (req,res){
-  controller.addPrincipal(req.body.schoolDescription, req.body.schoolAction, req.body.relationDescription, req.body.relationACtion, req.body.workClassDescription, req.body.workClassAction, req.body.workCireDescription, req.body.workCireAction, req.body.workHomeDescription, req.body.workHomeAction, req.body.parentDescription, req.body.parentAction, req.body.accompanimentDescription, req.body.accompanimentAction)
+  controller.addPrincipal(req.body.kid, req.body.schoolDescription, req.body.schoolAction, req.body.relationDescription, req.body.relationACtion, req.body.workClassDescription, req.body.workClassAction, req.body.workCireDescription, req.body.workCireAction, req.body.workHomeDescription, req.body.workHomeAction, req.body.parentDescription, req.body.parentAction, req.body.accompanimentDescription, req.body.accompanimentAction)
     .then((principalForm)=>{
       response.success(req, res, principalForm, 201);
     })

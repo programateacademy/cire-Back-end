@@ -9,14 +9,13 @@ const mySchema = new schema(
       ref: "kid"
     },
 
-    psychoEducationalAspects: {
       planning: {
         manages_to_classify_The_step_by_step_To_develop_The_task: {
           monday: String,
           tuesday: String,
           wednesday:String,
           thursday: String,
-          String,
+           friday : String,
 
           description: {
             behavior: String
@@ -164,22 +163,23 @@ const mySchema = new schema(
 
           description: {
             behavior: String
-          },
-
-          hour:{
-            initial: Number,
-            final: Number
           }
+
+        },
+
+        hour:{
+          initial: Number,
+          final: Number
         },
 
         observations: String
 
       }
 
-      }
+      },
 
 
-    },
+
   {
     timestamps: true
   }
