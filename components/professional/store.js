@@ -15,6 +15,16 @@ function getProfessional(filterProfessional){
   })
 };
 
+function getProfessionalById(professionalId){
+  return new Promise ((resolve, reject) => {
+    if (!professionalId){
+      reject('Invalid ID');
+    };
+    const professional = model.findById(professionalId);
+    resolve(professional);
+  });
+};
+
 async function updateProfessional(id, age, phone){
   const foundProfessional = await model.findById(id);
   foundProfessional.age = age;
@@ -35,5 +45,6 @@ module.exports = {
   add: addProfessional,
   list: getProfessional,
   updateProfessional: updateProfessional,
-  remove: removeProfessional
+  remove: removeProfessional,
+  getProfessionalById
 };

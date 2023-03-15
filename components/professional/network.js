@@ -14,6 +14,17 @@ router.get('/', function (req, res){
     });
 });
 
+router.get('/:id', function(req, res){
+  const filterProfessional = req.params.id || null;
+  controller.getProfessionalById(filterProfessional)
+    .then((oneProfessional) => {
+      response.success(req, res, oneProfessional, 200);
+    })
+    .catch((err) => {
+      response.error(req, res, 'Unexpected Error', 500, err);
+    });
+});
+
 router.post('/', function (req,res){
   controller.addProfessional(req.body.name,req.body.age, req.body.phone, req.body.occupation, req.body.email, req.body.password)
     .then((fullProfessional)=>{
