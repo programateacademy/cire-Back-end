@@ -4,7 +4,8 @@ const response = require('../../network/response');
 const controller = require('./controller');
 
 router.post('/', function(req, res){
-  controller.add(req.body.email, req.body.password)
+  const {email, password} = req.body
+  controller.add(email, password)
     .then((admin) =>{
       response.success(req, res, admin, 200);
     })
@@ -14,7 +15,8 @@ router.post('/', function(req, res){
 });
 
 router.put('/:id', function(req, res){
-  controller.update(req.params.id, req.body.password)
+  const {password} = req.body
+  controller.update(req.params.id, password)
     .then((data) => {
       response.success(req, res, data, 200);
     })

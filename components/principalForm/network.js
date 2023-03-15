@@ -14,8 +14,9 @@ router.get('/', function (req, res){
   });
 
   router.post('/', function (req,res){
-  // console.log(req.body.kid);
-  controller.addPrincipal(req.body.kid, req.body.schoolDescription, req.body.schoolAction, req.body.relationDescription, req.body.relationACtion, req.body.workClassDescription, req.body.workClassAction, req.body.workCireDescription, req.body.workCireAction, req.body.workHomeDescription, req.body.workHomeAction, req.body.parentDescription, req.body.parentAction, req.body.accompanimentDescription, req.body.accompanimentAction)
+  console.log(req.body.kid);
+  const {schoolDescription, schoolAction, relationDescription, relationACtion, workClassDescription, workClassAction, workCireDescription, workCireAction, workHomeDescription, workHomeAction, parentDescription, parentAction, accompanimentDescription, accompanimentAction} = req.body
+  controller.addPrincipal(schoolDescription, schoolAction, relationDescription, relationACtion, workClassDescription, workClassAction, workCireDescription, workCireAction, workHomeDescription, workHomeAction, parentDescription, parentAction, accompanimentDescription, accompanimentAction)
   .then((principalForm)=>{
     response.success(req, res, principalForm, 201);
   })
@@ -25,7 +26,8 @@ router.get('/', function (req, res){
 });
 
 router.put('/:id', function (req, res) {
-  controller.updatePrincipal(req.params.id, req.body.schoolDescription, req.body.schoolAction, req.body.relationDescription, req.body.relationACtion, req.body.workClassDescription, req.body.workClassAction, req.body.workCireDescription, req.body.workCireAction, req.body.workHomeDescription, req.body.workHomeAction, req.body.parentDescription, req.body.parentAction, req.body.accompanimentDescription, req.body.accompanimentAction)
+  const {schoolDescription, schoolAction, relationDescription, relationACtion, workClassDescription, workClassAction, workCireDescription, workCireAction, workHomeDescription, workHomeAction, parentDescription, parentAction, accompanimentDescription, accompanimentAction} = req.body
+  controller.updatePrincipal(schoolDescription, schoolAction, relationDescription, relationACtion, workClassDescription, workClassAction, workCireDescription, workCireAction, workHomeDescription, workHomeAction, parentDescription, parentAction, accompanimentDescription, accompanimentAction)
     .then((data) => {
       response.success(req, res, data, 200);
     })

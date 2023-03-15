@@ -26,7 +26,8 @@ router.get('/:id', function(req, res){
 });
 
 router.post('/', function (req,res){
-  controller.addProfessional(req.body.name,req.body.age, req.body.phone, req.body.occupation, req.body.email, req.body.password)
+  const {name, age, phone, occupation, email, password} = req.body
+  controller.addProfessional(name, age, phone, occupation, email, password)
     .then((fullProfessional)=>{
       response.success(req, res, fullProfessional, 201);
     })
@@ -36,7 +37,8 @@ router.post('/', function (req,res){
 });
 
 router.put('/:id', function (req, res) {
-  controller.updateProfessional(req.params.id, req.body.age, req.body.phone)
+  const {name, age, phone, occupation, email, password} = req.body
+  controller.updateProfessional(name, age, phone, occupation, email, password)
     .then((data) => {
       response.success(req, res, data, 200);
     })

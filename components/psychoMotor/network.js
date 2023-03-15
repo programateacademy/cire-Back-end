@@ -15,7 +15,8 @@ router.get('/', function (req, res){
 });
 
 router.post('/', function (req,res){
-  controller.addPsychoSocial(req.body.fallsEasily, req.body.walkWithDifficulty, req.body.feetRequiresSupport, req.body.stumblesOnObjects, req.body.cannotSwitchActionsEasily, req.body.useAllFingers, req.body.doesNotControlItsStrokes, req.body.doesNotTakeObjectsProperly, req.body.observations)
+  const {fallsEasily, walkWithDifficulty, feetRequiresSupport, stumblesOnObjects, cannotSwitchActionsEasily, useAllFingers, doesNotControlItsStrokes, doesNotTakeObjectsProperly, observations} = req.body
+  controller.addPsychoSocial(fallsEasily, walkWithDifficulty, feetRequiresSupport, stumblesOnObjects, cannotSwitchActionsEasily, useAllFingers, doesNotControlItsStrokes, doesNotTakeObjectsProperly, observations)
     .then((psychoSocialForm)=>{
       response.success(req, res, psychoSocialForm, 201);
     })
@@ -25,7 +26,8 @@ router.post('/', function (req,res){
 });
 
 router.put('/:id', function (req, res) {
-  controller.updatePsychoSocialForm(req.params.id, req.body.fallsEasily, req.body.walkWithDifficulty, req.body.feetRequiresSupport, req.body.stumblesOnObjects, req.body.cannotSwitchActionsEasily, req.body.useAllFingers, req.body.doesNotControlItsStrokes, req.body.doesNotTakeObjectsProperly, req.body.observations)
+  const {fallsEasily, walkWithDifficulty, feetRequiresSupport, stumblesOnObjects, cannotSwitchActionsEasily, useAllFingers, doesNotControlItsStrokes, doesNotTakeObjectsProperly, observations} = req.body
+  controller.updatePsychoSocialForm(fallsEasily, walkWithDifficulty, feetRequiresSupport, stumblesOnObjects, cannotSwitchActionsEasily, useAllFingers, doesNotControlItsStrokes, doesNotTakeObjectsProperly, observations)
     .then((data) => {
       response.success(req, res, data, 200);
     })

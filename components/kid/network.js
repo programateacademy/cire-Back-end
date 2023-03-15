@@ -26,7 +26,8 @@ router.get('/:id', function (req,res){
 });
 
 router.post('/', function (req,res){
-  controller.addKid(req.body.name,req.body.age, req.body.sex, req.body.namAttendant, req.body.numAttendant)
+  const {name, age, sex, namAttendant, numAttendant} = req.body
+  controller.addKid(name,age, sex, namAttendant, numAttendant)
     .then((fullKid)=>{
       response.success(req, res, fullKid, 201);
     })
@@ -36,7 +37,8 @@ router.post('/', function (req,res){
 });
 
 router.put('/:id', function (req, res) {
-  controller.updateKid(req.params.id, req.body.age, req.body.namAttendant, req.body.numAttendant)
+  const {name, age, sex, namAttendant, numAttendant} = req.body
+  controller.updateKid(name,age, sex, namAttendant, numAttendant)
     .then((data) => {
       response.success(req, res, data, 200);
     })

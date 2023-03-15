@@ -4,7 +4,8 @@ const controller = require('./controller')
 const response = require('../../network/response')
 
 router.post('/', function (req,res){
-  controller.addAffective(req.body.q1,req.body.q2, req.body.q3, req.body.q4, req.body.q5, req.body.q6, req.body.q7, req.body.q8, req.body.q9, req.body.q10, req.body.q11, req.body.q12, req.body.q13, req.body.q14,  req.body.q15, req.body.q16, req.body.q17, req.body.q18 )
+  const {q1, q2, q3, q4, q5, q6, q7, q8, q9, q10, q11, q12, q13, q14, q15, q16, q17, q18} = req.body
+  controller.addAffective(q1, q2, q3, q4, q5, q6, q7, q8, q9, q10, q11, q12, q13, q14, q15, q16, q17, q18)
     .then((fullAffective)=>{
       response.success(req, res, fullAffective, 201);
     })
@@ -14,7 +15,8 @@ router.post('/', function (req,res){
 });
 
 router.put('/:id', function (req, res) {
-  controller.updateAffective(req.params.id, req.body.q1, req.body.q2, req.body.q3, req.body.q4, req.body.q5, req.body.q6, req.body.q7, req.body.q8, req.body.q9, req.body.q10, req.body.q11, req.body.q12, req.body.q13, req.body.q14, req.body.q15, req.body.q16, req.body.q17, req.body.q18)
+  const {q1, q2, q3, q4, q5, q6, q7, q8, q9, q10, q11, q12, q13, q14, q15, q16, q17, q18} = req.body
+  controller.updateAffective(req.params.id, q1, q2, q3, q4, q5, q6, q7, q8, q9, q10, q11, q12, q13, q14, q15, q16, q17, q18)
     .then((data) => {
       response.success(req, res, data, 200);
     })

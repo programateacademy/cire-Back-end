@@ -15,7 +15,8 @@ router.get('/', function (req, res){
 });
 
 router.post('/', function (req,res){
-  controller.addSegForm(req.body.parentingOption, req.body.parentingObservations, req.body.followRulesClassOption, req.body.followRulesClassObservations, req.body.followRulesOutsideOption, req.body.followRulesOutsideObservations, req.body.hasHabitsRoutinesOption, req.body.hasHabitsRoutinesObservations, req.body.hasSchoolHabitsOption, req.body.hasSchoolHabitsObservations, req.body.reflectsCommitmentOption, req.body.reflectsCommitmentObservations, req.body.accompanimentClassesOption, req.body.accompanimentClassesObservations, req.body.homeSupportOption, req.body.homeSupportObservations)
+  const {parentingOption, parentingObservations, followRulesClassOption, followRulesClassObservations, followRulesOutsideOption, followRulesOutsideObservations, hasHabitsRoutinesOption, hasHabitsRoutinesObservations, hasSchoolHabitsOption, hasSchoolHabitsObservations, reflectsCommitmentOption, reflectsCommitmentObservations, accompanimentClassesOption, accompanimentClassesObservations, homeSupportOption, homeSupportObservations} = req.body
+  controller.addSegForm(parentingOption, parentingObservations, followRulesClassOption, followRulesClassObservations, followRulesOutsideOption, followRulesOutsideObservations, hasHabitsRoutinesOption, hasHabitsRoutinesObservations, hasSchoolHabitsOption, hasSchoolHabitsObservations, reflectsCommitmentOption, reflectsCommitmentObservations, accompanimentClassesOption, accompanimentClassesObservations, homeSupportOption, homeSupportObservations)
     .then((segForm)=>{
       response.success(req, res, segForm, 201);
     })
@@ -25,7 +26,8 @@ router.post('/', function (req,res){
 });
 
 router.put('/:id', function (req, res) {
-  controller.updateSegForm(req.params.id, req.body.parentingOption, req.body.parentingObservations, req.body.followRulesClassOption, req.body.followRulesClassObservations, req.body.followRulesOutsideOption, req.body.followRulesOutsideObservations, req.body.hasHabitsRoutinesOption, req.body.hasHabitsRoutinesObservations, req.body.hasSchoolHabitsOption, req.body.hasSchoolHabitsObservations, req.body.reflectsCommitmentOption, req.body.reflectsCommitmentObservations, req.body.accompanimentClassesOption, req.body.accompanimentClassesObservations, req.body.homeSupportOption, req.body.homeSupportObservations)
+  const {parentingOption, parentingObservations, followRulesClassOption, followRulesClassObservations, followRulesOutsideOption, followRulesOutsideObservations, hasHabitsRoutinesOption, hasHabitsRoutinesObservations, hasSchoolHabitsOption, hasSchoolHabitsObservations, reflectsCommitmentOption, reflectsCommitmentObservations, accompanimentClassesOption, accompanimentClassesObservations, homeSupportOption, homeSupportObservations} = req.body
+  controller.updateSegForm(parentingOption, parentingObservations, followRulesClassOption, followRulesClassObservations, followRulesOutsideOption, followRulesOutsideObservations, hasHabitsRoutinesOption, hasHabitsRoutinesObservations, hasSchoolHabitsOption, hasSchoolHabitsObservations, reflectsCommitmentOption, reflectsCommitmentObservations, accompanimentClassesOption, accompanimentClassesObservations, homeSupportOption, homeSupportObservations)
     .then((data) => {
       response.success(req, res, data, 200);
     })
