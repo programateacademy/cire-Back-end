@@ -77,7 +77,7 @@ const newRecommendations = await foundRecommendations.save(updateRecommendations
 
 module.exports = {
   add: addRecommendations,
-  updateObservation: updateRecommendations,
+  update: updateRecommendations,
    remove: removeRecommendations,
   list: getRecommendations
 }
