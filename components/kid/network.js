@@ -14,6 +14,17 @@ router.get('/', function (req, res){
     });
 });
 
+router.get('/:id', function (req,res){
+  const filterKid = req.params.id || null;
+  controller.getKidById(filterKid)
+    .then((oneKid) => {
+      response.success(req, res, oneKid, 200);
+    })
+    .catch((err) => {
+      response.error(req, res, 'Unexpected error', 500, err);
+    });
+});
+
 router.post('/', function (req,res){
   controller.addKid(req.body.name,req.body.age, req.body.sex, req.body.namAttendant, req.body.numAttendant)
     .then((fullKid)=>{

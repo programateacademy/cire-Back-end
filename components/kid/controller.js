@@ -22,6 +22,11 @@ function getKid(filterKid){
     resolve(store.list(filterKid));
   });
 };
+function getKidById(filterKid){
+  return new Promise ((resolve) => {
+    resolve(store.getKidById(filterKid));
+  });
+};
 
 function updateKid(id, age, namAttendant, numAttendant){
   return new Promise ((resolve, reject) => {
@@ -53,5 +58,6 @@ module.exports = {
   addKid,
   getKid,
   updateKid,
-  deleteKid
+  deleteKid,
+  getKidById
 };
