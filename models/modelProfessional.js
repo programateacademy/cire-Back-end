@@ -10,7 +10,8 @@ const mySchema = new schema(
     phone: String,
     occupation: String,
     email: String,
-    password: String
+    password: String,
+    numberId: String
   },
   {
     timestamps: true

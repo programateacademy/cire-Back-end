@@ -11,20 +11,21 @@ router.get('/', function (req, res){
     .catch(err => {
       response.error(req, res, 'Unexpected error', 500, err);
     });
-});
+  });
 
-router.post('/', function (req,res){
-  controller.addPrincipal(req.body.schoolDescription, req.body.schoolAction, req.body.relationDescription, req.body.relationACtion, req.body.workClassDescription, req.body.workClassAction, req.body.workCireDescription, req.body.workCireAction, req.body.workHomeDescription, req.body.workHomeAction, req.body.parentDescription, req.body.parentAction, req.body.accompanimentDescription, req.body.accompanimentAction)
-    .then((principalForm)=>{
-      response.success(req, res, principalForm, 201);
-    })
-    .catch(err => {
-      response.error(req, res, 'INVALID INFORMATION', 400,err);
-    });
+  router.post('/', function (req,res){
+  // console.log(req.body.kid);
+  controller.addPrincipal(req.body.kid, req.body.schoolDescription, req.body.schoolAction, req.body.relationDescription, req.body.relationACtion, req.body.workClassDescription, req.body.workClassAction, req.body.workCireDescription, req.body.workCireAction, req.body.workHomeDescription, req.body.workHomeAction, req.body.parentDescription, req.body.parentAction, req.body.accompanimentDescription, req.body.accompanimentAction)
+  .then((principalForm)=>{
+    response.success(req, res, principalForm, 201);
+  })
+  .catch(err => {
+    response.error(req, res, 'INVALID INFORMATION', 400,err);
+  });
 });
 
 router.put('/:id', function (req, res) {
-  controller.updatePrincipal(req.body.schoolDescription, req.body.schoolAction, req.body.relationDescription, req.body.relationACtion, req.body.workClassDescription, req.body.workClassAction, req.body.workCireDescription, req.body.workCireAction, req.body.workHomeDescription, req.body.workHomeAction, req.body.parentDescription, req.body.parentAction, req.body.accompanimentDescription, req.body.accompanimentAction)
+  controller.updatePrincipal(req.params.id, req.body.schoolDescription, req.body.schoolAction, req.body.relationDescription, req.body.relationACtion, req.body.workClassDescription, req.body.workClassAction, req.body.workCireDescription, req.body.workCireAction, req.body.workHomeDescription, req.body.workHomeAction, req.body.parentDescription, req.body.parentAction, req.body.accompanimentDescription, req.body.accompanimentAction)
     .then((data) => {
       response.success(req, res, data, 200);
     })

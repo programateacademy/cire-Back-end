@@ -9,7 +9,7 @@ function getKid(filterKid){
   return new Promise ((resolve) => {
     let filter = {};
     if (filterKid !== null){
-      filter = {name: filterKid};
+      filter = {age: filterKid};
     };
     const kids = model.find(filter);
     resolve(kids);
@@ -39,5 +39,5 @@ module.exports = {
   list: getKid,
   updateKid: updateKid,
   removeKid: removeKid
-}; 
+};
 

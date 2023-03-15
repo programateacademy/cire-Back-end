@@ -4,7 +4,7 @@ const controller = require('./controller');
 const response = require('../../network/response');
 
 router.get('/', function (req, res){
-  const filterKid= req.query.name || null;
+  const filterKid= req.query.age || null;
   controller.getKid(filterKid)
     .then((kidList) => {
       response.success(req, res, kidList, 200);
