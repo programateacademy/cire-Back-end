@@ -9,12 +9,22 @@ function getKid(filterKid){
   return new Promise ((resolve) => {
     let filter = {};
     if (filterKid !== null){
-      filter = {name: filterKid};
+      filter = {age: filterKid};
     };
     const kids = model.find(filter);
     resolve(kids);
   });
 };
+
+function getKidById(kidId){
+  return new Promise ((resolve, reject) => {
+    if(!kidId){
+      reject('Invalid ID')
+    }
+    const kid = model.findById(kidId);
+    resolve(kid);
+  })
+}
 
 async function updateKid(id, age, namAttendant, numAttendant){
   const foundKid = await model.findById(id);
@@ -38,6 +48,7 @@ module.exports = {
   add: addKid,
   list: getKid,
   updateKid: updateKid,
-  removeKid: removeKid
-}; 
+  removeKid: removeKid,
+  getKidById: getKidById
+};
 

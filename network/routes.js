@@ -6,7 +6,7 @@ const kid = require('../components/kid/network');
 const principalForm = require('../components/principalForm/network');
 const psychoSocialForm = require('../components/psychoSocial/network');
 const psychoMotorForm = require('../components/psychoMotor/network');
-const formSeg = require('../components/formSeg/network');
+const segForm = require('../components/segForm/network');
 const observation = require('../components/formObservation/network')
 const recommendations = require ('../components/formRecoment/network')
 
@@ -21,10 +21,12 @@ const routes = function (server) {
   server.use('/principalForm', principalForm);
   server.use('/psychoSocialForm', psychoSocialForm);
   server.use('/psychoMotorForm', psychoMotorForm);
-  server.use('/formSeg', formSeg );
+  server.use('/segForm', segForm );
   server.use('/observation', observation);
   server.use('/recommendation', recommendations)
 
  };
+
+
 
 module.exports = routes;

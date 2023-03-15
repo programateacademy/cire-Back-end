@@ -16,6 +16,7 @@ function getSegForm(filterKid){
       .exec((error, populated) => {
         if (error) {
           reject(error);
+          return false;
         }
         resolve(populated);
       });

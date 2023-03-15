@@ -23,6 +23,11 @@ function getProfessional(filterProfessional) {
     resolve(store.list(filterProfessional));
   });
 };
+function getProfessionalById(filterProfessional) {
+  return new Promise ((resolve) => {
+    resolve(store.getProfessionalById(filterProfessional));
+  });
+};
 
 function updateProfessional(id, age, phone){
   return new Promise((resolve, reject) => {
@@ -54,7 +59,8 @@ module.exports = {
   addProfessional,
   getProfessional,
   updateProfessional,
-  deleteProfessional
+  deleteProfessional,
+  getProfessionalById
 };
 
 

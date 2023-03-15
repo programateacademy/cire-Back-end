@@ -1,9 +1,10 @@
 const store = require('./store');
 
-function addPrincipal( kid, schoolDescription, schoolAction, relationDescription, relationACtion, workClassDescription, workClassAction, workCireDescription, workCireAction, workHomeDescription, workHomeAction, parentDescription, parentAction, accompanimentDescription, accompanimentAction){
+function addPrincipal(kid, schoolDescription, schoolAction, relationDescription, relationACtion, workClassDescription, workClassAction, workCireDescription, workCireAction, workHomeDescription, workHomeAction, parentDescription, parentAction, accompanimentDescription, accompanimentAction){
   return new Promise ((resolve) => {
+
     const fullPrincipal = {
-      kid:kid,
+      kid: kid,
       coexistence:{
         schoolBehavior:{
           description: schoolDescription,

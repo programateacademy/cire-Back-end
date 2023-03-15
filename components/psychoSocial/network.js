@@ -15,7 +15,8 @@ router.get('/', function (req, res){
 });
 
 router.post('/', function (req,res){
-  controller.addPsychoSocial(req.body.needSupportTeacher, req.body.doesNotEasilyAdapt, req.body.bitesMistreats, req.body.maladjustment, req.body.cryAnything, req.body.doesNotExpressFeelings, req.body.doesNotPlayOther, req.body.doesNotInteractAdults)
+  const {needSupportTeacher, doesNotEasilyAdapt, bitesMistreats, maladjustment, cryAnything, doesNotExpressFeelings, doesNotPlayOther, doesNotInteractAdults} = req.body
+  controller.addPsychoSocial(needSupportTeacher, doesNotEasilyAdapt, bitesMistreats, maladjustment, cryAnything, doesNotExpressFeelings, doesNotPlayOther, doesNotInteractAdults)
     .then((psychoSocialForm)=>{
       response.success(req, res, psychoSocialForm, 201);
     })
@@ -25,7 +26,8 @@ router.post('/', function (req,res){
 });
 
 router.put('/:id', function (req, res) {
-  controller.updatePsychoSocialForm(req.params.id, req.body.needSupportTeacher, req.body.doesNotEasilyAdapt, req.body.bitesMistreats, req.body.maladjustment, req.body.cryAnything, req.body.doesNotExpressFeelings, req.body.doesNotPlayOther, req.body.doesNotInteractAdults)
+  const {needSupportTeacher, doesNotEasilyAdapt, bitesMistreats, maladjustment, cryAnything, doesNotExpressFeelings, doesNotPlayOther, doesNotInteractAdults} = req.body
+  controller.updatePsychoSocialForm(req.params.id, needSupportTeacher, doesNotEasilyAdapt, bitesMistreats, maladjustment, cryAnything, doesNotExpressFeelings, doesNotPlayOther, doesNotInteractAdults)
     .then((data) => {
       response.success(req, res, data, 200);
     })

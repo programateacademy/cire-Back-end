@@ -1,53 +1,80 @@
 const mongoose = require('mongoose');
 
-const schema = mongoose.Schema;
+const Schema = mongoose.Schema;
 
-const mySchema = new schema(
+const mySchema = new Schema(
   {
     kid: {
-      type: schema.ObjectId,
-      ref: "kid"
+      type: Schema.Types.ObjectId,
+      ref:'kid',
+      required: true
     },
-
     coexistence:{
       schoolBehavior:{
-        description: String,
-        actionPlan:String
+        description: {
+          type: String
+        },
+        actionPlan:{
+          type: String
+        }
       },
       relationships:{
-        description: String,
-        actionPlan:String
-
+        description: {
+          type: String
+        },
+        actionPlan:{
+          type: String
+        }
       }
     },
 
     academic:{
       workInClasses:{
-        description: String,
-        actionPlan:String
+        description:{
+          type: String
+        },
+        actionPlan:{
+          type: String
+        }
       },
 
       worksInCire:{
-        description: String,
-        actionPlan:String
+        description: {
+          type: String
+        },
+        actionPlan:{
+          type: String
+        }
       },
 
       workAtHome:{
-        description: String,
-        actionPlan:String
+        description: {
+          type: String
+        },
+        actionPlan:{
+          type: String
+        }
       },
 
     },
 
     familySupport:{
       parentingGuidelines:{
-        description: String,
-        actionPlan:String
+        description: {
+          type: String
+        },
+        actionPlan:{
+          type: String
+        }
       },
 
       accompaniment:{
-        description: String,
-        actionPlan:String
+        description: {
+          type: String
+        },
+        actionPlan:{
+          type: String
+        }
       },
 
     }
