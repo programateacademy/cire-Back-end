@@ -1,6 +1,6 @@
 const store = require('./store');
 
-function addPrincipal(kid, schoolDescription, schoolAction, relationDescription, relationACtion, workClassDescription, workClassAction, workCireDescription, workCireAction, workHomeDescription, workHomeAction, parentDescription, parentAction, accompanimentDescription, accompanimentAction){
+function addPrincipal(kid, schoolDescription, schoolAction, behaviorDescription, behaviorAction, relationDescription, relationACtion, workClassDescription, workClassAction, workCireDescription, workCireAction, workHomeDescription, workHomeAction, parentDescription, parentAction, accompanimentDescription, accompanimentAction){
   return new Promise ((resolve) => {
 
     const fullPrincipal = {
@@ -10,6 +10,14 @@ function addPrincipal(kid, schoolDescription, schoolAction, relationDescription,
           description: schoolDescription,
           actionPlan:schoolAction
         },
+
+        behaviorAthome:{
+          description: behaviorDescription,
+          actionPlan:behaviorAction
+
+        },
+
+
         relationships:{
           description: relationDescription,
           actionPlan: relationACtion
@@ -58,12 +66,12 @@ function getPrincipal(filterKid){
   });
 };
 
-function updatePrincipal(id, schoolDescription, schoolAction, relationDescription, relationACtion, workClassDescription, workClassAction, workCireDescription, workCireAction, workHomeDescription, workHomeAction, parentDescription, parentAction, accompanimentDescription, accompanimentAction){
+function updatePrincipal(id, schoolDescription, schoolAction, behaviorDescription, behaviorAction, relationDescription, relationACtion, workClassDescription, workClassAction, workCireDescription, workCireAction, workHomeDescription, workHomeAction, parentDescription, parentAction, accompanimentDescription, accompanimentAction){
   return new Promise ((resolve, reject) => {
     if(!id){
       reject('INVALID DATA');
     };
-    const result = store.update(id, schoolDescription, schoolAction, relationDescription, relationACtion, workClassDescription, workClassAction, workCireDescription, workCireAction, workHomeDescription, workHomeAction, parentDescription, parentAction, accompanimentDescription, accompanimentAction);
+    const result = store.update(id, schoolDescription, schoolAction, behaviorDescription, behaviorAction, relationDescription, relationACtion, workClassDescription, workClassAction, workCireDescription, workCireAction, workHomeDescription, workHomeAction, parentDescription, parentAction, accompanimentDescription, accompanimentAction);
     resolve(result);
   });
 };

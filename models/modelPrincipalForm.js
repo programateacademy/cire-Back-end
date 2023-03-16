@@ -17,7 +17,19 @@ const mySchema = new Schema(
         actionPlan:{
           type: String
         }
+
       },
+
+      behaviorAthome:{
+        description: {
+          type: String
+        },
+        actionPlan:{
+          type: String
+        }
+
+      },
+
       relationships:{
         description: {
           type: String

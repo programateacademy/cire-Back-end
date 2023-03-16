@@ -38,7 +38,7 @@ router.post('/', function (req,res){
 
 router.put('/:id', function (req, res) {
   const {name, age, sex, namAttendant, numAttendant} = req.body
-  controller.updateKid(name,age, sex, namAttendant, numAttendant)
+  controller.updateKid(req.params.id, name,age, sex, namAttendant, numAttendant)
     .then((data) => {
       response.success(req, res, data, 200);
     })
