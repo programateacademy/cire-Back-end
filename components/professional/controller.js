@@ -1,5 +1,18 @@
 const store = require('./store');
 
+function login(email, password){
+  return new Promise ((resolve, reject) => {
+    if(!email || !password){
+      reject('Invalid data');
+    };
+    const credentials = {
+      email: email,
+      password: password
+    }
+    resolve(store.login(credentials));
+  })
+}
+
 function addProfessional(name, age, phone, occupation, email, password){
   return new Promise((resolve, reject) => {
     if (!name || !age || !phone || !occupation || !email || !password){
@@ -60,7 +73,8 @@ module.exports = {
   getProfessional,
   updateProfessional,
   deleteProfessional,
-  getProfessionalById
+  getProfessionalById,
+  login
 };
 
 

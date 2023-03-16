@@ -2,8 +2,6 @@ const model = require('../../models/modelPrincipalForm');
 
 async function addPrincipal(form){
   const myForm = new model(form);
-  // console.log(form);
-  // console.log(myForm);
   await myForm.save();
 
 };
@@ -30,8 +28,8 @@ async function updatePrincipal(id, schoolDescription, schoolAction, behaviorDesc
   const foundPrincipal = await model.findById(id);
     foundPrincipal.coexistence.schoolBehavior.description = schoolDescription;
     foundPrincipal.coexistence.schoolBehavior.actionPlan = schoolAction;
-    foundPrincipal.coexistence.behaviorAthome.description = behaviorDescription;
-    foundPrincipal.coexistence.behaviorAthome.actionPlan = behaviorAction;
+    foundPrincipal.coexistence.behaviorAtHome = behaviorDescription;
+    foundPrincipal.coexistence.behaviorAtHome.actionPlan = behaviorAction;
     foundPrincipal.coexistence.relationships.description = relationDescription;
     foundPrincipal.coexistence.relationships.actionPlan = relationACtion;
     foundPrincipal.academic.workInClasses.description = workClassDescription;

@@ -20,7 +20,7 @@ const mySchema = new Schema(
 
       },
 
-      behaviorAthome:{
+      behaviorAtHome:{
         description: {
           type: String
         },

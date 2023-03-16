@@ -1,8 +1,8 @@
-const model = require('../../models/modelSuperAdmin');
+const { model } = require('../../models/modelSuperAdmin');
 
 function addAdmin(admin){
   const myAdmin = new model(admin);
-  myAdmin.save();
+  return myAdmin.save();
 };
 
 async function updateAdmin(id, password){
@@ -21,8 +21,20 @@ async function removeAdmin(id){
 }
 
 
-exports.module = {
+async function login(credentials) {
+  const superAdmin = await model.findOne(credentials);
+  if (!superAdmin) {
+    throw new Error('Incorrect email or password');
+  }
+
+  const token = await superAdmin.generateAuthToken();
+  return token;
+}
+
+
+module.exports = {
   addAdmin,
   updateAdmin,
-  removeAdmin
+  removeAdmin,
+  login
 }

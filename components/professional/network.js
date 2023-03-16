@@ -62,6 +62,17 @@ router.delete('/:id', function (req, res) {
     });
 });
 
+router.post('/login', function(req, res){
+  const {email, password} = req.body
+  controller.login(email, password)
+    .then((token) =>{
+      response.success(req, res, {token}, 200);
+    })
+    .catch(err => {
+      response.error(req, res, 'INVALID CREDENTIALS', 400, err);
+    });
+});
+
 module.exports = router;
 
 

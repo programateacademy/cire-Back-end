@@ -24,8 +24,7 @@ const routes = function (server) {
   server.use('/segForm', segForm );
   server.use('/observation', observation);
   server.use('/recommendation', recommendations)
-
- };
+};
 
 
 
