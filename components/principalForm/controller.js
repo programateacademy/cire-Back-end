@@ -11,7 +11,7 @@ function addPrincipal(kid, schoolDescription, schoolAction, behaviorDescription,
           actionPlan:schoolAction
         },
 
-        behaviorAthome:{
+        behaviorAtHome:{
           description: behaviorDescription,
           actionPlan:behaviorAction
 
