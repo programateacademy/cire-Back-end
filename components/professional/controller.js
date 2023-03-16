@@ -29,12 +29,12 @@ function getProfessionalById(filterProfessional) {
   });
 };
 
-function updateProfessional(id, age, phone){
+function updateProfessional(id, name, age, phone, occupation, email, password, numberId){
   return new Promise((resolve, reject) => {
-    if(!id || !age || !phone){
-      reject('INVALID DATA');
-    };
-    const result = store.updateProfessional(id, age, phone);
+    if (!id){
+      reject('Invalid ID');
+    }
+    const result = store.updateProfessional(id, name, age, phone, occupation, email, password, numberId);
     resolve(result);
   });
 };

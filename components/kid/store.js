@@ -26,13 +26,17 @@ function getKidById(kidId){
   })
 }
 
-async function updateKid(id, age, namAttendant, numAttendant){
+async function updateKid(id, name, age, sex, namAttendant, numAttendant){
   const foundKid = await model.findById(id);
+  foundKid.name = name;
   foundKid.age = age;
+  foundKid.sex = sex;
   foundKid.namAttendant = namAttendant;
   foundKid.numAttendant = numAttendant;
   const updateKid = {
+    name,
     age,
+    sex,
     namAttendant,
     numAttendant
   };

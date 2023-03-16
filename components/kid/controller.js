@@ -28,12 +28,12 @@ function getKidById(filterKid){
   });
 };
 
-function updateKid(id, age, namAttendant, numAttendant){
+function updateKid(id, name, age, sex, namAttendant, numAttendant){
   return new Promise ((resolve, reject) => {
     if(!id){
       reject('INVALID DATA');
     };
-    const result = store.updateKid(id, age, namAttendant, numAttendant);
+    const result = store.updateKid(id, name, age, sex, namAttendant, numAttendant);
     resolve(result);
   });
 };

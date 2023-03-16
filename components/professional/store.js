@@ -25,13 +25,23 @@ function getProfessionalById(professionalId){
   });
 };
 
-async function updateProfessional(id, age, phone){
+async function updateProfessional(id, name, age, phone, occupation, email, password, numberId){
   const foundProfessional = await model.findById(id);
+  foundProfessional.name = name;
   foundProfessional.age = age;
   foundProfessional.phone = phone;
+  foundProfessional.occupation = occupation;
+  foundProfessional.email = email;
+  foundProfessional.password = password;
+  foundProfessional.numberId = numberId;
   const updateProfessional = {
+    name,
     age,
-    phone
+    phone,
+    occupation,
+    email,
+    password,
+    numberId
   };
   const newProfessional = await foundProfessional.save(updateProfessional);
   return newProfessional;
