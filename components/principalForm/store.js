@@ -1,8 +1,11 @@
 const model = require('../../models/modelPrincipalForm');
 
-function addPrincipal(form){
+async function addPrincipal(form){
   const myForm = new model(form);
-  myForm.save();
+  // console.log(form);
+  // console.log(myForm);
+  await myForm.save();
+
 };
 
 function getPrincipal(filterKid){
@@ -18,7 +21,7 @@ function getPrincipal(filterKid){
           reject(error);
           return false;
         };
-        resolve(populated);
+        resolve(populated)
       });
   });
 };
