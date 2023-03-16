@@ -38,7 +38,7 @@ router.post('/', function (req,res){
 
 router.put('/:id', function (req, res) {
   const {name, age, phone, occupation, email, password} = req.body
-  controller.updateProfessional(name, age, phone, occupation, email, password)
+  controller.updateProfessional(req.params.id, name, age, phone, occupation, email, password)
     .then((data) => {
       response.success(req, res, data, 200);
     })
