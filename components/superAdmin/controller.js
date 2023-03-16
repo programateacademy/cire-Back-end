@@ -22,7 +22,6 @@ function addAdmin(email, password){
       email: email,
       password: password
     }
-    console.log(admin);
     resolve(store.addAdmin(admin));
   });
 };
