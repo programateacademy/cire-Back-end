@@ -9,24 +9,13 @@ const mySchema = new schema(
       ref: "kid"
     },
 
-    psychoEducationalAspects: {
       planning: {
         manages_to_classify_The_step_by_step_To_develop_The_task: {
-          monday: {
-          option: String
-          },
-          tuesday: {
-            option: String
-          },
-          wednesday: {
-            option: String
-          },
-          thursday: {
-            option: String
-          },
-          friday: {
-            option: String
-          },
+          monday: String,
+          tuesday: String,
+          wednesday:String,
+          thursday: String,
+           friday : String,
 
           description: {
             behavior: String
@@ -34,21 +23,11 @@ const mySchema = new schema(
         },
 
         before_Starting_the_Task_prepare_The_material_That_you_Will_use: {
-          monday: {
-            option: String
-          },
-          tuesday: {
-            option: String
-          },
-          wednesday: {
-            option: String
-          },
-          thursday: {
-            option: String
-          },
-          friday: {
-            option: String
-          },
+          monday: String,
+          tuesday:String,
+          wednesday: String,
+          thursday: String,
+          friday: String,
 
           description: {
             behavior: String
@@ -56,21 +35,11 @@ const mySchema = new schema(
         },
 
         finish_the_task_I_started:{
-          monday: {
-            option: String
-          },
-          tuesday: {
-            option: String
-          },
-          wednesday: {
-            option: String
-          },
-          thursday: {
-            option: String
-          },
-          friday: {
-            option: String
-          },
+          monday: String,
+          tuesday: String,
+          wednesday: String,
+          thursday: String,
+          friday: String,
 
           description: {
             behavior: String
@@ -78,21 +47,11 @@ const mySchema = new schema(
         },
 
         runtime_is_adequate_for_the_task:{
-          monday: {
-            option: String
-          },
-          tuesday: {
-            option: String
-          },
-          wednesday: {
-            option: String
-          },
-          thursday: {
-            option: String
-          },
-          friday: {
-            option: String
-          },
+          monday: String,
+          tuesday: String,
+          wednesday: String,
+          thursday: String,
+          friday: String,
 
           description: {
             behavior: String
@@ -100,21 +59,11 @@ const mySchema = new schema(
         },
 
         gets_distracted_while_performing_the_task:{
-          monday: {
-            option: String
-          },
-          tuesday: {
-            option: String
-          },
-          wednesday: {
-            option: String
-          },
-          thursday: {
-            option: String
-          },
-          friday: {
-            option: String
-          },
+          monday:String,
+          tuesday:String,
+          wednesday:String,
+          thursday: String,
+          friday: String,
 
           description: {
             behavior: String
@@ -122,21 +71,11 @@ const mySchema = new schema(
         },
 
         requires_reinforcement_in_the_execution_of_an_instruction:{
-          monday: {
-          option:String
-          },
-          tuesday: {
-            option:String
-          },
-          wednesday: {
-            option:String
-          },
-          thursday: {
-            option:String
-          },
-          friday: {
-            option:String
-          },
+          monday: String,
+          tuesday: String,
+          wednesday:String,
+          thursday: String,
+          friday: String,
 
           description: {
             behavior: String
@@ -144,21 +83,11 @@ const mySchema = new schema(
         },
 
         strive_to_hand_in_homework_with_good_presentation:{
-          monday: {
-            option:String
-          },
-          tuesday: {
-            option:String
-          },
-          wednesday: {
-            option:String
-          },
-          thursday: {
-            option:String
-          },
-          friday: {
-            option:String
-          },
+          monday:String,
+          tuesday:String,
+          wednesday: String,
+          thursday: String,
+          friday:String,
 
           description: {
             behavior: String
@@ -166,21 +95,11 @@ const mySchema = new schema(
         },
 
         makes_adequate_use_of_the_space_stipulated_for_the_task:{
-          monday: {
-            option:String
-          },
-          tuesday: {
-            option:String
-          },
-          wednesday: {
-            option:String
-          },
-          thursday: {
-            option:String
-          },
-          friday: {
-            option:String
-          },
+          monday:String,
+          tuesday: String,
+          wednesday: String,
+          thursday: String,
+          friday:String,
 
           description: {
             behavior: String
@@ -188,21 +107,11 @@ const mySchema = new schema(
         },
 
         frustration_tolerance_or_recognition_of_success_is_evident:{
-          monday: {
-            option:String
-          },
-          tuesday: {
-            option:String
-          },
-          wednesday: {
-            option:String
-          },
-          thursday: {
-            option:String
-          },
-          friday: {
-            option:String
-          },
+          monday:String,
+          tuesday: String,
+          wednesday: String,
+          thursday:String,
+          friday: String,
 
           description: {
             behavior: String
@@ -210,22 +119,11 @@ const mySchema = new schema(
         },
 
         if_you_are_from_the_province_keep_your_dialect:{
-          monday: {
-            option:String
-          },
-          tuesday: {
-            option:String
-          },
-          wednesday: {
-            yes: String,
-            not: String
-          },
-          thursday: {
-            option:String
-          },
-          friday: {
-            option:String
-          },
+          monday:String,
+          tuesday:String,
+          wednesday: String,
+          thursday: String,
+          friday: String,
 
           description: {
             behavior: String
@@ -233,21 +131,11 @@ const mySchema = new schema(
         },
 
         relates_to_other_children_with_notable_differences:{
-          monday: {
-            option:String
-          },
-          tuesday: {
-            option:String
-          },
-          wednesday: {
-            option:String
-          },
-          thursday: {
-            option:String
-          },
-          friday: {
-            option:String
-          },
+          monday: String,
+          tuesday: String,
+          wednesday: String,
+          thursday: String,
+          friday:String,
 
           description: {
             behavior: String
@@ -255,21 +143,11 @@ const mySchema = new schema(
         },
 
         feels_included_accepted_and_loved_with_peers:{
-          monday: {
-            option:String
-          },
-          tuesday: {
-            option:String
-          },
-          wednesday: {
-            option:String
-          },
-          thursday: {
-            option:String
-          },
-          friday: {
-            option:String
-          },
+          monday: String,
+          tuesday: String,
+          wednesday:String,
+          thursday: String,
+          friday: String,
 
           description: {
             behavior: String
@@ -277,40 +155,31 @@ const mySchema = new schema(
         },
 
         include_accept_and_show_love_for_your_peers:{
-          monday: {
-            option:String
-          },
-          tuesday: {
-            option:String
-          },
-          wednesday: {
-            option:String
-          },
-          thursday: {
-            option:String
-          },
-          friday: {
-            option:String
-          },
+          monday: String,
+          tuesday: String,
+          wednesday: String,
+          thursday: String,
+          friday: String,
 
           description: {
             behavior: String
-          },
-
-          hour:{
-            initial: Number,
-            final: Number
           }
+
+        },
+
+        hour:{
+          initial: Number,
+          final: Number
         },
 
         observations: String
 
       }
 
-      }
+      },
 
 
-    },
+
   {
     timestamps: true
   }

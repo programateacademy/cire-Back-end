@@ -5,12 +5,22 @@ function addAffective(Affective) {
   myAffective.save();
 };
 
-function getAffective(){
-  return new Promise ((resolve) =>{
-
-    const Affective = model.find()
-    resolve(Affective)
-  })
+function getAffective(filterKid){
+  let filter = {};
+  return new Promise ((resolve,reject) => {
+    if(filterKid !== null){
+      filter = {kid: filterKid};
+    };
+    model.find(filter)
+      .populate('kid', {name: true, age: true, sex: true, namAttendant: true, numAttendant: true})
+      .exec((error, populated) => {
+        if (error){
+          reject(error);
+          return false;
+        };
+        resolve(populated);
+      });
+  });
 };
 
 async function updateAffective(id, q1, q2, q3, q4, q5, q6, q7, q8, q9, q10, q11, q12, q13, q14, q15, q16, q17, q18) {

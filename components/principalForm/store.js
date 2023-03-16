@@ -2,8 +2,6 @@ const model = require('../../models/modelPrincipalForm');
 
 async function addPrincipal(form){
   const myForm = new model(form);
-  // console.log(form);
-  // console.log(myForm);
   await myForm.save();
 
 };
@@ -26,10 +24,12 @@ function getPrincipal(filterKid){
   });
 };
 
-async function updatePrincipal(id, schoolDescription, schoolAction, relationDescription, relationACtion, workClassDescription, workClassAction, workCireDescription, workCireAction, workHomeDescription, workHomeAction, parentDescription, parentAction, accompanimentDescription, accompanimentAction){
+async function updatePrincipal(id, schoolDescription, schoolAction, behaviorDescription, behaviorAction, relationDescription, relationACtion, workClassDescription, workClassAction, workCireDescription, workCireAction, workHomeDescription, workHomeAction, parentDescription, parentAction, accompanimentDescription, accompanimentAction){
   const foundPrincipal = await model.findById(id);
     foundPrincipal.coexistence.schoolBehavior.description = schoolDescription;
     foundPrincipal.coexistence.schoolBehavior.actionPlan = schoolAction;
+    foundPrincipal.coexistence.behaviorAtHome = behaviorDescription;
+    foundPrincipal.coexistence.behaviorAtHome.actionPlan = behaviorAction;
     foundPrincipal.coexistence.relationships.description = relationDescription;
     foundPrincipal.coexistence.relationships.actionPlan = relationACtion;
     foundPrincipal.academic.workInClasses.description = workClassDescription;
@@ -45,6 +45,8 @@ async function updatePrincipal(id, schoolDescription, schoolAction, relationDesc
     const updatePrincipal = {
       schoolDescription,
       schoolAction,
+      behaviorDescription,
+      behaviorAction,
       relationDescription,
       relationACtion,
       workClassDescription,
