@@ -3,7 +3,7 @@ const store = require('./store');
 function login(email, password){
   return new Promise ((resolve, reject)=>{
     if(!email || !password){
-      reject('Invalid data')
+      reject('Invalid data');
     };
     const credentials = {
       email: email,

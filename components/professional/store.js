@@ -1,4 +1,4 @@
-const model = require('../../models/modelProfessional');
+const { model } = require('../../models/modelProfessional');
 
 function addProfessional(professional){
   const myProfessional = new model(professional);
@@ -51,10 +51,21 @@ async function removeProfessional(id){
   return await model.findByIdAndDelete(id);
 };
 
+async function login(credentials) {
+  const professional = await model.findOne(credentials);
+  if(!professional){
+    throw new Error('Incorrect email or password');
+  }
+
+  const token = await professional.generateAuthToken();
+  return token;
+};
+
 module.exports = {
   add: addProfessional,
   list: getProfessional,
   updateProfessional: updateProfessional,
   remove: removeProfessional,
-  getProfessionalById
+  getProfessionalById,
+  login
 };
