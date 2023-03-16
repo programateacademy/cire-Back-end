@@ -1,5 +1,18 @@
 const store = require('./store');
 
+function login(email, password){
+  return new Promise ((resolve, reject)=>{
+    if(!email || !password){
+      reject('Invalid data')
+    };
+    const credentials = {
+      email: email,
+      password: password
+    };
+    resolve(store.login(credentials));
+  });
+};
+
 function addAdmin(email, password){
   return new Promise((resolve, reject) => {
     if (!email || !password){
@@ -9,8 +22,8 @@ function addAdmin(email, password){
       email: email,
       password: password
     }
-    store.addAdmin(admin);
-    resolve(admin);
+    console.log(admin);
+    resolve(store.addAdmin(admin));
   });
 };
 
@@ -41,8 +54,9 @@ function deleteAdmin(id){
 };
 
 
-exports.module = {
+module.exports = {
   add: addAdmin,
   update: updateAdmin,
-  delete: deleteAdmin
+  delete: deleteAdmin,
+  login
 };
