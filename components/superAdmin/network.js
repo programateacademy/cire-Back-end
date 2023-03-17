@@ -21,6 +21,7 @@ router.post('/', function(req, res){
     });
 });
 
+
 router.put('/:id', function(req, res){
   const {password} = req.body
   controller.update(req.params.id, password)
