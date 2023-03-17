@@ -1,5 +1,5 @@
 const nodemailer = require('nodemailer');
-require('dotenv').config();
+
 
 /**
  * Envía correos electrónicos.
@@ -50,5 +50,5 @@ async function sendMail(mail) {
     });
 }
 
-exports.modules = sendMail;
+module.exports = sendMail;
 

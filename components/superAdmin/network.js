@@ -3,17 +3,17 @@ const router = express.Router();
 const response = require('../../network/response');
 const controller = require('./controller');
 const  sendMail  = require("../../components/superAdmin/email");
-// console.log(sendMail);
+
 
 router.post('/', function(req, res){
   const {email, password} = req.body
   controller.add(email, password)
-    .then(async (admin) =>{
-       await sendMail({
+    .then((admin) =>{
+         sendMail({
          to: email,
-         subject: 'Subject from email',
-         body: `Su correo es: ${email} y su contraseña: ${password}`
-       });
+          subject: 'Subject from email',
+          body: `Su correo es: ${email} y su contraseña: ${password}`
+        });
       response.success(req, res, admin, 200);
     })
     .catch(err => {
