@@ -1,7 +1,7 @@
 const store = require('./store')
 
 
-function addRecommendations(guidelinesOption, guidelinesObservation, habitsAndRoutinesOption, habitsAndRoutinesObservation, studyHabitsAndRoutinesOption, studyHabitsAndRoutinesObservation, commitmentsOptionfamily, commitmentsObservationfamily, rulesWithinTheClassroomOption, rulesWithinTheClassroomObservation, rulesOutsideTheClassroomOPtion, rulesOutsideTheClassroomObservation, accompanimentOption, accompanimentObservation, commitmentsOptionschool, commitmentsObservationschool, parentingGuidelinesOption, parentingGuidelinesObservation, studyHabitsAndRoutinesOptioncire, studyHabitsAndRoutinesObservationcire, accompanimentOptioncire, accompanimentObservationcire, rulesOption, rulesObservation, commitmentsOptioncire, commitmentsObservationcire
+function addRecommendations(guidelinesOption, guidelinesObservation, habitsAndRoutinesOption, habitsAndRoutinesObservation, studyHabitsAndRoutinesOption, studyHabitsAndRoutinesObservation, commitmentsOptionFamily, commitmentsObservationFamily, rulesWithinTheClassroomOption, rulesWithinTheClassroomObservation, rulesOutsideTheClassroomOPtion, rulesOutsideTheClassroomObservation, accompanimentOption, accompanimentObservation, commitmentsOptionSchool, commitmentsObservationSchool, parentingGuidelinesOption, parentingGuidelinesObservation, studyHabitsAndRoutinesOptionCire, studyHabitsAndRoutinesObservationCire, accompanimentOptionCire, accompanimentObservationCire, rulesOption, rulesObservation, commitmentsOptionCire, commitmentsObservationCire
 ) {
   return new Promise((resolve) => {
     const fullRecommendations = {
@@ -21,8 +21,8 @@ function addRecommendations(guidelinesOption, guidelinesObservation, habitsAndRo
         },
 
         commitments: {
-          option: commitmentsOptionfamily,
-          observation: commitmentsObservationfamily
+          option: commitmentsOptionFamily,
+          observation: commitmentsObservationFamily
         },
 
       },
@@ -43,8 +43,8 @@ function addRecommendations(guidelinesOption, guidelinesObservation, habitsAndRo
         },
 
         commitments: {
-          option: commitmentsOptionschool,
-          observation: commitmentsObservationschool
+          option: commitmentsOptionSchool,
+          observation: commitmentsObservationSchool
         }
 
       },
@@ -57,13 +57,13 @@ function addRecommendations(guidelinesOption, guidelinesObservation, habitsAndRo
         },
 
         studyHabitsAndRoutines: {
-          option: studyHabitsAndRoutinesOptioncire,
-          observation: studyHabitsAndRoutinesObservationcire
+          option: studyHabitsAndRoutinesOptionCire,
+          observation: studyHabitsAndRoutinesObservationCire
         },
 
         accompaniment: {
-          option: accompanimentOptioncire,
-          observation: accompanimentObservationcire
+          option: accompanimentOptionCire,
+          observation: accompanimentObservationCire
         },
 
         rules: {
@@ -72,8 +72,8 @@ function addRecommendations(guidelinesOption, guidelinesObservation, habitsAndRo
         },
 
         commitments: {
-          option: commitmentsOptioncire,
-          observation: commitmentsObservationcire
+          option: commitmentsOptionCire,
+          observation: commitmentsObservationCire
         }
 
       }
@@ -88,13 +88,13 @@ function getRecommendations(filterKid) {
     resolve(store.list(filterKid));
   });
 };
-function updateRecommendations(id, guidelinesOption, guidelinesObservation, habitsAndRoutinesOption, habitsAndRoutinesObservation, studyHabitsAndRoutinesOption, studyHabitsAndRoutinesObservation, commitmentsOptionfamily, commitmentsObservationfamily, rulesWithinTheClassroomOption, rulesWithinTheClassroomObservation, rulesOutsideTheClassroomOPtion, rulesOutsideTheClassroomObservation, accompanimentOption, accompanimentObservation, commitmentsOptionschool, commitmentsObservationschool, parentingGuidelinesOption, parentingGuidelinesObservation, studyHabitsAndRoutinesOptioncire, studyHabitsAndRoutinesObservationcire, accompanimentOptioncire, accompanimentObservationcire, rulesOption, rulesObservation, commitmentsOptioncire, commitmentsObservationcire) {
+function updateRecommendations(id, guidelinesOption, guidelinesObservation, habitsAndRoutinesOption, habitsAndRoutinesObservation, studyHabitsAndRoutinesOption, studyHabitsAndRoutinesObservation, commitmentsOptionFamily, commitmentsObservationFamily, rulesWithinTheClassroomOption, rulesWithinTheClassroomObservation, rulesOutsideTheClassroomOPtion, rulesOutsideTheClassroomObservation, accompanimentOption, accompanimentObservation, commitmentsOptionSchool, commitmentsObservationSchool, parentingGuidelinesOption, parentingGuidelinesObservation, studyHabitsAndRoutinesOptionCire, studyHabitsAndRoutinesObservationCire, accompanimentOptionCire, accompanimentObservationCire, rulesOption, rulesObservation, commitmentsOptionCire, commitmentsObservationCire) {
   return new Promise((resolve, reject) => {
     if (!id) {
       reject('INVALID DATA');
     };
 
-    const result = store.update(id, guidelinesOption, guidelinesObservation, habitsAndRoutinesOption, habitsAndRoutinesObservation, studyHabitsAndRoutinesOption, studyHabitsAndRoutinesObservation, commitmentsOptionfamily, commitmentsObservationfamily, rulesWithinTheClassroomOption, rulesWithinTheClassroomObservation, rulesOutsideTheClassroomOPtion, rulesOutsideTheClassroomObservation, accompanimentOption, accompanimentObservation, commitmentsOptionschool, commitmentsObservationschool, parentingGuidelinesOption, parentingGuidelinesObservation, studyHabitsAndRoutinesOptioncire, studyHabitsAndRoutinesObservationcire, accompanimentOptioncire, accompanimentObservationcire, rulesOption, rulesObservation, commitmentsOptioncire, commitmentsObservationcire);
+    const result = store.update(id, guidelinesOption, guidelinesObservation, habitsAndRoutinesOption, habitsAndRoutinesObservation, studyHabitsAndRoutinesOption, studyHabitsAndRoutinesObservation, commitmentsOptionFamily, commitmentsObservationFamily, rulesWithinTheClassroomOption, rulesWithinTheClassroomObservation, rulesOutsideTheClassroomOPtion, rulesOutsideTheClassroomObservation, accompanimentOption, accompanimentObservation, commitmentsOptionSchool, commitmentsObservationSchool, parentingGuidelinesOption, parentingGuidelinesObservation, studyHabitsAndRoutinesOptionCire, studyHabitsAndRoutinesObservationCire, accompanimentOptionCire, accompanimentObservationCire, rulesOption, rulesObservation, commitmentsOptionCire, commitmentsObservationCire);
     resolve(result);
   });
 };

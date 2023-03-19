@@ -8,7 +8,7 @@ const psychoSocialForm = require('../components/psychoSocial/network');
 const psychoMotorForm = require('../components/psychoMotor/network');
 const segForm = require('../components/segForm/network');
 const observation = require('../components/formObservation/network')
-const recommendations = require ('../components/formRecoment/network')
+const recommendations = require ('../components/formRecomend/network')
 
 
 

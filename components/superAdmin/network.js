@@ -2,17 +2,25 @@ const express = require('express');
 const router = express.Router();
 const response = require('../../network/response');
 const controller = require('./controller');
+const  sendMail  = require("../../components/superAdmin/email");
+
 
 router.post('/', function(req, res){
   const {email, password} = req.body
   controller.add(email, password)
     .then((admin) =>{
+         sendMail({
+         to: email,
+          subject: 'Subject from email',
+          body: `Su correo es: ${email} y su contraseña: ${password}`
+        });
       response.success(req, res, admin, 200);
     })
     .catch(err => {
       response.error(req, res, 'INVALID DATA', 400,err);
     });
 });
+
 
 router.put('/:id', function(req, res){
   const {password} = req.body

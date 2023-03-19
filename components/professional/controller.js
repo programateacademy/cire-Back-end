@@ -1,4 +1,5 @@
 const store = require('./store');
+// const nodemailer = require('nodemailer');
 
 function login(email, password){
   return new Promise ((resolve, reject) => {
@@ -30,6 +31,8 @@ function addProfessional(name, age, phone, occupation, email, password){
     resolve(fullProfessional);
   });
 };
+
+
 
 function getProfessional(filterProfessional) {
   return new Promise ((resolve) => {
