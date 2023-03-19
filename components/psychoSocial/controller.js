@@ -36,7 +36,7 @@ function updatePsychoSocialForm(id, needSupportTeacher, doesNotEasilyAdapt, bite
 function deletePsychoSocialForm(id){
   return new Promise ((resolve, reject) => {
     if (!id){
-      reject('INVALIDA DATA');
+      reject('INVALID DATA');
     } else {
       store.remove(id)
         .then(() => {

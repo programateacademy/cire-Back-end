@@ -23,7 +23,7 @@ function getObservation(filterKid) {
   });
 };
 
-async function updateObservation(id,  managesWeeksMonday, managesWeeksTuesday, managesWeeksWednesday, managesWeeksThursday, managesWeeksFriday, managesBehavior, beforeWeeksMonday, beforeWeeksTuesday, beforeWeeksWednesday, beforeWeeksThursday, beforeWeeksFriday, beforeBehavior, finishWeeksMonday, finishWeeksTuesday,finishWeeksWednesday, finishWeeksThursday, finishWeeksFriday, finishBehavior, runtimeWeeksMonday, runtimeWeeksTuesday, runtimeWeeksWednesday, runtimeWeeksThursday, runtimeWeeksFriday, runtimeBehavior, getsWeeksMonday, getsWeeksTuesday, getsWeeksWednesday, getsWeeksThursday, getsWeeksFriday, getsBehavior, requiresWeeksMonday, requiresWeeksTuesday, requiresWeeksWednesday, requiresWeeksThursday, requiresWeeksFriday, requiresBehavior, striveWeeksMonday, striveWeeksTuesday, striveWeeksWednesday, striveWeeksThursday, striveWeeksFriday, striveBehavior,makesWeeksMonday,makesWeeksTuesday, makesWeeksWednesday, makesWeeksThursday, makesWeeksFriday, makesBehavior, frustrationWeeksMonday, frustrationWeeksTuesday, frustrationWeeksWednesday, frustrationWeeksThursday, frustrationWeeksFriday, frustrationBehavior, ifWeeksMonday, ifWeeksTuesday, ifWeeksWednesday, ifWeeksThursday, ifWeeksFriday, ifBehavior, relatesWeeksMonday, relatesWeeksTuesday, relatesWeeksWednesday, relatesWeeksThursday,  relatesWeeksFriday, relatesBehavior, feelsWeeksMonday, feelsWeeksTuesday, feelsWeeksWednesday, feelsWeeksThursday, feelsWeeksFriday, feelsBehavior, includeWeeksMonday, includeWeeksTuesday, includeWeeksWednesday, includeWeeksThursday, includeWeeksFriday, includeBehavior, hourInital, hourFinal,
+async function updateObservation(id,  managesWeeksMonday, managesWeeksTuesday, managesWeeksWednesday, managesWeeksThursday, managesWeeksFriday, managesBehavior, beforeWeeksMonday, beforeWeeksTuesday, beforeWeeksWednesday, beforeWeeksThursday, beforeWeeksFriday, beforeBehavior, finishWeeksMonday, finishWeeksTuesday,finishWeeksWednesday, finishWeeksThursday, finishWeeksFriday, finishBehavior, runtimeWeeksMonday, runtimeWeeksTuesday, runtimeWeeksWednesday, runtimeWeeksThursday, runtimeWeeksFriday, runtimeBehavior, getsWeeksMonday, getsWeeksTuesday, getsWeeksWednesday, getsWeeksThursday, getsWeeksFriday, getsBehavior, requiresWeeksMonday, requiresWeeksTuesday, requiresWeeksWednesday, requiresWeeksThursday, requiresWeeksFriday, requiresBehavior, striveWeeksMonday, striveWeeksTuesday, striveWeeksWednesday, striveWeeksThursday, striveWeeksFriday, striveBehavior,makesWeeksMonday,makesWeeksTuesday, makesWeeksWednesday, makesWeeksThursday, makesWeeksFriday, makesBehavior, frustrationWeeksMonday, frustrationWeeksTuesday, frustrationWeeksWednesday, frustrationWeeksThursday, frustrationWeeksFriday, frustrationBehavior, ifWeeksMonday, ifWeeksTuesday, ifWeeksWednesday, ifWeeksThursday, ifWeeksFriday, ifBehavior, relatesWeeksMonday, relatesWeeksTuesday, relatesWeeksWednesday, relatesWeeksThursday,  relatesWeeksFriday, relatesBehavior, feelsWeeksMonday, feelsWeeksTuesday, feelsWeeksWednesday, feelsWeeksThursday, feelsWeeksFriday, feelsBehavior, includeWeeksMonday, includeWeeksTuesday, includeWeeksWednesday, includeWeeksThursday, includeWeeksFriday, includeBehavior, hourInitial, hourFinal,
   observation) {
   const foundObservation = await model.findById(id);
   foundObservation.planning.before_Starting_the_Task_prepare_The_material_That_you_Will_use.monday = managesWeeksMonday;
@@ -105,7 +105,7 @@ foundObservation.planning.manages_to_classify_The_step_by_step_To_develop_The_ta
   foundObservation.planning.include_accept_and_show_love_for_your_peers.thursday = includeWeeksThursday;
   foundObservation.planning.include_accept_and_show_love_for_your_peers.friday = includeWeeksFriday;
   foundObservation.planning.include_accept_and_show_love_for_your_peers.description.behavior = includeBehavior;
-  foundObservation.planning.hour.initial = hourInital;
+  foundObservation.planning.hour.initial = hourInitial;
   foundObservation.planning.hour.final = hourFinal;
   foundObservation.planning.observations = observation
   const updateObservation = {
@@ -183,12 +183,12 @@ foundObservation.planning.manages_to_classify_The_step_by_step_To_develop_The_ta
     includeWeeksMonday,
     includeWeeksTuesday,
     includeWeeksWednesday,
-     includeWeeksThursday,
-     includeWeeksFriday,
-      includeBehavior,
-      hourInital,
-       hourFinal,
-       observation
+    includeWeeksThursday,
+    includeWeeksFriday,
+    includeBehavior,
+    hourInitial,
+    hourFinal,
+    observation
   }
 
   const newObservation = await foundObservation.save(updateObservation)
@@ -203,7 +203,7 @@ async function removeObservation(id){
 module.exports = {
   add: addObservation,
   updateObservation: updateObservation,
-   remove: removeObservation,
+  remove: removeObservation,
   list: getObservation
 }
 

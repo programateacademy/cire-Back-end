@@ -43,7 +43,7 @@ router.delete('/:id', function (req, res) {
       if (deleteDiagnostic){
         response.success(req, res, `Diagnostic ${req.params.id} deleted`, 200);
       } else{
-        response.error(req, res, `The Diacnostic with id: ${req.params.id} was already deleted or does not exist`);
+        response.error(req, res, `The Diagnostic with id: ${req.params.id} was already deleted or does not exist`);
       }
     })
     .catch(err => {

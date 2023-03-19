@@ -70,7 +70,7 @@ function deleteDiagnostic(id){
 
 
 module.exports ={
- addDiagnostic,
+addDiagnostic,
 getDiagnostic,
 updateDiagnostic,
 deleteDiagnostic

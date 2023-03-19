@@ -63,10 +63,6 @@ async function updateAffective(id, q1, q2, q3, q4, q5, q6, q7, q8, q9, q10, q11,
     q16,
     q17,
     q18
-
-
-
-
   };
   const newAffective = await foundAffective.save(updateAffective);
   return newAffective;

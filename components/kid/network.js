@@ -27,7 +27,7 @@ router.get('/:id', function (req,res){
 
 router.post('/', function (req,res){
   const {name, age, sex, namAttendant, numAttendant} = req.body
-  controller.addKid(name,age, sex, namAttendant, numAttendant)
+  controller.addKid(name, age, sex, namAttendant, numAttendant)
     .then((fullKid)=>{
       response.success(req, res, fullKid, 201);
     })
