@@ -1,5 +1,6 @@
 const store = require('./store');
 
+
 function login(email, password){
   return new Promise ((resolve, reject)=>{
     if(!email || !password){
@@ -13,15 +14,18 @@ function login(email, password){
   });
 };
 
-function addAdmin(email, password){
+function addAdmin (email, password){
   return new Promise((resolve, reject) => {
     if (!email || !password){
       reject('INVALID DATA');
+
     };
-    const admin = {
+    const   admin =  {
       email: email,
-      password: password
+      password: password.passHash
     }
+
+
     resolve(store.addAdmin(admin));
   });
 };

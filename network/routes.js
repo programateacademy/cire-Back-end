@@ -12,6 +12,7 @@ const recommendations = require ('../components/formRecomend/network')
 
 
 
+
 const routes = function (server) {
   server.use('/professional', professional);
   server.use('/superAdmin', superAdmin);
@@ -23,7 +24,9 @@ const routes = function (server) {
   server.use('/psychoMotorForm', psychoMotorForm);
   server.use('/segForm', segForm );
   server.use('/observation', observation);
-  server.use('/recommendation', recommendations)
+  server.use('/recommendation', recommendations);
+
+
 };
 
 

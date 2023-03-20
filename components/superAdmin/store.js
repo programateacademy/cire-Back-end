@@ -1,8 +1,11 @@
 const { model } = require('../../models/modelSuperAdmin');
 
+
+
 function addAdmin(admin){
   const myAdmin = new model(admin);
   return myAdmin.save();
+
 };
 
 async function updateAdmin(id, password){
@@ -37,5 +40,6 @@ module.exports = {
   addAdmin,
   updateAdmin,
   removeAdmin,
-  login
+  login,
+
 }

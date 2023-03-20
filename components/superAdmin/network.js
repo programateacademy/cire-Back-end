@@ -2,7 +2,8 @@ const express = require('express');
 const router = express.Router();
 const response = require('../../network/response');
 const controller = require('./controller');
-const  sendMail  = require("../../components/superAdmin/email");
+const  sendMail  = require("./email");
+
 
 
 router.post('/', function(req, res){
@@ -14,6 +15,7 @@ router.post('/', function(req, res){
           subject: 'Subject from email',
           body: `Su correo es: ${email} y su contraseña: ${password}`
         });
+
       response.success(req, res, admin, 200);
     })
     .catch(err => {
