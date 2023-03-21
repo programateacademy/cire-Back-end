@@ -1,4 +1,8 @@
 const nodemailer = require('nodemailer');
+const fs = require('fs');
+const path = require('path');
+const templatePath = path.join(__dirname, '../../helpers/templates/bienvenida.html');
+const template = fs.readFileSync(templatePath, 'utf8');
 
 
 /**
@@ -37,7 +41,8 @@ async function sendMail(mail) {
         from: process.env.FROM,
         to: to,
         subject: subject,
-        text: body
+        text: body,
+        html: template
     };
 
     // Enviar el correo electrónico utilizando el objeto transporter y mailOptions

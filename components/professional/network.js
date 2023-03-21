@@ -50,15 +50,11 @@ router.put('/:id', function (req, res) {
 router.delete('/:id', function (req, res) {
   let id = req.params.id;
   controller.deleteProfessional(id)
-    .then((deletedProfessional) => {
-      if (deletedProfessional !== null){
-        response.success(req, res, `Professional ${req.params.id} deleted`, 200);
-      } else{
-        response.error(req, res, `The professional with id: ${req.params.id} was already deleted or does not exist`);
-      }
+    .then(() => {
+      response.success(req, res, `Professional ${req.params.id} deleted`, 200);
     })
     .catch(err => {
-      response.error(req, res, 'INTERN ERROR', 500, err);
+      response.error(req, res, `Professional with id:${id} was not found, check id or already deleted`, 404, err);
     });
 });
 

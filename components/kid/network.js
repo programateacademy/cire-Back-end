@@ -50,15 +50,11 @@ router.put('/:id', function (req, res) {
 router.delete('/:id', function (req, res) {
   let id = req.params.id;
   controller.deleteKid(id)
-    .then((deletedKid) => {
-      if (deletedKid !== null){
-        response.success(req, res, `Kid ${req.params.id} deleted`, 200);
-      } else{
-        response.error(req, res, `The kid with id: ${req.params.id} was already deleted or does not exist`);
-      }
+    .then(() => {
+      response.success(req, res, `Kid ${req.params.id} deleted`, 200);
     })
     .catch(err => {
-      response.error(req, res, 'INTERN ERROR', 500, err);
+      response.error(req, res, `Kid with id: ${id} was not found, check id or already deleted`, 404, err);
     });
 });
 

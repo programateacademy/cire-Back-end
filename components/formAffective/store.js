@@ -5,11 +5,11 @@ function addAffective(Affective) {
   myAffective.save();
 };
 
-function getAffective(filterKid){
+function getAffective(filterAffective){
   let filter = {};
   return new Promise ((resolve,reject) => {
-    if(filterKid !== null){
-      filter = {kid: filterKid};
+    if(filterAffective !== null){
+      filter = {_id: filterAffective};
     };
     model.find(filter)
       .populate('kid', {name: true, age: true, sex: true, namAttendant: true, numAttendant: true})
@@ -68,8 +68,16 @@ async function updateAffective(id, q1, q2, q3, q4, q5, q6, q7, q8, q9, q10, q11,
   return newAffective;
 };
 
+async function existDB(id){
+  const exist = await model.exists({_id: id});
+  return exist
+}
+
 async function removeAffective(id) {
-  return await model.findByIdAndDelete(id);
+  if (await existDB(id)){
+    return await model.findByIdAndDelete(id);
+  }
+  return false;
 };
 
 module.exports = {

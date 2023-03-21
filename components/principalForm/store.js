@@ -6,11 +6,11 @@ async function addPrincipal(form){
 
 };
 
-function getPrincipal(filterKid){
+function getPrincipal(filterPrincipal){
   let filter = {};
   return new Promise ((resolve, reject) => {
-    if(filterKid !== null){
-      filter = {kid: filterKid};
+    if(filterPrincipal !== null){
+      filter = {_id: filterPrincipal};
     };
     model.find(filter)
       .populate('kid', {name: true, age: true, sex: true, namAttendant: true, numAttendant:true})
@@ -28,7 +28,7 @@ async function updatePrincipal(id, schoolDescription, schoolAction, behaviorDesc
   const foundPrincipal = await model.findById(id);
     foundPrincipal.coexistence.schoolBehavior.description = schoolDescription;
     foundPrincipal.coexistence.schoolBehavior.actionPlan = schoolAction;
-    foundPrincipal.coexistence.behaviorAtHome = behaviorDescription;
+    foundPrincipal.coexistence.behaviorAtHome.description = behaviorDescription;
     foundPrincipal.coexistence.behaviorAtHome.actionPlan = behaviorAction;
     foundPrincipal.coexistence.relationships.description = relationDescription;
     foundPrincipal.coexistence.relationships.actionPlan = relationACtion;
@@ -64,8 +64,18 @@ async function updatePrincipal(id, schoolDescription, schoolAction, behaviorDesc
     return newPrincipal;
 };
 
+async function existDB(id) {
+  const exist = await model.exists({
+    _id: id
+  });
+  return exist
+};
+
 async function removePrincipal(id){
-  return await model.findByIdAndDelete(id);
+  if (await existDB(id)){
+    return await model.findByIdAndDelete(id);
+  }
+  return false;
 };
 
 module.exports = {

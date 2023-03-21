@@ -48,9 +48,9 @@ function addSegForm(parentingOption, parentingObservations, followRulesClassOpti
   });
 };
 
-function getSegForm(filterKid){
+function getSegForm(filterSeg){
   return new Promise((resolve) => {
-    resolve(store.list(filterKid));
+    resolve(store.list(filterSeg));
   });
 };
 
@@ -70,7 +70,10 @@ function deleteSegForm(id){
       reject('INVALID DATA');
     } else {
       store.remove(id)
-        .then(() => {
+        .then((data) => {
+          if(!data){
+            reject('Seg form was not found, check id or already deleted');
+          };
           resolve();
         })
         .catch(err => {

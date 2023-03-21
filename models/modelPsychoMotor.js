@@ -7,7 +7,8 @@ const mySchema = new schema(
   {
     kid: {
       type: schema.ObjectId,
-      ref: 'kid'
+      ref: 'kid',
+      required: true
     },
 
     moves_awkwardly_and_falls_easily: String,

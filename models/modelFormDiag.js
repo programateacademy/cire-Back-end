@@ -7,10 +7,10 @@ const mySchema = new schema(
   {
     kid: {
       type: schema.ObjectId,
-      ref: 'kid'
+      ref: 'kid',
     },
 
-    
+
     q1: String,
     q2: String,
     q3: String,
@@ -35,10 +35,10 @@ const mySchema = new schema(
     q22: String,
 
 
-      
+
 
     },
-  
+
 
   {
     timestamps: true

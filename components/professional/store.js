@@ -47,8 +47,16 @@ async function updateProfessional(id, name, age, phone, occupation, email, passw
   return newProfessional;
 };
 
+async function existDB(id){
+  const exist = await model.exists({_id: id});
+  return exist
+}
+
 async function removeProfessional(id){
-  return await model.findByIdAndDelete(id);
+  if (await existDB(id)){
+    return await model.findByIdAndDelete(id);
+  }
+  return false;
 };
 
 async function login(credentials) {

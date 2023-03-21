@@ -30,9 +30,9 @@ function addPsychoMotor(fallsEasily, walkWithDifficulty, feetRequiresSupport, st
   });
 };
 
-function getPsychoMotor(filterKid){
+function getPsychoMotor(filterPsychoMotor){
   return new Promise((resolve) => {
-    resolve(store.list(filterKid));
+    resolve(store.list(filterPsychoMotor));
   });
 };
 
@@ -50,9 +50,13 @@ function deletePsychoMotor(id){
   return new Promise ((resolve, reject) => {
     if (!id){
       reject('INVALID DATA');
+      return false;
     } else {
       store.remove(id)
-        .then(() => {
+        .then((data) => {
+          if(!data){
+            reject('PsychoMotor form not found, check id or already deleted')
+          }
           resolve();
         })
         .catch(err => {

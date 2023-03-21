@@ -44,7 +44,10 @@ function deleteKid(id){
       reject('INVALID DATA');
     } else{
       store.removeKid(id)
-        .then(() => {
+        .then((data) => {
+          if(!data){
+            reject('Kid was not found, check id or already deleted')
+          }
           resolve();
         })
         .catch(err => {

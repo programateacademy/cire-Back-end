@@ -5,11 +5,11 @@ function addPsychoSocial(psychoSocialForm){
   myPsychoSocialForm.save();
 };
 
-function getPsychoSocial(filterKid){
+function getPsychoSocial(filterPsychoSocial){
   let filter = {};
   return new Promise ((resolve,reject) => {
-    if(filterKid !== null){
-      filter = {kid: filterKid};
+    if(filterPsychoSocial !== null){
+      filter = {_id: filterPsychoSocial};
     };
     model.find(filter)
       .populate('kid', {name: true, age: true, sex: true, namAttendant: true, numAttendant: true})
@@ -47,8 +47,16 @@ async function updatePsychoSocial(id, needSupportTeacher, doesNotEasilyAdapt, bi
   return newPsychoSocial;
 }
 
+async function existDB(id){
+  const exist = await model.exists({_id: id});
+  return exist;
+};
+
 async function removePsychoSocial(id){
-  return await model.findByIdAndDelete(id);
+  if (await existDB(id)){
+    return await model.findByIdAndDelete(id);
+  }
+  return false;
 };
 
 module.exports = {

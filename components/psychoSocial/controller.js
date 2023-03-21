@@ -17,9 +17,9 @@ function addPsychoSocial(needSupportTeacher, doesNotEasilyAdapt, bitesMistreats,
   });
 };
 
-function getPsychoSocialForm(filterKid){
+function getPsychoSocialForm(filterPsychoSocial){
   return new Promise((resolve) => {
-    resolve(store.list(filterKid));
+    resolve(store.list(filterPsychoSocial));
   });
 };
 
@@ -28,7 +28,7 @@ function updatePsychoSocialForm(id, needSupportTeacher, doesNotEasilyAdapt, bite
     if(!id){
       reject('INVALID DATA');
     };
-    const result = store.update(needSupportTeacher, doesNotEasilyAdapt, bitesMistreats, maladjustment, cryAnything, doesNotExpressFeelings, doesNotPlayOther, doesNotInteractAdults);
+    const result = store.update(id, needSupportTeacher, doesNotEasilyAdapt, bitesMistreats, maladjustment, cryAnything, doesNotExpressFeelings, doesNotPlayOther, doesNotInteractAdults);
     resolve(result);
   });
 };
@@ -39,7 +39,10 @@ function deletePsychoSocialForm(id){
       reject('INVALID DATA');
     } else {
       store.remove(id)
-        .then(() => {
+        .then((data) => {
+          if (!data){
+            reject('Psycho social form not found, check id or already deleted');
+          };
           resolve();
         })
         .catch(err => {

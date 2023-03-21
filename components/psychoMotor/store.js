@@ -5,11 +5,11 @@ function addPsychoMotor(psychoMotorForm){
   myPsychoMotorForm.save();
 };
 
-function getPsychoMotor(filterKid){
+function getPsychoMotor(filterPsychoMotor){
   let filter = {};
   return new Promise ((resolve, reject) => {
-    if (filterKid !== null){
-      filter = {kid: filterKid};
+    if (filterPsychoMotor !== null){
+      filter = {_id: filterPsychoMotor};
     };
     model.find(filter)
       .populate('kid', {name: true, age: true, sex: true, namAttendant: true, numAttendant: true})
@@ -53,8 +53,16 @@ async function updatePsychoMotor(id, fallsEasily, walkWithDifficulty, feetRequir
   return newPsychoMotor;
 };
 
+async function existDB(id){
+  const exist = await model.exists({_id: id});
+  return exist
+}
+
 async function removePsychoMotor(id){
-  return await model.findByIdAndDelete(id);
+  if (await existDB(id)){
+    return await model.findByIdAndDelete(id);
+  }
+  return false;
 };
 
 module.exports = {

@@ -5,11 +5,11 @@ function addSegForm(segForm){
   mySegForm.save();
 };
 
-function getSegForm(filterKid){
+function getSegForm(filterSeg){
   let filter = {};
   return new Promise((resolve, reject) => {
-    if (filterKid !== null){
-      filter = {kid: filterKid};
+    if (filterSeg !== null){
+      filter = {_id: filterSeg};
     };
     model.find(filter)
       .populate('kid', {name: true, age: true, sex:true, namAttendant: true, numAttendant: true})
@@ -52,8 +52,16 @@ async function updateSegForm(id, parentingOption, parentingObservations, followR
   return newSegForm;
 };
 
+async function existDB(id){
+  const exist = await model.exists({_id: id});
+  return exist;
+};
+
 async function removeSegForm(id){
-  return await model.findByIdAndDelete(id);
+  if(existDB(id)){
+    return await model.findByIdAndDelete(id);
+  };
+  return false;
 };
 
 module.exports = {

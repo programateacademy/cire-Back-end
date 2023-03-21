@@ -1,212 +1,207 @@
-const store = require ('./store')
+const store = require('./store')
 
-
-
-function addObservation( managesWeeksMonday, managesWeeksTuesday, managesWeeksWednesday, managesWeeksThursday, managesWeeksFriday, managesBehavior, beforeWeeksMonday, beforeWeeksTuesday, beforeWeeksWednesday, beforeWeeksThursday, beforeWeeksFriday, beforeBehavior, finishWeeksMonday, finishWeeksTuesday,finishWeeksWednesday, finishWeeksThursday, finishWeeksFriday, finishBehavior, runtimeWeeksMonday, runtimeWeeksTuesday, runtimeWeeksWednesday, runtimeWeeksThursday, runtimeWeeksFriday, runtimeBehavior, getsWeeksMonday, getsWeeksTuesday, getsWeeksWednesday, getsWeeksThursday, getsWeeksFriday, getsBehavior, requiresWeeksMonday, requiresWeeksTuesday, requiresWeeksWednesday, requiresWeeksThursday, requiresWeeksFriday, requiresBehavior, striveWeeksMonday, striveWeeksTuesday, striveWeeksWednesday, striveWeeksThursday, striveWeeksFriday, striveBehavior,makesWeeksMonday,makesWeeksTuesday, makesWeeksWednesday, makesWeeksThursday, makesWeeksFriday, makesBehavior, frustrationWeeksMonday, frustrationWeeksTuesday, frustrationWeeksWednesday, frustrationWeeksThursday, frustrationWeeksFriday, frustrationBehavior, ifWeeksMonday, ifWeeksTuesday, ifWeeksWednesday, ifWeeksThursday, ifWeeksFriday, ifBehavior, relatesWeeksMonday, relatesWeeksTuesday, relatesWeeksWednesday, relatesWeeksThursday,  relatesWeeksFriday, relatesBehavior, feelsWeeksMonday, feelsWeeksTuesday, feelsWeeksWednesday, feelsWeeksThursday, feelsWeeksFriday, feelsBehavior, includeWeeksMonday, includeWeeksTuesday, includeWeeksWednesday, includeWeeksThursday, includeWeeksFriday, includeBehavior, hourInitial, hourFinal,
+function addObservation(kid, managesWeeksMonday, managesWeeksTuesday, managesWeeksWednesday, managesWeeksThursday, managesWeeksFriday, managesBehavior, beforeWeeksMonday, beforeWeeksTuesday, beforeWeeksWednesday, beforeWeeksThursday, beforeWeeksFriday, beforeBehavior, finishWeeksMonday, finishWeeksTuesday, finishWeeksWednesday, finishWeeksThursday, finishWeeksFriday, finishBehavior, runtimeWeeksMonday, runtimeWeeksTuesday, runtimeWeeksWednesday, runtimeWeeksThursday, runtimeWeeksFriday, runtimeBehavior, getsWeeksMonday, getsWeeksTuesday, getsWeeksWednesday, getsWeeksThursday, getsWeeksFriday, getsBehavior, requiresWeeksMonday, requiresWeeksTuesday, requiresWeeksWednesday, requiresWeeksThursday, requiresWeeksFriday, requiresBehavior, striveWeeksMonday, striveWeeksTuesday, striveWeeksWednesday, striveWeeksThursday, striveWeeksFriday, striveBehavior, makesWeeksMonday, makesWeeksTuesday, makesWeeksWednesday, makesWeeksThursday, makesWeeksFriday, makesBehavior, frustrationWeeksMonday, frustrationWeeksTuesday, frustrationWeeksWednesday, frustrationWeeksThursday, frustrationWeeksFriday, frustrationBehavior, ifWeeksMonday, ifWeeksTuesday, ifWeeksWednesday, ifWeeksThursday, ifWeeksFriday, ifBehavior, relatesWeeksMonday, relatesWeeksTuesday, relatesWeeksWednesday, relatesWeeksThursday, relatesWeeksFriday, relatesBehavior, feelsWeeksMonday, feelsWeeksTuesday, feelsWeeksWednesday, feelsWeeksThursday, feelsWeeksFriday, feelsBehavior, includeWeeksMonday, includeWeeksTuesday, includeWeeksWednesday, includeWeeksThursday, includeWeeksFriday, includeBehavior, hourInitial, hourFinal,
   observation
-  ) {
+) {
   return new Promise((resolve) => {
     const fullObservation = {
-      planning: {
-        manages_to_classify_The_step_by_step_To_develop_The_task: {
-          monday: managesWeeksMonday,
-          tuesday: managesWeeksTuesday,
-          wednesday: managesWeeksWednesday,
-          thursday: managesWeeksThursday,
-          friday: managesWeeksFriday,
+      kid: kid,
+      manages_to_classify_The_step_by_step_To_develop_The_task: {
+        monday: managesWeeksMonday,
+        tuesday: managesWeeksTuesday,
+        wednesday: managesWeeksWednesday,
+        thursday: managesWeeksThursday,
+        friday: managesWeeksFriday,
+        description: {
+          behavior: managesBehavior
+        }
+      },
 
-          description: {
-            behavior: managesBehavior
-          }
-        },
+      before_Starting_the_Task_prepare_The_material_That_you_Will_use: {
+        monday: beforeWeeksMonday,
+        tuesday: beforeWeeksTuesday,
+        wednesday: beforeWeeksWednesday,
+        thursday: beforeWeeksThursday,
+        friday: beforeWeeksFriday,
+        description: {
+          behavior: beforeBehavior
+        }
+      },
 
-        before_Starting_the_Task_prepare_The_material_That_you_Will_use: {
-          monday: beforeWeeksMonday,
-          tuesday: beforeWeeksTuesday,
-          wednesday: beforeWeeksWednesday,
-          thursday: beforeWeeksThursday,
-          friday: beforeWeeksFriday,
+      finish_the_task_I_started: {
+        monday: finishWeeksMonday,
+        tuesday: finishWeeksTuesday,
+        wednesday: finishWeeksWednesday,
+        thursday: finishWeeksThursday,
+        friday: finishWeeksFriday,
 
-          description: {
-            behavior: beforeBehavior
-          }
-        },
+        description: {
+          behavior: finishBehavior
+        }
+      },
 
-        finish_the_task_I_started: {
-          monday: finishWeeksMonday,
-          tuesday: finishWeeksTuesday,
-          wednesday: finishWeeksWednesday,
-          thursday: finishWeeksThursday,
-          friday: finishWeeksFriday,
+      runtime_is_adequate_for_the_task: {
+        monday: runtimeWeeksMonday,
+        tuesday: runtimeWeeksTuesday,
+        wednesday: runtimeWeeksWednesday,
+        thursday: runtimeWeeksThursday,
+        friday: runtimeWeeksFriday,
 
-          description: {
-            behavior: finishBehavior
-          }
-        },
+        description: {
+          behavior: runtimeBehavior
+        }
+      },
 
-        runtime_is_adequate_for_the_task: {
-          monday: runtimeWeeksMonday,
-          tuesday: runtimeWeeksTuesday,
-          wednesday: runtimeWeeksWednesday,
-          thursday: runtimeWeeksThursday,
-          friday: runtimeWeeksFriday,
+      gets_distracted_while_performing_the_task: {
+        monday: getsWeeksMonday,
+        tuesday: getsWeeksTuesday,
+        wednesday: getsWeeksWednesday,
+        thursday: getsWeeksThursday,
+        friday: getsWeeksFriday,
 
-          description: {
-            behavior: runtimeBehavior
-          }
-        },
+        description: {
+          behavior: getsBehavior
+        }
+      },
 
-        gets_distracted_while_performing_the_task: {
-          monday: getsWeeksMonday,
-          tuesday: getsWeeksTuesday,
-          wednesday: getsWeeksWednesday,
-          thursday: getsWeeksThursday,
-          friday: getsWeeksFriday,
+      requires_reinforcement_in_the_execution_of_an_instruction: {
+        monday: requiresWeeksMonday,
+        tuesday: requiresWeeksTuesday,
+        wednesday: requiresWeeksWednesday,
+        thursday: requiresWeeksThursday,
+        friday: requiresWeeksFriday,
 
-          description: {
-            behavior: getsBehavior
-          }
-        },
+        description: {
+          behavior: requiresBehavior
+        }
+      },
 
-        requires_reinforcement_in_the_execution_of_an_instruction: {
-          monday: requiresWeeksMonday,
-          tuesday: requiresWeeksTuesday,
-          wednesday: requiresWeeksWednesday,
-          thursday: requiresWeeksThursday,
-          friday: requiresWeeksFriday,
+      strive_to_hand_in_homework_with_good_presentation: {
+        monday: striveWeeksMonday,
+        tuesday: striveWeeksTuesday,
+        wednesday: striveWeeksWednesday,
+        thursday: striveWeeksThursday,
+        friday: striveWeeksFriday,
 
-          description: {
-            behavior: requiresBehavior
-          }
-        },
+        description: {
+          behavior: striveBehavior
+        }
+      },
 
-        strive_to_hand_in_homework_with_good_presentation: {
-          monday: striveWeeksMonday,
-          tuesday: striveWeeksTuesday,
-          wednesday: striveWeeksWednesday,
-          thursday: striveWeeksThursday,
-          friday: striveWeeksFriday,
+      makes_adequate_use_of_the_space_stipulated_for_the_task: {
+        monday: makesWeeksMonday,
+        tuesday: makesWeeksTuesday,
+        wednesday: makesWeeksWednesday,
+        thursday: makesWeeksThursday,
+        friday: makesWeeksFriday,
 
-          description: {
-            behavior: striveBehavior
-          }
-        },
+        description: {
+          behavior: makesBehavior
+        }
+      },
 
-        makes_adequate_use_of_the_space_stipulated_for_the_task: {
-          monday: makesWeeksMonday,
-          tuesday: makesWeeksTuesday,
-          wednesday: makesWeeksWednesday,
-          thursday: makesWeeksThursday,
-          friday: makesWeeksFriday,
+      frustration_tolerance_or_recognition_of_success_is_evident: {
+        monday: frustrationWeeksMonday,
+        tuesday: frustrationWeeksTuesday,
+        wednesday: frustrationWeeksWednesday,
+        thursday: frustrationWeeksThursday,
+        friday: frustrationWeeksFriday,
 
-          description: {
-            behavior: makesBehavior
-          }
-        },
+        description: {
+          behavior: frustrationBehavior
+        }
+      },
 
-        frustration_tolerance_or_recognition_of_success_is_evident: {
-          monday: frustrationWeeksMonday,
-          tuesday: frustrationWeeksTuesday,
-          wednesday: frustrationWeeksWednesday,
-          thursday: frustrationWeeksThursday,
-          friday: frustrationWeeksFriday,
+      if_you_are_from_the_province_keep_your_dialect: {
+        monday: ifWeeksMonday,
+        tuesday: ifWeeksTuesday,
+        wednesday: ifWeeksWednesday,
+        thursday: ifWeeksThursday,
+        friday: ifWeeksFriday,
 
-          description: {
-            behavior: frustrationBehavior
-          }
-        },
+        description: {
+          behavior: ifBehavior
+        }
+      },
 
-        if_you_are_from_the_province_keep_your_dialect: {
-          monday: ifWeeksMonday,
-          tuesday: ifWeeksTuesday,
-          wednesday: ifWeeksWednesday,
-          thursday: ifWeeksThursday,
-          friday: ifWeeksFriday,
+      relates_to_other_children_with_notable_differences: {
+        monday: relatesWeeksMonday,
+        tuesday: relatesWeeksTuesday,
+        wednesday: relatesWeeksWednesday,
+        thursday: relatesWeeksThursday,
+        friday: relatesWeeksFriday,
 
-          description: {
-            behavior: ifBehavior
-          }
-        },
+        description: {
+          behavior: relatesBehavior
+        }
+      },
 
-        relates_to_other_children_with_notable_differences: {
-          monday: relatesWeeksMonday,
-          tuesday: relatesWeeksTuesday,
-          wednesday: relatesWeeksWednesday,
-          thursday: relatesWeeksThursday,
-          friday: relatesWeeksFriday,
+      feels_included_accepted_and_loved_with_peers: {
+        monday: feelsWeeksMonday,
+        tuesday: feelsWeeksTuesday,
+        wednesday: feelsWeeksWednesday,
+        thursday: feelsWeeksThursday,
+        friday: feelsWeeksFriday,
 
-          description: {
-            behavior: relatesBehavior
-          }
-        },
+        description: {
+          behavior: feelsBehavior
+        }
+      },
 
-        feels_included_accepted_and_loved_with_peers: {
-          monday: feelsWeeksMonday,
-          tuesday: feelsWeeksTuesday,
-          wednesday: feelsWeeksWednesday,
-          thursday: feelsWeeksThursday,
-          friday: feelsWeeksFriday,
+      include_accept_and_show_love_for_your_peers: {
+        monday: includeWeeksMonday,
+        tuesday: includeWeeksTuesday,
+        wednesday: includeWeeksWednesday,
+        thursday: includeWeeksThursday,
+        friday: includeWeeksFriday,
 
-          description: {
-            behavior: feelsBehavior
-          }
-        },
-
-        include_accept_and_show_love_for_your_peers: {
-          monday: includeWeeksMonday,
-          tuesday: includeWeeksTuesday,
-          wednesday: includeWeeksWednesday,
-          thursday: includeWeeksThursday,
-          friday: includeWeeksFriday,
-
-          description: {
-            behavior: includeBehavior
-          }
+        description: {
+          behavior: includeBehavior
+        }
 
 
-        },
+      },
 
-        hour: {
-          initial:hourInitial,
-          final: hourFinal
-        },
+      hour: {
+        initial: hourInitial,
+        final: hourFinal
+      },
 
-        observations: observation
+      observations: observation
+  }
 
-      }
-
-    }
-
-      store.add(fullObservation);
+    store.add(fullObservation);
     resolve(fullObservation);
   });
 };
 
-function getObservation(filterKid){
-  return new Promise ((resolve) => {
-    resolve(store.list(filterKid));
+function getObservation(filterObservation) {
+  return new Promise((resolve) => {
+    resolve(store.list(filterObservation));
   });
 };
 
-function updateObservation( id, managesWeeksMonday, managesWeeksTuesday, managesWeeksWednesday, managesWeeksThursday, managesWeeksFriday, managesBehavior, beforeWeeksMonday, beforeWeeksTuesday, beforeWeeksWednesday, beforeWeeksThursday, beforeWeeksFriday, beforeBehavior, finishWeeksMonday, finishWeeksTuesday,finishWeeksWednesday, finishWeeksThursday, finishWeeksFriday, finishBehavior, runtimeWeeksMonday, runtimeWeeksTuesday, runtimeWeeksWednesday, runtimeWeeksThursday, runtimeWeeksFriday, runtimeBehavior, getsWeeksMonday, getsWeeksTuesday, getsWeeksWednesday, getsWeeksThursday, getsWeeksFriday, getsBehavior, requiresWeeksMonday, requiresWeeksTuesday, requiresWeeksWednesday, requiresWeeksThursday, requiresWeeksFriday, requiresBehavior, striveWeeksMonday, striveWeeksTuesday, striveWeeksWednesday, striveWeeksThursday, striveWeeksFriday, striveBehavior,makesWeeksMonday,makesWeeksTuesday, makesWeeksWednesday, makesWeeksThursday, makesWeeksFriday, makesBehavior, frustrationWeeksMonday, frustrationWeeksTuesday, frustrationWeeksWednesday, frustrationWeeksThursday, frustrationWeeksFriday, frustrationBehavior, ifWeeksMonday, ifWeeksTuesday, ifWeeksWednesday, ifWeeksThursday, ifWeeksFriday, ifBehavior, relatesWeeksMonday, relatesWeeksTuesday, relatesWeeksWednesday, relatesWeeksThursday,  relatesWeeksFriday, relatesBehavior, feelsWeeksMonday, feelsWeeksTuesday, feelsWeeksWednesday, feelsWeeksThursday, feelsWeeksFriday, feelsBehavior, includeWeeksMonday, includeWeeksTuesday, includeWeeksWednesday, includeWeeksThursday, includeWeeksFriday, includeBehavior, hourInitial, hourFinal,
+function updateObservation(id, managesWeeksMonday, managesWeeksTuesday, managesWeeksWednesday, managesWeeksThursday, managesWeeksFriday, managesBehavior, beforeWeeksMonday, beforeWeeksTuesday, beforeWeeksWednesday, beforeWeeksThursday, beforeWeeksFriday, beforeBehavior, finishWeeksMonday, finishWeeksTuesday, finishWeeksWednesday, finishWeeksThursday, finishWeeksFriday, finishBehavior, runtimeWeeksMonday, runtimeWeeksTuesday, runtimeWeeksWednesday, runtimeWeeksThursday, runtimeWeeksFriday, runtimeBehavior, getsWeeksMonday, getsWeeksTuesday, getsWeeksWednesday, getsWeeksThursday, getsWeeksFriday, getsBehavior, requiresWeeksMonday, requiresWeeksTuesday, requiresWeeksWednesday, requiresWeeksThursday, requiresWeeksFriday, requiresBehavior, striveWeeksMonday, striveWeeksTuesday, striveWeeksWednesday, striveWeeksThursday, striveWeeksFriday, striveBehavior, makesWeeksMonday, makesWeeksTuesday, makesWeeksWednesday, makesWeeksThursday, makesWeeksFriday, makesBehavior, frustrationWeeksMonday, frustrationWeeksTuesday, frustrationWeeksWednesday, frustrationWeeksThursday, frustrationWeeksFriday, frustrationBehavior, ifWeeksMonday, ifWeeksTuesday, ifWeeksWednesday, ifWeeksThursday, ifWeeksFriday, ifBehavior, relatesWeeksMonday, relatesWeeksTuesday, relatesWeeksWednesday, relatesWeeksThursday, relatesWeeksFriday, relatesBehavior, feelsWeeksMonday, feelsWeeksTuesday, feelsWeeksWednesday, feelsWeeksThursday, feelsWeeksFriday, feelsBehavior, includeWeeksMonday, includeWeeksTuesday, includeWeeksWednesday, includeWeeksThursday, includeWeeksFriday, includeBehavior, hourInitial, hourFinal,
   observation) {
-return new Promise ((resolve, reject) => {
-  if(!id){
-    reject ('INVALID DATA');
-  };
-  const result = store.update(id, managesWeeksMonday, managesWeeksTuesday, managesWeeksWednesday, managesWeeksThursday, managesWeeksFriday, managesBehavior, beforeWeeksMonday, beforeWeeksTuesday, beforeWeeksWednesday, beforeWeeksThursday, beforeWeeksFriday, beforeBehavior, finishWeeksMonday, finishWeeksTuesday,finishWeeksWednesday, finishWeeksThursday, finishWeeksFriday, finishBehavior, runtimeWeeksMonday, runtimeWeeksTuesday, runtimeWeeksWednesday, runtimeWeeksThursday, runtimeWeeksFriday, runtimeBehavior, getsWeeksMonday, getsWeeksTuesday, getsWeeksWednesday, getsWeeksThursday, getsWeeksFriday, getsBehavior, requiresWeeksMonday, requiresWeeksTuesday, requiresWeeksWednesday, requiresWeeksThursday, requiresWeeksFriday, requiresBehavior, striveWeeksMonday, striveWeeksTuesday, striveWeeksWednesday, striveWeeksThursday, striveWeeksFriday, striveBehavior,makesWeeksMonday,makesWeeksTuesday, makesWeeksWednesday, makesWeeksThursday, makesWeeksFriday, makesBehavior, frustrationWeeksMonday, frustrationWeeksTuesday, frustrationWeeksWednesday, frustrationWeeksThursday, frustrationWeeksFriday, frustrationBehavior, ifWeeksMonday, ifWeeksTuesday, ifWeeksWednesday, ifWeeksThursday, ifWeeksFriday, ifBehavior, relatesWeeksMonday, relatesWeeksTuesday, relatesWeeksWednesday, relatesWeeksThursday,  relatesWeeksFriday, relatesBehavior, feelsWeeksMonday, feelsWeeksTuesday, feelsWeeksWednesday, feelsWeeksThursday, feelsWeeksFriday, feelsBehavior, includeWeeksMonday, includeWeeksTuesday, includeWeeksWednesday, includeWeeksThursday, includeWeeksFriday, includeBehavior, hourInitial, hourFinal,
-  observation);
-  resolve(result)
-});
+  return new Promise((resolve, reject) => {
+    if (!id) {
+      reject('INVALID DATA');
+    };
+    const result = store.updateObservation(id, managesWeeksMonday, managesWeeksTuesday, managesWeeksWednesday, managesWeeksThursday, managesWeeksFriday, managesBehavior, beforeWeeksMonday, beforeWeeksTuesday, beforeWeeksWednesday, beforeWeeksThursday, beforeWeeksFriday, beforeBehavior, finishWeeksMonday, finishWeeksTuesday, finishWeeksWednesday, finishWeeksThursday, finishWeeksFriday, finishBehavior, runtimeWeeksMonday, runtimeWeeksTuesday, runtimeWeeksWednesday, runtimeWeeksThursday, runtimeWeeksFriday, runtimeBehavior, getsWeeksMonday, getsWeeksTuesday, getsWeeksWednesday, getsWeeksThursday, getsWeeksFriday, getsBehavior, requiresWeeksMonday, requiresWeeksTuesday, requiresWeeksWednesday, requiresWeeksThursday, requiresWeeksFriday, requiresBehavior, striveWeeksMonday, striveWeeksTuesday, striveWeeksWednesday, striveWeeksThursday, striveWeeksFriday, striveBehavior, makesWeeksMonday, makesWeeksTuesday, makesWeeksWednesday, makesWeeksThursday, makesWeeksFriday, makesBehavior, frustrationWeeksMonday, frustrationWeeksTuesday, frustrationWeeksWednesday, frustrationWeeksThursday, frustrationWeeksFriday, frustrationBehavior, ifWeeksMonday, ifWeeksTuesday, ifWeeksWednesday, ifWeeksThursday, ifWeeksFriday, ifBehavior, relatesWeeksMonday, relatesWeeksTuesday, relatesWeeksWednesday, relatesWeeksThursday, relatesWeeksFriday, relatesBehavior, feelsWeeksMonday, feelsWeeksTuesday, feelsWeeksWednesday, feelsWeeksThursday, feelsWeeksFriday, feelsBehavior, includeWeeksMonday, includeWeeksTuesday, includeWeeksWednesday, includeWeeksThursday, includeWeeksFriday, includeBehavior, hourInitial, hourFinal, observation);
+    resolve(result)
+  });
 };
 
-function deleteObservation(id){
-  return new Promise ((resolve, reject) => {
-    if(!id){
+function deleteObservation(id) {
+  return new Promise((resolve, reject) => {
+    if (!id) {
       reject('INVALID DATA');
-    } else{
+    } else {
       store.remove(id)
-        .then(() => {
+        .then((data) => {
+          if (!data){
+            reject('Observation form not found, check id or already deleted');
+          }
           resolve();
         })
         .catch(err => {
@@ -219,8 +214,8 @@ function deleteObservation(id){
 
 
 module.exports = {
-addObservation,
-getObservation,
-updateObservation,
-deleteObservation
+  addObservation,
+  getObservation,
+  updateObservation,
+  deleteObservation
 }

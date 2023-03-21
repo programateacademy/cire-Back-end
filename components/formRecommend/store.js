@@ -5,11 +5,11 @@ function addRecommendations(recommend) {
   myRecommend.save();
 };
 
-function getRecommendations(filterKid) {
+function getRecommendations(filterRecommend) {
   let filter = {};
   return new Promise((resolve, reject) => {
-    if (filterKid !== null) {
-      filter = { kid: filterKid };
+    if (filterRecommend !== null) {
+      filter = { _id: filterRecommend };
     };
     model.find(filter)
       .populate('kid', { name: true, age: true, sex: true, namAttendant: true, numAttendant: true })
@@ -71,8 +71,17 @@ async function updateRecommendations(id, guidelinesOption, guidelinesObservation
   return newRecommendations;
 
 };
+
+async function existDB(id){
+  const exist = await model.exists({_id: id});
+  return exist;
+};
+
 async function removeRecommendations(id) {
-  return await model.findByIdAndDelete(id);
+  if (await existDB(id)){
+    return await model.findByIdAndDelete(id);
+  }
+  return false;
 };
 
 module.exports = {

@@ -7,7 +7,8 @@ const mySchema = new schema(
   {
     kid: {
       type: schema.ObjectId,
-      ref: 'kid'
+      ref: 'kid',
+      required: true
     },
 
     he_needs_a_lot_of_support_from_his_teacher: String,

@@ -61,7 +61,10 @@ function deleteProfessional(id){
       reject('INVALID DATA');
     } else{
       store.remove(id)
-        .then(() => {
+        .then((data) => {
+          if(!data){
+            reject('Professional not found, check id or already deleted');
+          };
           resolve();
         })
         .catch(err => {

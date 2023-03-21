@@ -4,8 +4,8 @@ const controller = require('./controller');
 const response = require('../../network/response');
 
 router.get('/', function (req, res){
-  const filterKid = req.query.kid || null;
-  controller.getPsychoSocialForm(filterKid)
+  const filterPsychoSocial = req.query.id || null;
+  controller.getPsychoSocialForm(filterPsychoSocial)
     .then((psychoSocialForm) => {
       response.success(req, res, psychoSocialForm, 200);
     })
@@ -39,15 +39,11 @@ router.put('/:id', function (req, res) {
 router.delete('/:id', function (req, res) {
   let id = req.params.id;
   controller.deletePsychoSocialForm(id)
-    .then((deletedForm) => {
-      if (deletedForm !== null){
-        response.success(req, res, `Psychosocial form ${req.params.id} deleted`, 200);
-      } else{
-        response.error(req, res, `The form with id: ${req.params.id} was already deleted or does not exist`);
-      }
+    .then(() => {
+      response.success(req, res, `Psychosocial form ${req.params.id} deleted`, 200);
     })
     .catch(err => {
-      response.error(req, res, 'INTERN ERROR', 500, err);
+      response.error(req, res, `Psychosocial form not found, check id or already deleted`, 404, err);
     });
 });
 

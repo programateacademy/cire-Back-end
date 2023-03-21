@@ -1,8 +1,9 @@
 const store = require('./store')
 
-function addAffective(q1, q2, q3, q4, q5, q6, q7, q8, q9, q10, q11, q12, q13, q14, q15, q16, q17, q18) {
+function addAffective(kid, q1, q2, q3, q4, q5, q6, q7, q8, q9, q10, q11, q12, q13, q14, q15, q16, q17, q18) {
   return new Promise((resolve) => {
     const fullAffective = {
+      kid: kid,
       q1: q1,
       q2: q2,
       q3: q3,
@@ -27,9 +28,9 @@ function addAffective(q1, q2, q3, q4, q5, q6, q7, q8, q9, q10, q11, q12, q13, q1
   });
 };
 
-function getAffective(filterKid) {
+function getAffective(filterAffective) {
   return new Promise ((resolve) => {
-    resolve(store.list(filterKid));
+    resolve(store.list(filterAffective));
   });
 };
 
@@ -47,7 +48,10 @@ function deleteAffective(id){
       reject('INVALID DATA');
     } else{
       store.remove(id)
-        .then(() => {
+        .then((data) => {
+          if (!data){
+            reject('Affective form not found, check id or already deleted')
+          }
           resolve();
         })
         .catch(err => {

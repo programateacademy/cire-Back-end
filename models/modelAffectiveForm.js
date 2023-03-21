@@ -7,9 +7,11 @@ const mySchema = new schema(
 
     kid: {
       type: schema.ObjectId,
-      ref: "kid"
+      ref: "kid",
+      required: true
     },
-
+    
+    q1: Number,
     q2: Number,
     q3: Number,
     q4: Number,

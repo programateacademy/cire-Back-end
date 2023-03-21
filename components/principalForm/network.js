@@ -4,7 +4,7 @@ const controller = require('./controller');
 const response = require('../../network/response');
 
 router.get('/', function (req, res){
-  let filterPrincipal = req.params.id || null;
+  let filterPrincipal = req.query.id || null;
   controller.getPrincipal(filterPrincipal)
     .then((principalForm) => {
       response.success(req, res, principalForm, 200);
@@ -28,8 +28,8 @@ router.get('/', function (req, res){
 });
 
 router.put('/:id', function (req, res) {
-  const {schoolDescription, schoolAction, behaviorDescription, behaviorAction, relationDescription, relationACtion, workClassDescription, workClassAction, workCireDescription, workCireAction, workHomeDescription, workHomeAction, parentDescription, parentAction, accompanimentDescription, accompanimentAction} = req.body
-  controller.updatePrincipal(schoolDescription, schoolAction, behaviorDescription, behaviorAction, relationDescription, relationACtion, workClassDescription, workClassAction, workCireDescription, workCireAction, workHomeDescription, workHomeAction, parentDescription, parentAction, accompanimentDescription, accompanimentAction)
+  const {schoolDescription, schoolAction, behaviorDescription, behaviorAction, relationDescription, relationACtion, workClassDescription, workClassAction, workCireDescription, workCireAction, workHomeDescription, workHomeAction, parentDescription, parentAction, accompanimentDescription, accompanimentAction} = req.body;
+  controller.updatePrincipal(req.params.id, schoolDescription, schoolAction, behaviorDescription, behaviorAction, relationDescription, relationACtion, workClassDescription, workClassAction, workCireDescription, workCireAction, workHomeDescription, workHomeAction, parentDescription, parentAction, accompanimentDescription, accompanimentAction)
     .then((data) => {
       response.success(req, res, data, 200);
     })
@@ -41,15 +41,11 @@ router.put('/:id', function (req, res) {
 router.delete('/:id', function (req, res) {
   let id = req.params.id;
   controller.deletePrincipal(id)
-    .then((deletedForm) => {
-      if (deletedForm !== null){
-        response.success(req, res, `Principal form ${req.params.id} deleted`, 200);
-      } else{
-        response.error(req, res, `The form with id: ${req.params.id} was already deleted or does not exist`);
-      }
+    .then(() => {
+      response.success(req, res, `Principal form ${req.params.id} deleted`, 200);
     })
     .catch(err => {
-      response.error(req, res, 'INTERN ERROR', 500, err);
+      response.error(req, res, 'Principal form not found check id or already deleted', 404, err);
     });
 });
 

@@ -4,8 +4,8 @@ const controller = require('./controller');
 const response = require('../../network/response');
 
 router.get('/', function (req, res){
-  const filterKid = req.query.id || null;
-  controller.getSegForm(filterKid)
+  const filterSeg = req.query.id || null;
+  controller.getSegForm(filterSeg)
     .then((segForm) => {
       response.success(req, res, segForm, 200);
     })
@@ -27,7 +27,7 @@ router.post('/', function (req,res){
 
 router.put('/:id', function (req, res) {
   const {parentingOption, parentingObservations, followRulesClassOption, followRulesClassObservations, followRulesOutsideOption, followRulesOutsideObservations, hasHabitsRoutinesOption, hasHabitsRoutinesObservations, hasSchoolHabitsOption, hasSchoolHabitsObservations, reflectsCommitmentOption, reflectsCommitmentObservations, accompanimentClassesOption, accompanimentClassesObservations, homeSupportOption, homeSupportObservations} = req.body
-  controller.updateSegForm(parentingOption, parentingObservations, followRulesClassOption, followRulesClassObservations, followRulesOutsideOption, followRulesOutsideObservations, hasHabitsRoutinesOption, hasHabitsRoutinesObservations, hasSchoolHabitsOption, hasSchoolHabitsObservations, reflectsCommitmentOption, reflectsCommitmentObservations, accompanimentClassesOption, accompanimentClassesObservations, homeSupportOption, homeSupportObservations)
+  controller.updateSegForm(req.params.id, parentingOption, parentingObservations, followRulesClassOption, followRulesClassObservations, followRulesOutsideOption, followRulesOutsideObservations, hasHabitsRoutinesOption, hasHabitsRoutinesObservations, hasSchoolHabitsOption, hasSchoolHabitsObservations, reflectsCommitmentOption, reflectsCommitmentObservations, accompanimentClassesOption, accompanimentClassesObservations, homeSupportOption, homeSupportObservations)
     .then((data) => {
       response.success(req, res, data, 200);
     })
@@ -39,15 +39,11 @@ router.put('/:id', function (req, res) {
 router.delete('/:id', function (req, res) {
   let id = req.params.id;
   controller.deleteSegForm(id)
-    .then((deletedForm) => {
-      if (deletedForm !== null){
-        response.success(req, res, `Seg form ${req.params.id} deleted`, 200);
-      } else{
-        response.error(req, res, `The form with id: ${req.params.id} was already deleted or does not exist`);
-      }
+    .then(() => {
+      response.success(req, res, `Seg form ${req.params.id} deleted`, 200);
     })
     .catch(err => {
-      response.error(req, res, 'INTERN ERROR', 500, err);
+      response.error(req, res, `Seg form not found, check id or already deleted`, 404, err);
     });
 });
 

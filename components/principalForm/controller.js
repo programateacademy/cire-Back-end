@@ -60,9 +60,9 @@ function addPrincipal(kid, schoolDescription, schoolAction, behaviorDescription,
   });
 };
 
-function getPrincipal(filterKid){
+function getPrincipal(filterPrincipal){
   return new Promise ((resolve) => {
-    resolve(store.list(filterKid));
+    resolve(store.list(filterPrincipal));
   });
 };
 
@@ -80,9 +80,13 @@ function deletePrincipal(id){
   return new Promise ((resolve, reject) => {
     if(!id){
       reject('INVALID DATA');
+      return false;
     } else{
       store.remove(id)
-        .then(() => {
+        .then((data) => {
+          if(!data){
+            reject('Principal form not found, check id or already deleted')
+          }
           resolve();
         })
         .catch(err => {

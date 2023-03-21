@@ -44,8 +44,16 @@ async function updateKid(id, name, age, sex, namAttendant, numAttendant){
   return newKid;
 };
 
+async function existDB(id){
+  const exist = await model.exists({_id: id})
+  return exist;
+};
+
 async function removeKid(id){
-  return await model.findByIdAndDelete(id);
+  if(await existDB(id)){
+    return await model.findByIdAndDelete(id);
+  };
+  return false;
 };
 
 module.exports = {
