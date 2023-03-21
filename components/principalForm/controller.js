@@ -60,9 +60,9 @@ function addPrincipal(kid, schoolDescription, schoolAction, behaviorDescription,
   });
 };
 
-function getPrincipal(filterKid){
+function getPrincipal(filterPrincipal){
   return new Promise ((resolve) => {
-    resolve(store.list(filterKid));
+    resolve(store.list(filterPrincipal));
   });
 };
 

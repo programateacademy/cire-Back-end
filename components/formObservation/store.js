@@ -5,11 +5,11 @@ function addObservation(Observation) {
   myObservation.save();
 };
 
-function getObservation(filterKid) {
+function getObservation(filterObservation) {
   let filter = {};
   return new Promise((resolve, reject) => {
-    if (filterKid !== null) {
-      filter = { kid: filterKid };
+    if (filterObservation !== null) {
+      filter = { _id: filterObservation };
     };
     model.find(filter)
       .populate('kid', { name: true, age: true, sex: true, namAttendant: true, numAttendant: true })

@@ -182,9 +182,9 @@ function addObservation( managesWeeksMonday, managesWeeksTuesday, managesWeeksWe
   });
 };
 
-function getObservation(filterKid){
+function getObservation(filterObservation){
   return new Promise ((resolve) => {
-    resolve(store.list(filterKid));
+    resolve(store.list(filterObservation));
   });
 };
 

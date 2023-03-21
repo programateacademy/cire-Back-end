@@ -37,9 +37,9 @@ module.exports = {
 
 };
 
-function getDiagnostic(filterKid) {
+function getDiagnostic(filterDiag) {
   return new Promise ((resolve) => {
-    resolve(store.list(filterKid));
+    resolve(store.list(filterDiag));
   });
 };
 
@@ -70,7 +70,7 @@ function deleteDiagnostic(id){
 
 
 module.exports ={
- addDiagnostic,
+addDiagnostic,
 getDiagnostic,
 updateDiagnostic,
 deleteDiagnostic

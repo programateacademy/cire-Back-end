@@ -4,7 +4,8 @@ const controller = require('./controller');
 const response = require('../../network/response');
 
 router.get('/', function (req, res){
-  controller.getObservation()
+  let filterObservation = req.query.id || null;
+  controller.getObservation(filterObservation)
     .then((formObservation) => {
       response.success(req, res, formObservation, 200);
     })

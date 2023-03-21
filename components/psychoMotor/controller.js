@@ -30,9 +30,9 @@ function addPsychoMotor(fallsEasily, walkWithDifficulty, feetRequiresSupport, st
   });
 };
 
-function getPsychoMotor(filterKid){
+function getPsychoMotor(filterPsychoMotor){
   return new Promise((resolve) => {
-    resolve(store.list(filterKid));
+    resolve(store.list(filterPsychoMotor));
   });
 };
 

@@ -5,11 +5,11 @@ function addPsychoSocial(psychoSocialForm){
   myPsychoSocialForm.save();
 };
 
-function getPsychoSocial(filterKid){
+function getPsychoSocial(filterPsychoSocial){
   let filter = {};
   return new Promise ((resolve,reject) => {
-    if(filterKid !== null){
-      filter = {kid: filterKid};
+    if(filterPsychoSocial !== null){
+      filter = {_id: filterPsychoSocial};
     };
     model.find(filter)
       .populate('kid', {name: true, age: true, sex: true, namAttendant: true, numAttendant: true})

@@ -7,7 +7,6 @@ const mySchema = new Schema(
     kid: {
       type: Schema.Types.ObjectId,
       ref:'kid',
-      required: true
     },
     coexistence:{
       schoolBehavior:{

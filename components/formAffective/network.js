@@ -15,7 +15,8 @@ router.post('/', function (req,res){
 });
 
 router.get('/', function (req, res){
-  controller.getAffective()
+  let filterAffective = req.query.id || null;
+  controller.getAffective(filterAffective)
     .then((FormAffective) => {
       response.success(req, res, FormAffective, 200);
     })

@@ -6,11 +6,11 @@ async function addPrincipal(form){
 
 };
 
-function getPrincipal(filterKid){
+function getPrincipal(filterPrincipal){
   let filter = {};
   return new Promise ((resolve, reject) => {
-    if(filterKid !== null){
-      filter = {kid: filterKid};
+    if(filterPrincipal !== null){
+      filter = {_id: filterPrincipal};
     };
     model.find(filter)
       .populate('kid', {name: true, age: true, sex: true, namAttendant: true, numAttendant:true})

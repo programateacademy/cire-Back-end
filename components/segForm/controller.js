@@ -48,9 +48,9 @@ function addSegForm(parentingOption, parentingObservations, followRulesClassOpti
   });
 };
 
-function getSegForm(filterKid){
+function getSegForm(filterSeg){
   return new Promise((resolve) => {
-    resolve(store.list(filterKid));
+    resolve(store.list(filterSeg));
   });
 };
 

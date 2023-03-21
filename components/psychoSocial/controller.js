@@ -17,9 +17,9 @@ function addPsychoSocial(needSupportTeacher, doesNotEasilyAdapt, bitesMistreats,
   });
 };
 
-function getPsychoSocialForm(filterKid){
+function getPsychoSocialForm(filterPsychoSocial){
   return new Promise((resolve) => {
-    resolve(store.list(filterKid));
+    resolve(store.list(filterPsychoSocial));
   });
 };
 

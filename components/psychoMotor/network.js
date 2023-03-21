@@ -4,8 +4,8 @@ const controller = require('./controller');
 const response = require('../../network/response');
 
 router.get('/', function (req, res){
-  const filterKid = req.query.kid || null;
-  controller.getPsychoMotor(filterKid)
+  const filterPsychoMotor = req.query.id || null;
+  controller.getPsychoMotor(filterPsychoMotor)
     .then((psychoMotorForm) => {
       response.success(req, res, psychoMotorForm, 200);
     })

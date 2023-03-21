@@ -5,11 +5,11 @@ function addPsychoMotor(psychoMotorForm){
   myPsychoMotorForm.save();
 };
 
-function getPsychoMotor(filterKid){
+function getPsychoMotor(filterPsychoMotor){
   let filter = {};
   return new Promise ((resolve, reject) => {
-    if (filterKid !== null){
-      filter = {kid: filterKid};
+    if (filterPsychoMotor !== null){
+      filter = {_id: filterPsychoMotor};
     };
     model.find(filter)
       .populate('kid', {name: true, age: true, sex: true, namAttendant: true, numAttendant: true})

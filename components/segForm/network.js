@@ -4,8 +4,8 @@ const controller = require('./controller');
 const response = require('../../network/response');
 
 router.get('/', function (req, res){
-  const filterKid = req.query.id || null;
-  controller.getSegForm(filterKid)
+  const filterSeg = req.query.id || null;
+  controller.getSegForm(filterSeg)
     .then((segForm) => {
       response.success(req, res, segForm, 200);
     })

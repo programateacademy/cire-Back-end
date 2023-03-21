@@ -5,11 +5,11 @@ function addSegForm(segForm){
   mySegForm.save();
 };
 
-function getSegForm(filterKid){
+function getSegForm(filterSeg){
   let filter = {};
   return new Promise((resolve, reject) => {
-    if (filterKid !== null){
-      filter = {kid: filterKid};
+    if (filterSeg !== null){
+      filter = {_id: filterSeg};
     };
     model.find(filter)
       .populate('kid', {name: true, age: true, sex:true, namAttendant: true, numAttendant: true})

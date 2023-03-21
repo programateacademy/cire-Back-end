@@ -4,8 +4,8 @@ const controller = require('./controller');
 const response = require('../../network/response');
 
 router.get('/', function (req, res){
-  const filterKid = req.query.kid || null;
-  controller.getPsychoSocialForm(filterKid)
+  const filterPsychoSocial = req.query.id || null;
+  controller.getPsychoSocialForm(filterPsychoSocial)
     .then((psychoSocialForm) => {
       response.success(req, res, psychoSocialForm, 200);
     })

@@ -5,11 +5,11 @@ function addAffective(Affective) {
   myAffective.save();
 };
 
-function getAffective(filterKid){
+function getAffective(filterAffective){
   let filter = {};
   return new Promise ((resolve,reject) => {
-    if(filterKid !== null){
-      filter = {kid: filterKid};
+    if(filterAffective !== null){
+      filter = {_id: filterAffective};
     };
     model.find(filter)
       .populate('kid', {name: true, age: true, sex: true, namAttendant: true, numAttendant: true})

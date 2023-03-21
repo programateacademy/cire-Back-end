@@ -4,7 +4,7 @@ const controller = require('./controller');
 const response = require('../../network/response');
 
 router.get('/', function (req, res){
-  let filterPrincipal = req.params.id || null;
+  let filterPrincipal = req.query.id || null;
   controller.getPrincipal(filterPrincipal)
     .then((principalForm) => {
       response.success(req, res, principalForm, 200);
