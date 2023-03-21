@@ -14,8 +14,8 @@ router.post('/', function(req, res){
   const {email, password} = req.body
   controller.add(email, password)
     .then((admin) =>{
-         sendMail({
-         to: email,
+        sendMail({
+          to: email,
           body: `Su correo es: ${email} y su contraseña: ${password}`,
           subject: 'Subject from email',
           html: template
