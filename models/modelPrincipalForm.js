@@ -24,7 +24,7 @@ const mySchema = new Schema(
         description:{
           type: String,
         },
-        action: {
+        actionPlan: {
           type: String
         }
       },

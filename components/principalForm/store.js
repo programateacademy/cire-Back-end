@@ -3,7 +3,6 @@ const model = require('../../models/modelPrincipalForm');
 async function addPrincipal(form){
   const myForm = new model(form);
   await myForm.save();
-
 };
 
 function getPrincipal(filterPrincipal){

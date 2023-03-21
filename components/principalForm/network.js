@@ -45,7 +45,7 @@ router.delete('/:id', function (req, res) {
       response.success(req, res, `Principal form ${req.params.id} deleted`, 200);
     })
     .catch(err => {
-      response.error(req, res, 'Principal form not found check id or already deleted', 404, err);
+      response.error(req, res, 'Principal form not found, check id or already deleted', 404, err);
     });
 });
 
