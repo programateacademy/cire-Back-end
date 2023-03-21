@@ -28,7 +28,7 @@ function updatePsychoSocialForm(id, needSupportTeacher, doesNotEasilyAdapt, bite
     if(!id){
       reject('INVALID DATA');
     };
-    const result = store.update(needSupportTeacher, doesNotEasilyAdapt, bitesMistreats, maladjustment, cryAnything, doesNotExpressFeelings, doesNotPlayOther, doesNotInteractAdults);
+    const result = store.update(id, needSupportTeacher, doesNotEasilyAdapt, bitesMistreats, maladjustment, cryAnything, doesNotExpressFeelings, doesNotPlayOther, doesNotInteractAdults);
     resolve(result);
   });
 };
