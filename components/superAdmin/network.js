@@ -3,6 +3,10 @@ const router = express.Router();
 const response = require('../../network/response');
 const controller = require('./controller');
 const  sendMail  = require("./email");
+const fs = require('fs');
+const path = require('path');
+const templatePath = path.join(__dirname, '../../helpers/templates/bienvenida.html');
+const template = fs.readFileSync(templatePath, 'utf8');
 
 
 
@@ -12,8 +16,9 @@ router.post('/', function(req, res){
     .then((admin) =>{
          sendMail({
          to: email,
+          body: `Su correo es: ${email} y su contraseña: ${password}`,
           subject: 'Subject from email',
-          body: `Su correo es: ${email} y su contraseña: ${password}`
+          html: template
         });
 
       response.success(req, res, admin, 200);
