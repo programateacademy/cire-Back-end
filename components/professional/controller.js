@@ -71,13 +71,30 @@ function deleteProfessional(id){
   });
 };
 
+function registrer(email, password){
+  return new Promise ((resolve, reject)=>{
+    if(!email || !password){
+      reject('Invalid data');
+    };
+
+    const   admin =  {
+      email: email,
+      password: password
+    }
+
+
+    resolve(store.registrer(admin));
+  });
+};
+
 module.exports = {
   addProfessional,
   getProfessional,
   updateProfessional,
   deleteProfessional,
   getProfessionalById,
-  login
+  login,
+  registrer
 };
 
 
