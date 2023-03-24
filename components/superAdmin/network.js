@@ -3,14 +3,12 @@ const router = express.Router();
 const response = require('../../network/response');
 const controller = require('./controller');
 const  sendMail  = require("./email");
-const fs = require('fs');
-const path = require('path');
-const templatePath = path.join(__dirname, '../../helpers/templates/bienvenida.html');
-const template = fs.readFileSync(templatePath, 'utf8');
+const encrypt  = require ('../../helpers/handleBycrpt');
+const { Promise } = require('mongoose');
 
 
 
-router.post('/', function(req, res){
+router.post('/', function (req, res){
   const {email, password} = req.body
   controller.add(email, password)
     .then((admin) =>{
@@ -18,10 +16,22 @@ router.post('/', function(req, res){
           to: email,
           body: `Su correo es: ${email} y su contraseña: ${password}`,
           subject: 'Subject from email',
-          html: template
-        });
 
-      response.success(req, res, admin, 200);
+
+        });
+        new Promise((resolve, reject)=>{
+          const h = encrypt.encrypt(password)
+          if (!h){
+            reject('can not do it')
+          }
+          console.log(h);
+          resolve(h)
+
+        })
+
+
+      response.success(req
+        , res, admin, 200);
     })
     .catch(err => {
       response.error(req, res, 'INVALID DATA', 400,err);
