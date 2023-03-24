@@ -57,9 +57,27 @@ function deleteAdmin(id){
 };
 
 
+function registrer(email, password){
+  return new Promise ((resolve, reject)=>{
+    if(!email || !password){
+      reject('Invalid data');
+    };
+
+    const   admin =  {
+      email: email,
+      password: password
+    }
+
+
+    resolve(store.registrer(admin));
+  });
+};
+
+
 module.exports = {
   add: addAdmin,
   update: updateAdmin,
   delete: deleteAdmin,
-  login
+  login,
+  registrer
 };

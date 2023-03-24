@@ -1,8 +1,5 @@
 const nodemailer = require('nodemailer');
-const fs = require('fs');
-const path = require('path');
-const templatePath = path.join(__dirname, '../../helpers/templates/bienvenida.html');
-const template = fs.readFileSync(templatePath, 'utf8');
+
 
 
 /**
@@ -23,7 +20,7 @@ const template = fs.readFileSync(templatePath, 'utf8');
  * @returns { Promise<void> }
  */
 async function sendMail(mail) {
-    const { subject, body, to } = mail;
+    const { subject, body, to  } = mail;
 
     // Configurar el objeto transporter con los detalles del servidor SMTP
     const transporter = nodemailer.createTransport({
@@ -42,7 +39,7 @@ async function sendMail(mail) {
         to: to,
         subject: subject,
         text: body,
-        html: template
+
     };
 
     // Enviar el correo electrónico utilizando el objeto transporter y mailOptions
