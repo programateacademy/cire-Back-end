@@ -6,7 +6,8 @@ const mySchema = new schema(
   {
     kid: {
       type: schema.ObjectId,
-      ref: "kid"
+      ref: "kid",
+      required: true
     },
 
     does_The_Child_Have_Parenting_Guidelines: {

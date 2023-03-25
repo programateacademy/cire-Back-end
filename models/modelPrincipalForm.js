@@ -20,14 +20,13 @@ const mySchema = new Schema(
 
       },
 
-      behaviorAtHome:{
-        description: {
-          type: String
+      behaviorAtHome: {
+        description:{
+          type: String,
         },
-        actionPlan:{
+        actionPlan: {
           type: String
         }
-
       },
 
       relationships:{

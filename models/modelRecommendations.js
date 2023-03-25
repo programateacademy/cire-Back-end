@@ -6,7 +6,8 @@ const mySchema = new schema(
   {
     kid: {
       type: schema.ObjectId,
-      ref: "kid"
+      ref: "kid",
+      required: true
     },
 
     familyRecommendations: {
