@@ -5,7 +5,7 @@ const {
   SignIn,
   SignUP,
   forgotPassword,
-} = require('../controller/auth.controller');
+} = require('../controller/controllerAuth');
 const { authAdmin } = require('../middlewares/Auth');
 
 router.post('/login', authAdmin, SignIn);
