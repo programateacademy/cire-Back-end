@@ -5,22 +5,18 @@ const {
   getProfessional,
   getProfessionals,
   deleteProfessional,
-  deleteProfessionals,
-  updatePatchProfessional,
-  updateProfessional,
+  updateProfessional
 } = require('../controller/professional.controller');
 const { authAdmin } = require('../middlewares/Auth');
 
 router
   .route('/')
-  .get(authAdmin, getProfessionals)
-  .delete(authAdmin, deleteProfessionals);
+  .get( getProfessionals)
 
 router
-  .route('/id')
-  .get(authAdmin, getProfessional)
+  .route('/:id')
+  .get(getProfessional)
   .delete(authAdmin, deleteProfessional)
-  .put(authAdmin, updateProfessional)
-  .patch(authAdmin, updatePatchProfessional);
+  .put(updateProfessional)
 
 module.exports = router;

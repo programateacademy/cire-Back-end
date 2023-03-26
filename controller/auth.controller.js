@@ -1,8 +1,7 @@
 const User = require('../models/User');
 const Professional = require('../models/modelProfessional');
 const { hashPassword, checkPassword } = require('../services/password');
-const { createToken, pResetToken } = require('../services/auth');
-const { transporter, emailPort } = require('../helpers/email');
+const { createToken } = require('../services/auth');
 const auth = {};
 
 auth.SignUP = async (req, res, next) => {
@@ -17,53 +16,61 @@ auth.SignUP = async (req, res, next) => {
         success: false,
         message: 'Ya existe un usuario con este correo',
       });
+      next();
     }
+
+    if (password.length < 6)
+      return res
+        .status(400)
+        .json({ msg: 'La contraseña debe tener al menos 6 caracteres.' });
 
     let hash = await hashPassword(password);
     password = hash;
 
-    //Crear Profesional
+    //Crear Profesional y usuario profesional
     if (role === 'pro') {
-      const professional = new Professional({
-        name,
-        age,
-        phone,
-        occupation,
-        numberId,
-        email,
-        password,
-        role,
-      });
-
-      const proSaved = await professional.save();
-
       const user = new User({ email, password, role });
 
       const userSaved = await user.save();
 
       const token = createToken(userSaved);
 
+      const professional = new Professional({
+        name,
+        age,
+        phone,
+        occupation,
+        numberId,
+        role,
+        userId: userSaved._id,
+      });
+
+      const proSaved = await professional.save();
+
       return res.status(201).send({ success: true, token, doc: proSaved });
     }
 
-
-
     //Crear usuario admin
-    const user = new User({ email, password, role });
+    if (role === 'adm') {
+      const user = new User({ email, password, role });
 
-    const userSaved = await user.save();
+      const userSaved = await user.save();
 
-    const token = createToken(userSaved);
+      const token = createToken(userSaved);
 
-    return res.status(201).send({ success: true, token, doc: userSaved });
-  } catch (error) {
-    next(error);
+      return res.status(201).send({ success: true, token, doc: userSaved });
+    }
+
+    return res.status(500).json({ msg: 'No se ha podido crear el usuario' });
+  } catch (err) {
+    return res.status(500).json({ msg: err.message });
   }
 };
 
-auth.SignIn = async (req, res, next) => {
+auth.SignIn = async (req, res) => {
   try {
     let { email, password } = req.body;
+
     let user = await User.findOne({ email });
 
     if (!user)
@@ -72,9 +79,9 @@ auth.SignIn = async (req, res, next) => {
         message: 'Usuario y/o contraseña, inválidos.',
       });
 
-    const { isValid } = await checkPassword(password, user.password);
+    const compare = await checkPassword(password, user.password);
 
-    if (!isValid)
+    if (!compare)
       return res.status(401).send({
         success: false,
         message: 'Usuario y/o contraseña, inválidos.',
@@ -83,49 +90,56 @@ auth.SignIn = async (req, res, next) => {
     const token = createToken(user);
 
     return res.status(200).send({ success: true, token, doc: user });
-  } catch (error) {
-    next(error);
+  } catch (err) {
+    return res.status(500).json({ msg: err.message });
   }
 };
 
-auth.forgotPassword = async (req, res, next) => {
+//Get All Users
+auth.getUsers = async (req, res) => {
   try {
-    if (!req.body.email)
-      return res
-        .status(400)
-        .send({ success: false, message: 'Se require un correo electrónico' });
+    const users = await User.find();
+    return res.status(200).json(users);
+  } catch (err) {
+    return res.status(500).json({ msg: err.message });
+  }
+};
 
-    const user = await User.findOne({ email: req.body.email });
-    if (!user)
-      return res
-        .status(403)
-        .send({ success: false, message: 'No existe la cuenta' });
+//Get User
+auth.getUser = async (req, res) => {
+  try {
+    const user = await User.findById(req.params.id);
+    return res.status(200).json(user);
+  } catch (err) {
+    return res.status(500).json({ msg: err.message });
+  }
+};
 
-    const token = pResetToken(user);
+auth.updateUser = async (req, res) => {
+  try {
+    const { email, password } = req.body;
 
-    user.updateOne({ resetPasswordToken: token });
+    const user = await User.findById(req.params.id);
 
-    const mailOptions = {
-      from: 'angeldesweb@gmail.com',
-      to: `${user.email}`,
-      subject: 'Enlace para recuperar contraseña',
-      text: 'Reestablecer contraseña',
-      html: `<a href="${emailPort}/reset/${user._id}/${token}">Link de recuperación</a>`,
-    };
+    if (!user) {
+      return res.status(404).send({
+        success: false,
+        message: 'Usuario no encontrado',
+      });
+    }
 
-    transporter.sendMail(mailOptions, (err, response) => {
-      if (err) {
-        console.log('Ha ocurrido un error', err);
-        return next(err);
-      } else {
-        console.log(response);
-        return res
-          .status(200)
-          .send({ success: true, message: 'Mensaje de recuperación enviado' });
-      }
+    const compare = await checkPassword(password, user.password);
+
+    let passwordHash = !compare ? await hashPassword(password) : password;
+
+    await User.findByIdAndUpdate(req.params.id, {
+      email,
+      password: passwordHash,
     });
-  } catch (error) {
-    next(error);
+
+    res.json({ msg: 'Usuario update' });
+  } catch (err) {
+    return res.status(500).json({ msg: 'Error al actualizar: ' + err.message });
   }
 };
 

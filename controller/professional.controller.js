@@ -1,22 +1,23 @@
 const professionalCtrl = {};
 
 const Professional = require('../models/modelProfessional');
+const User = require('../models/User');
 
-//All Movies
 professionalCtrl.getProfessionals = async (req, res) => {
   try {
-    const professionals = await Professional.find();
-    res.json(professionals);
+    const professionals = await Professional.find().populate('userId');
+    return res.status(200).json(professionals);
   } catch (err) {
     return res.status(500).json({ msg: err.message });
   }
 };
 
-//One Movie
 professionalCtrl.getProfessional = async (req, res) => {
   try {
-    const professional = await Professional.findById(req.params.id);
-    res.json(professional);
+    const professional = await Professional.findById(req.params.id).populate(
+      'userId'
+    );
+    return res.status(200).json(professional);
   } catch (err) {
     return res.status(500).json({ msg: err.message });
   }
@@ -27,46 +28,39 @@ professionalCtrl.updateProfessional = async (req, res) => {
   try {
     const { name, age, phone, occupation, numberId, email, password } =
       req.body;
+
+    if (password || email) {
+      return res
+        .status(400)
+        .json({ msg: 'No se puede actualizar email y password' });
+    }
+
     await Professional.findByIdAndUpdate(req.params.id, {
       name,
       age,
       phone,
       occupation,
       numberId,
-      email,
-      password,
     });
-    res.json({ msg: 'professional update' });
-  } catch (err) {
-    return res.status(500).json({ msg: err.message });
-  }
-};
 
-//Update Movie with patch
-professionalCtrl.updatePatchProfessional = async (req, res) => {
-  try {
-    await Professional.findByIdAndUpdate(req.params.id, req.body);
-    res.json({ msg: 'Professional update with patch' });
+    return res.status(200).json({ msg: 'professional update' });
   } catch (err) {
-    return res.status(500).json({ msg: err.message });
+    return res.status(500).json({ msg: 'Error al actualizar: ' + err.message });
   }
 };
 
 //Delete Movie
 professionalCtrl.deleteProfessional = async (req, res) => {
   try {
-    await Professional.findOneAndRemove(req.params.id);
-    res.json({ msg: 'Delete-Professional' });
-  } catch (err) {
-    return res.status(500).json({ msg: err.message });
-  }
-};
+    const { email } = req.body;
 
-//Delete All Movies
-professionalCtrl.deleteProfessionals = async (req, res) => {
-  try {
-    await Professional.remove();
-    res.json({ msg: 'Delete all Professional' });
+    await Professional.findOneAndRemove(req.params.id);
+
+    const user = await User.find({ email });
+
+    await User.findOneAndRemove(user._id);
+
+    return res.status(200).json({ msg: 'Delete-Professional' });
   } catch (err) {
     return res.status(500).json({ msg: err.message });
   }
