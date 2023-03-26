@@ -8,14 +8,11 @@ const {
 } = require('../controller/controllerAuth');
 const { authAdmin } = require('../middlewares/Auth');
 
-router.post('/login', authAdmin, SignIn);
-router.post('/register', SignUP);
+router.post('/login', SignIn);
+router.post('/register',authAdmin, SignUP);
 router.post('/forgot', forgotPassword);
 
-router.get('/test', authAdmin, (req, res) => {
-  return res
-    .status(200)
-    .send({ message: 'Bienvenido', user: req.user, role: req.role });
-});
+
 
 module.exports = router;
+

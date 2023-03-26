@@ -19,6 +19,9 @@ auth.SignUP = async (req, res, next) => {
       });
     }
 
+    let hash = await hashPassword(password);
+    password = hash;
+
     //Crear Profesional
     if (role === 'pro') {
       const professional = new Professional({
@@ -46,8 +49,7 @@ auth.SignUP = async (req, res, next) => {
 
     }
 
-    let hash = await hashPassword(password);
-    password = hash;
+
 
     //Crear usuario admin
     const user = new User({ email, password, role });

@@ -25,13 +25,14 @@ professionalCtrl.getProfessional = async (req, res) => {
 //Update Movie with put
 professionalCtrl.updateProfessional = async (req, res) => {
   try {
-    const { name, age, phone, occupation, email, password } =
+    const { name, age, phone, occupation, numberId, email, password } =
       req.body;
     await Professional.findByIdAndUpdate(req.params.id, {
       name,
       age,
       phone,
       occupation,
+      numberId,
       email,
       password,
     });
