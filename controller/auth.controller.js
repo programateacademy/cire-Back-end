@@ -12,12 +12,15 @@ auth.SignUP = async (req, res, next) => {
 
     let emailExist = await User.findOne({ email });
 
-    if(emailExist){
+    if (emailExist) {
       res.status(401).send({
         success: false,
         message: 'Ya existe un usuario con este correo',
       });
     }
+
+    let hash = await hashPassword(password);
+    password = hash;
 
     //Crear Profesional
     if (role === 'pro') {
@@ -29,7 +32,7 @@ auth.SignUP = async (req, res, next) => {
         numberId,
         email,
         password,
-        role
+        role,
       });
 
       const proSaved = await professional.save();
@@ -40,14 +43,10 @@ auth.SignUP = async (req, res, next) => {
 
       const token = createToken(userSaved);
 
-
       return res.status(201).send({ success: true, token, doc: proSaved });
-
-
     }
 
-    let hash = await hashPassword(password);
-    password = hash;
+
 
     //Crear usuario admin
     const user = new User({ email, password, role });
@@ -68,7 +67,7 @@ auth.SignIn = async (req, res, next) => {
     let user = await User.findOne({ email });
 
     if (!user)
-      res.status(401).send({
+      return res.status(401).send({
         success: false,
         message: 'Usuario y/o contraseña, inválidos.',
       });
@@ -76,7 +75,7 @@ auth.SignIn = async (req, res, next) => {
     const { isValid } = await checkPassword(password, user.password);
 
     if (!isValid)
-      res.status(401).send({
+      return res.status(401).send({
         success: false,
         message: 'Usuario y/o contraseña, inválidos.',
       });

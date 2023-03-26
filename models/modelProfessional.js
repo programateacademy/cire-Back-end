@@ -1,4 +1,4 @@
-const {Schema, model} = require('mongoose');
+const { Schema, model } = require('mongoose');
 
 const mySchema = new Schema(
   {
@@ -7,14 +7,14 @@ const mySchema = new Schema(
     phone: { type: String, required: true },
     occupation: { type: String, required: true },
     numberId: { type: Number, required: true },
-    email: { type: String, required: true, unique: true, lowercase: true },
-    password: { type: String, required: true },
+    userAuthId: {
+      type: Schema.Types.ObjectId,
+      ref: 'user',
+    }
   },
   {
-    timestamps: true
+    timestamps: true,
   }
 );
 
-
 module.exports = model('professional', mySchema);
-

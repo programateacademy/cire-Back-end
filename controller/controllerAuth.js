@@ -70,7 +70,7 @@ auth.SignIn = async (req, res, next) => {
     let user = await User.findOne({ email });
 
     if (!user)
-      res.status(401).send({
+     return res.status(401).send({
         success: false,
         message: 'Usuario y/o contraseña, inválidos.',
       });
@@ -78,7 +78,7 @@ auth.SignIn = async (req, res, next) => {
     const { isValid } = await checkPassword(password, user.password);
 
     if (!isValid)
-      res.status(401).send({
+     return res.status(401).send({
         success: false,
         message: 'Usuario y/o contraseña, inválidos.',
       });

@@ -8,7 +8,6 @@ const segForm = require('../controller/controllerSegForm');
 const observation = require('../controller/controllerObservation');
 const recommendations = require ('../controller/controllerRecommend');
 
-
 const routes = function (server) {
   server.use('/auth', require('./auth.route'))
   server.use('/professional', require('./professional.route'))

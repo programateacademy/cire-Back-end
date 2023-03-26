@@ -11,16 +11,15 @@ const authAdmin = (req, res, next) => {
   const token = req.headers.authorization.split(' ')[1];
   const { sub, role } = decode(token, secret);
 
-  if(role !== 'adm'){
-    res.status(404).send({ success: false, error: 'No autorizado' })
-    next()
+  if (role !== 'adm') {
+    res.status(404).send({ success: false, error: 'No autorizado' });
+    next();
   }
 
   req.user = sub;
   req.role = role;
   next();
 };
-
 
 module.exports = {
   authAdmin,
