@@ -1,12 +1,12 @@
-const affective = require('../controller/controllerAffective');
-const diagnostic = require ('../controller/controllerDiag');
-const kid = require('../controller/controllerKid');
-const principalForm = require('../controller/controllerPrincipalForm');
-const psychoSocialForm = require('../controller/controllerPsychoSocial');
-const psychoMotorForm = require('../controller/controllerPsychoMotor');
-const segForm = require('../controller/controllerSegForm');
-const observation = require('../controller/controllerObservation');
-const recommendations = require ('../controller/controllerRecommend');
+const affective = require('./routeAffective');
+const diagnostic = require ('./routeDiag.js');
+const kid = require('./routeKid');
+const principalForm = require('./routePrincipalForm.js');
+const psychoSocialForm = require('./routePsychoSocial');
+const psychoMotorForm = require('./routePsychoMotor');
+const segForm = require('./routeSegForm');
+const observation = require('./routeObservation');
+const recommendations = require ('./routeRecommend');
 
 const routes = function (server) {
   server.use('/auth', require('./auth.route'))

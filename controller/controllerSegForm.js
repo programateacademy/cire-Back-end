@@ -1,9 +1,7 @@
-const express = require('express');
-const router = express.Router();
 const validator = require('../validators/validatorSegForm');
 const response = require('../helpers/response');
 
-router.get('/', function (req, res){
+function getSegForm(req, res){
   const filterSeg = req.query.id || null;
   validator.getSegForm(filterSeg)
     .then((segForm) => {
@@ -12,9 +10,9 @@ router.get('/', function (req, res){
     .catch(err => {
       response.error(req, res, 'Unexpected error', 500, err);
     });
-});
+};
 
-router.post('/', function (req,res){
+function postSegForm(req,res){
   const {parentingOption, parentingObservations, followRulesClassOption, followRulesClassObservations, followRulesOutsideOption, followRulesOutsideObservations, hasHabitsRoutinesOption, hasHabitsRoutinesObservations, hasSchoolHabitsOption, hasSchoolHabitsObservations, reflectsCommitmentOption, reflectsCommitmentObservations, accompanimentClassesOption, accompanimentClassesObservations, homeSupportOption, homeSupportObservations} = req.body
   validator.addSegForm(parentingOption, parentingObservations, followRulesClassOption, followRulesClassObservations, followRulesOutsideOption, followRulesOutsideObservations, hasHabitsRoutinesOption, hasHabitsRoutinesObservations, hasSchoolHabitsOption, hasSchoolHabitsObservations, reflectsCommitmentOption, reflectsCommitmentObservations, accompanimentClassesOption, accompanimentClassesObservations, homeSupportOption, homeSupportObservations)
     .then((segForm)=>{
@@ -23,9 +21,9 @@ router.post('/', function (req,res){
     .catch(err => {
       response.error(req, res, 'INVALID INFORMATION', 400,err);
     });
-});
+};
 
-router.put('/:id', function (req, res) {
+function putSegForm(req, res) {
   const {parentingOption, parentingObservations, followRulesClassOption, followRulesClassObservations, followRulesOutsideOption, followRulesOutsideObservations, hasHabitsRoutinesOption, hasHabitsRoutinesObservations, hasSchoolHabitsOption, hasSchoolHabitsObservations, reflectsCommitmentOption, reflectsCommitmentObservations, accompanimentClassesOption, accompanimentClassesObservations, homeSupportOption, homeSupportObservations} = req.body
   validator.updateSegForm(req.params.id, parentingOption, parentingObservations, followRulesClassOption, followRulesClassObservations, followRulesOutsideOption, followRulesOutsideObservations, hasHabitsRoutinesOption, hasHabitsRoutinesObservations, hasSchoolHabitsOption, hasSchoolHabitsObservations, reflectsCommitmentOption, reflectsCommitmentObservations, accompanimentClassesOption, accompanimentClassesObservations, homeSupportOption, homeSupportObservations)
     .then((data) => {
@@ -34,9 +32,9 @@ router.put('/:id', function (req, res) {
     .catch(err => {
       response.error(req, res, 'INTERN ERROR', 500, err);
     });
-});
+};
 
-router.delete('/:id', function (req, res) {
+function deleteSegForm(req, res) {
   let id = req.params.id;
   validator.deleteSegForm(id)
     .then(() => {
@@ -45,6 +43,11 @@ router.delete('/:id', function (req, res) {
     .catch(err => {
       response.error(req, res, `Seg form not found, check id or already deleted`, 404, err);
     });
-});
+};
 
-module.exports = router;
+module.exports = {
+  getSegForm,
+  postSegForm,
+  putSegForm,
+  deleteSegForm
+};

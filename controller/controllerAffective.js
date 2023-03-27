@@ -1,9 +1,7 @@
-const express = require('express');
-const router = express.Router()
 const validator = require('../validators/validatorAffective')
 const response = require('../helpers/response')
 
-router.post('/', function (req,res){
+function postAffective (req, res){
   const {kid, q1, q2, q3, q4, q5, q6, q7, q8, q9, q10, q11, q12, q13, q14, q15, q16, q17, q18} = req.body
   validator.addAffective(kid, q1, q2, q3, q4, q5, q6, q7, q8, q9, q10, q11, q12, q13, q14, q15, q16, q17, q18)
     .then((fullAffective)=>{
@@ -12,9 +10,9 @@ router.post('/', function (req,res){
     .catch(err => {
       response.error(req, res, 'INVALID INFORMATION', 400,err);
     });
-});
+};
 
-router.get('/', function (req, res){
+function getAffective(req, res){
   let filterAffective = req.query.id || null;
   validator.getAffective(filterAffective)
     .then((FormAffective) => {
@@ -23,9 +21,9 @@ router.get('/', function (req, res){
     .catch(err => {
       response.error(req, res, 'Unexpected error', 500, err);
     });
-});
+};
 
-router.put('/:id', function (req, res) {
+function putAffective(req, res){
   const {q1, q2, q3, q4, q5, q6, q7, q8, q9, q10, q11, q12, q13, q14, q15, q16, q17, q18} = req.body
   validator.updateAffective(req.params.id, q1, q2, q3, q4, q5, q6, q7, q8, q9, q10, q11, q12, q13, q14, q15, q16, q17, q18)
     .then((data) => {
@@ -34,11 +32,9 @@ router.put('/:id', function (req, res) {
     .catch(err => {
       response.error(req, res, 'INTERN ERROR', 500, err);
     });
-});
+};
 
-
-
-router.delete('/:id', function (req, res) {
+function deleteAffective(req, res){
   let id = req.params.id;
   validator.deleteAffective(id)
     .then(() => {
@@ -47,8 +43,13 @@ router.delete('/:id', function (req, res) {
     .catch(err => {
       response.error(req, res, `Affective form not found, check id or already deleted`, 404, err);
     });
-});
+};
 
-module.exports = router;
+module.exports = {
+  postAffective,
+  getAffective,
+  deleteAffective,
+  putAffective
+};
 
 
