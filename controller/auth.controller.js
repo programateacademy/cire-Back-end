@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 const User = require('../models/User');
 const Professional = require('../models/modelProfessional');
 const {hashPassword, checkPassword} = require('../services/password');
@@ -21,9 +22,7 @@ auth.SignUP = async (req, res, next) => {
 
         if (emailExist) {
 
-            return
-
-            res.status(401).send({success: false, message: 'Ya existe un usuario con este correo'});
+            return res.status(401).send({success: false, message: 'Ya existe un usuario con este correo'});
         }
 
         if (password.length < 6)
@@ -145,4 +144,3 @@ auth.updateUser = async (req, res) => {
 };
 
 module.exports = auth;
-

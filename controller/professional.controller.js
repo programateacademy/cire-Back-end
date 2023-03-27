@@ -23,7 +23,7 @@ professionalCtrl.getProfessional = async (req, res) => {
   }
 };
 
-//Update Movie with put
+//Update professioal with put
 professionalCtrl.updateProfessional = async (req, res) => {
   try {
     const { name, age, phone, occupation, numberId, email, password } =
@@ -49,7 +49,7 @@ professionalCtrl.updateProfessional = async (req, res) => {
   }
 };
 
-//Delete Movie
+//Delete Professional
 professionalCtrl.deleteProfessional = async (req, res) => {
   try {
     const { email } = req.body;
