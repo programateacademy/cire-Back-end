@@ -1,4 +1,4 @@
-
+/* eslint-disable no-unused-vars */
 const User = require('../models/User');
 const Professional = require('../models/modelProfessional');
 const { hashPassword, checkPassword } = require('../services/password');
