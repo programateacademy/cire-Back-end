@@ -35,14 +35,15 @@ professionalCtrl.updateProfessional = async (req, res) => {
         .json({ msg: 'No se puede actualizar email y password' });
     }
 
-    await Professional.findByIdAndUpdate(req.params.id, {
+    const updatePro = await Professional.findByIdAndUpdate(req.params.id, {
       name,
       age,
       phone,
       occupation,
       numberId,
     });
-
+    
+    updatePro.save()
     return res.status(200).json({ msg: 'professional update' });
   } catch (err) {
     return res.status(500).json({ msg: 'Error al actualizar: ' + err.message });
