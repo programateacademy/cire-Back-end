@@ -130,9 +130,10 @@ auth.updateUser = async (req, res) => {
 
         const compare = await checkPassword(password, user.password);
 
-        let passwordHash = ! compare ? await hashPassword(password) : password;
+        let passwordHash = ! compare ? await hashPassword(password) : user.password;
 
-        await User.findByIdAndUpdate(req.params.id, {email, password: passwordHash});
+        const userUpdate = await User.findByIdAndUpdate(req.params.id, {email, password: passwordHash});
+        userUpdate.save()
 
         res.json({msg: 'Usuario update'});
     } catch (err) {
